@@ -1770,7 +1770,7 @@ input, select, textarea {
 		position: relative;
 		display: inline-block;
 		background: #ed786a;
-		color: #fff !important;
+		color: #fff;
 		text-transform: uppercase;
 		border-radius: 4px;
 		border: 0;
@@ -2228,7 +2228,44 @@ input, select, textarea {
 		background: #fff;
 		padding: 6em 0;
 	}
+	section#main_map {
+    	margin-bottom: 3em;
+	}
+	section#main_customer {
+    	margin-bottom: 3em;
+	}
+	section#main_agree {
+    	margin-bottom: 3em;
+	}
+	
+	#main_map, #main_customer, #main_agree {
+		padding-top: 2em;
+	}
+	
+	#map_title, #customer_title, #agree_title {
+		text-align: left;
+	}
 
+	#customer_h2 {
+		margin-bottom: 0em;
+	}
+	
+	button.question {
+    	margin-bottom: 4em;
+    	margin-top: -1em;
+    	background: white;
+    	color: skyblue;
+	}
+	button.question:hover {
+		cursor: pointer;
+		background: skyblue;
+    	color: white;
+	}
+	button.question:active {
+		background: #a0d8ef;
+    	color: white;
+	}
+	
 /* Content */
 
 	#content > section,
@@ -2272,7 +2309,7 @@ input, select, textarea {
 		overflow: hidden;
 		border-top: solid 2px #e5e5e5;
 		background: #f0f0f0;
-		padding: 6em 0 8em 0;
+		padding: 2em 0 2em 0;
 	}
 
 		#footer form input[type="text"],
@@ -2300,8 +2337,8 @@ input, select, textarea {
 	#copyright {
 		border-top: solid 2px #e5e5e5;
 		text-align: center;
-		margin-top: 6em;
-		padding-top: 4em;
+		margin-top: 2em;
+		padding-top: 2em;
 	}
 
 /* XLarge */
