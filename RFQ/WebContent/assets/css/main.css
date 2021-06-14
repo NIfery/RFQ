@@ -2229,13 +2229,16 @@ input, select, textarea {
 		padding: 6em 0;
 	}
 	section#main_map {
-    	margin-bottom: 3em;
+    	background: white;
+   		padding-bottom: 4em;
 	}
 	section#main_customer {
-    	margin-bottom: 3em;
+    	background: white;
+   		padding-bottom: 4em;
 	}
 	section#main_agree {
-    	margin-bottom: 3em;
+    	background: white;
+   		padding-bottom: 4em;
 	}
 	
 	#main_map, #main_customer, #main_agree {
@@ -2251,6 +2254,7 @@ input, select, textarea {
 	}
 	
 	button.question {
+		box-shadow: 0 0 0.125em 0.175em rgba(0, 0, 0, 0.125);
     	margin-bottom: 4em;
     	margin-top: -1em;
     	background: white;

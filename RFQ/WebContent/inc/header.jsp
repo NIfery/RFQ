@@ -36,7 +36,7 @@
 							</nav>
 								<nav id="nav2">
 									<ul>
-										<li><a href="#"><span>LOGIN</span></a></li>
+										<li><a href="<%=request.getContextPath() %>/login/login.jsp"><span>LOGIN</span></a></li>
 										<li><a href="#"><span>JOIN</span></a></li>
 									</ul>
 								</nav>							
