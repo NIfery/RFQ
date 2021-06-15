@@ -13,9 +13,9 @@
 								<ul>
 									<li><a href="<%=request.getContextPath()%>/index.jsp" class="icon solid fa-home"><span>Home</span></a></li>
 									<li>
-										<a href="#" class="icon fa-chart-bar"><span>퀴즈</span></a>
+										<a href="<%=request.getContextPath()%>/quiz/quizMain.jsp" class="icon fa-chart-bar"><span>퀴즈</span></a>
 										<ul>
-											<li><a href="#">전체보기</a></li>
+											<li><a href="<%=request.getContextPath()%>/quiz/quizMain.jsp">전체보기</a></li>
 											<li><a href="#">&nbsp;&nbsp;&nbsp;영화</a></li>
 											<li><a href="#">&nbsp;&nbsp;&nbsp;넌센스</a></li>
 											<li><a href="#">&nbsp;&nbsp;&nbsp;상식</a></li>

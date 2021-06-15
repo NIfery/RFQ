@@ -20,7 +20,19 @@
 				
 		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
-			
+			$(function(){
+				$('form[name=frmLogin]').submit(function(){
+					if($('#userid').val().length<1){
+						alert('아이디를 입력하세요.');
+						$('#userid').focus();
+						event.preventDefault();
+					}else if($('#pwd').val().length<1){
+						alert('비밀번호를 입력하세요.');
+						$('#pwd').focus();
+						event.preventDefault();
+					}
+				});
+			});
 		</script>
 		
 		<!-- 사용자 정의 css -->
@@ -38,9 +50,27 @@
 					<div class="container" style="text-align:center;">
 						<div id="agree_title">
 							<h2><b>로그인</b></h2>
-						</div>
-						<div>
-							로그인 폼
+						</div>						
+						<div style="text-align:center;border-top:1px solid #888;border-bottom:1px solid #888;padding-top:10px">
+							<div style="width:60%;position:relative;left:20%;">
+								<div>
+									<img src="<%=request.getContextPath()%>/images/logo.jpg" style="width:100%;height:100%">
+								</div>
+								<div>
+									<form name="frmLogin" method="post" action="<%=request.getContextPath() %>/index.jsp">
+										<fieldset>
+											<input type="text" maxlength="20" id="userid" name="userid" title="아이디" autofocus placeholder="아이디" />
+											<input type="password" id="pwd" name="pwd" maxlength="50" title="비밀번호" placeholder="비밀번호" />&nbsp;
+											<input type="submit" class="question" id="lg_submit" value="로그인">
+											<div>
+												<!-- <input type="submit" id="lg_submit" value="로그인"> -->
+												<input type="checkbox" name="chkSave" id="chkSave"> 
+												<label for="chkSave" style="font-size: 0.8em">아이디 저장하기</label>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>

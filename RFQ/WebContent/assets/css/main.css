@@ -65,12 +65,12 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, select, textarea {
+/* input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-}
+} */
 
 /* Basic */
 
@@ -1658,7 +1658,7 @@ input, select, textarea {
 		font-weight: 600;
 		text-transform: uppercase;
 		color: #888;
-		display: block;
+		/* display: block; */
 		margin: 0 0 1em 0;
 	}
 
@@ -1671,11 +1671,11 @@ input, select, textarea {
 		-webkit-transition: background-color 0.25s ease-in-out;
 		-ms-transition: background-color 0.25s ease-in-out;
 		transition: background-color 0.25s ease-in-out;
-		-webkit-appearance: none;
-		display: block;
+		/* -webkit-appearance: none; */
+		/* display: block; */
 		border: 0;
 		background: #e8e8e8;
-		width: 100%;
+		/* width: 100%; */
 		box-shadow: inset 2px 2px 0px 0px rgba(0, 0, 0, 0.1);
 		border-radius: 4px;
 		line-height: 1.25em;
@@ -1766,7 +1766,7 @@ input, select, textarea {
 		-webkit-transition: all 0.25s ease-in-out;
 		-ms-transition: all 0.25s ease-in-out;
 		transition: all 0.25s ease-in-out;
-		-webkit-appearance: none;
+		/* -webkit-appearance: none; */
 		position: relative;
 		display: inline-block;
 		background: #ed786a;
@@ -2172,10 +2172,10 @@ input, select, textarea {
 		border-top: solid 2px #e5e5e5;
 		border-bottom: solid 2px #e5e5e5;
 		box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
-		position: relative;
 		text-transform: uppercase;
 		background: url("../../images/logo.jpg");
-		background-size: cover;
+		background-size: 100% 100%;
+		/* background-size: cover; */
 		padding: 10em 0;
 	}
 
@@ -2266,6 +2266,21 @@ input, select, textarea {
     	color: white;
 	}
 	button.question:active {
+		background: #a0d8ef;
+    	color: white;
+	}
+	
+	form input[type="submit"].question {
+		box-shadow: 0 0 0.125em 0.175em rgba(0, 0, 0, 0.125);
+    	background: white;
+    	color: skyblue;
+	}
+	form input[type="submit"].question:hover {
+		cursor: pointer;
+		background: skyblue;
+    	color: white;
+	}
+	form input[type="submit"].question:active {
 		background: #a0d8ef;
     	color: white;
 	}
