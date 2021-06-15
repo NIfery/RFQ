@@ -4,9 +4,6 @@
 <html>
 <head>
 <title>RFQ</title>
-<%
-	String kind = request.getParameter("kind");
-%>
 <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -21,14 +18,14 @@
 		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(function(){
-				$('form[name=frmLogin]').submit(function(){
-					if($('#userid').val().length<1){
-						alert('아이디를 입력하세요.');
-						$('#userid').focus();
+				$('form[name=frmAgree]').submit(function(){
+					if(!$('#chkAgree1').is(':checked')){
+						alert('약관에 동의하셔야 합니다.');
+						$('#chkAgree1').focus();
 						event.preventDefault();
-					}else if($('#pwd').val().length<1){
-						alert('비밀번호를 입력하세요.');
-						$('#pwd').focus();
+					}else if(!$('#chkAgree2').is(':checked')){
+						alert('약관에 동의하셔야 합니다.');
+						$('#chkAgree2').focus();
 						event.preventDefault();
 					}
 				});
@@ -46,31 +43,36 @@
 			<%@ include file="../inc/header.jsp" %>
 			
 			<!-- Main -->
-				<section id="main_agree">
+				<section id="main_map">
 					<div class="container" style="text-align:center;">
-						<div id="agree_title">
-							<h2><b>로그인</b></h2>
-						</div>						
-						<div style="text-align:center;border-top:1px solid #888;border-bottom:1px solid #888;padding-top:10px">
-							<div style="width:60%;position:relative;left:20%;">
+						<div id="map_title">
+							<h2><b>회원가입</b></h2>
+						</div>
+						<div>
+							<form name="frmAgree" method="post" action="<%=request.getContextPath() %>/member/join.jsp">
 								<div>
-									<img src="<%=request.getContextPath()%>/images/logo.jpg" style="width:100%;height:100%">
+									<textarea rows="5" cols="80" readonly="readonly">
+										<%@ include file="agreement_content1.jsp" %>
+									</textarea>
+									<br>
+									<input type="checkbox" name="chkAgree1" id="chkAgree1">
+									<span><label for="chkAgree1">RFQ 이용약관 동의</label></span>
 								</div>
+								<br><br>
 								<div>
-									<form name="frmLogin" method="post" action="<%=request.getContextPath() %>/index.jsp">
-										<fieldset>
-											<input type="text" maxlength="20" id="userid" name="userid" title="아이디" autofocus placeholder="아이디" />
-											<input type="password" id="pwd" name="pwd" maxlength="50" title="비밀번호" placeholder="비밀번호" />&nbsp;
-											<input type="submit" class="question" id="lg_submit" value="로그인">
-											<div>
-												<!-- <input type="submit" id="lg_submit" value="로그인"> -->
-												<input type="checkbox" name="chkSave" id="chkSave"> 
-												<label for="chkSave" style="font-size: 0.8em">아이디 저장하기</label>
-											</div>
-										</fieldset>
-									</form>
+									<textarea rows="5" cols="80" readonly="readonly">
+										<%@ include file="agreement_content2.jsp" %>
+									</textarea>
+									<br>
+									<input type="checkbox" name="chkAgree2" id="chkAgree2">
+									<span><label for="chkAgree2">개인정보 수집 및 이용 동의</label></span>
 								</div>
-							</div>
+								<br><br>
+								<div style="text-align: center">
+									<input type="submit" class="question" id="submit" value="확인">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="../index.jsp"><input type="button" class="back" id="back" value="취소"></a>
+								</div>
+							</form>
 						</div>
 					</div>
 				</section>

@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String t_userid = (String)session.getAttribute("userid");
+	boolean t_login = false;
+	if(t_userid!=null && !t_userid.isEmpty()){ //세션에 값이 있으면
+		t_login = true; //로그인이 된 경우
+	}
+%>
 <!-- Header -->
 				<section id="header">
 					<div class="container">
@@ -36,8 +43,13 @@
 							</nav>
 								<nav id="nav2">
 									<ul>
-										<li><a href="<%=request.getContextPath() %>/login/login.jsp"><span>LOGIN</span></a></li>
-										<li><a href="#"><span>JOIN</span></a></li>
+										<%if(!t_login){ %>			
+											<li><a href="<%=request.getContextPath() %>/member/login.jsp"><span>LOGIN</span></a></li>
+											<li><a href="<%=request.getContextPath() %>/member/agreement.jsp"><span>JOIN</span></a></li>           
+										<%}else{ %>
+											<li><a href="<%=request.getContextPath() %>/member/logout.jsp"><span>LOGOUT</span></a></li>
+											<li><a href="#"><span>MYPAGE</span></a></li>	            
+										<%} %>
 									</ul>
 								</nav>							
 					</div>

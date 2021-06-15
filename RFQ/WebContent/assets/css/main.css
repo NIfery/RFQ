@@ -2241,6 +2241,30 @@ input::-moz-focus-inner {
     	color: white;
 	}
 	
+	form input[type="button"].question {
+		box-shadow: 0 0 0.125em 0.175em rgba(0, 0, 0, 0.125);
+    	background: white;
+    	color: skyblue;
+	}
+	form input[type="button"].question:hover {
+		cursor: pointer;
+		background: skyblue;
+    	color: white;
+	}
+	form input[type="button"].question:active {
+		background: #a0d8ef;
+    	color: white;
+	}
+	
+	form input[type="button"].back {
+		box-shadow: 0 0 0.125em 0.175em rgba(0, 0, 0, 0.125);
+    	background: #888;
+    	color: white;
+	}
+	form input[type="button"].back:hover {
+		cursor: pointer;
+	}
+	
 /* Content */
 
 	#content > section,
