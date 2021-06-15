@@ -56,7 +56,7 @@
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
-										<img src="images/kfc.PNG" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘1</h2>
@@ -67,7 +67,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/drink1.PNG" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>음료</h2>
@@ -78,7 +78,7 @@
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘3</h2>
@@ -89,7 +89,7 @@
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘4</h2>
@@ -100,7 +100,7 @@
 								</article>
 								<article class="style5">
 									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘5</h2>
@@ -111,7 +111,7 @@
 								</article>
 								<article class="style6">
 									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘6</h2>
@@ -122,7 +122,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="images/pic07.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘7</h2>
@@ -133,7 +133,7 @@
 								</article>
 								<article class="style3">
 									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘8</h2>
@@ -144,7 +144,7 @@
 								</article>
 								<article class="style1">
 									<span class="image">
-										<img src="images/pic09.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘9</h2>
@@ -155,7 +155,7 @@
 								</article>
 								<article class="style5">
 									<span class="image">
-										<img src="images/pic10.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘10</h2>
@@ -166,7 +166,7 @@
 								</article>
 								<article class="style6">
 									<span class="image">
-										<img src="images/pic11.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘11</h2>
@@ -177,7 +177,7 @@
 								</article>
 								<article class="style4">
 									<span class="image">
-										<img src="images/pic12.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
 									<a href="generic.html">
 										<h2>기프티콘12</h2>
