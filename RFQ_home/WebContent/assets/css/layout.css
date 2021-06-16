@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+#f_title{
+	font-weight: bold;
+}
+
+.info ul li{
+	display:inline;
+	font-size:0.8em;
+}
+
+#title {
+    font-weight: bold;
+    font-size:1.8em;
+    margin-left: 200px;
+}
+
+.inner {
+    text-align: center;
+    padding-top: 15px;
+}
+
+#logo {
+    float: left;
+}
+#sideMenu {
+    float: right;
+    font-size: 0.8em;
+    padding-top: 10px;
+}
+
+.footer {
+    text-align: center; 
+}
+
+.s_center {
+    font-size: 0.8em;
+}
+
+#header {
+    background-color: lightyellow;
+    height: 70px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h3 {
+    display: inline;
+    margin-left: 5px;
+}
+
+table{
+    border: 1px solid gray;
+    border-collapse: collapse;
+    text-align: center;
+    width: 950px;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid gray;
+    height: 45px;
+}
+
+#giftImg img {
+    width: 200px;
+    height: 200px;
+}
+
+#detail {
+    text-align: left;
+    padding: 0;
+    padding-left: 10px;
+    width: 300px;
+}
+
+#tag {
+    font-size: 0.75em;
+    color: gray;
+}
+
+#giftImg {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+#seller {
+    width: 130px;
+}
+
+.buyer {
+    font-size: 0.8em;
+}
+
+#agree {
+    margin-top: 10px;
+}
+
+input[type=text] {
+    width: 50px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.agree span{
+    font-size: 0.8em;
+}
+
+.agree p{
+    font-size: 0.8em;
+}
+.pay{
+	text-align: center;
+}
+
+.status {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 23px;
+    font-size: 0.8em;
+}
+
+#status {
+    font-weight: bold;
+}
+
+span#name {
+    margin: 30px;
+}
+
+span#hp {
+    margin: 30px;
+}
+
+input#g_Point {
+    margin-left: 14px;
+}
