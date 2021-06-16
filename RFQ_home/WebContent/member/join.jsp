@@ -7,15 +7,8 @@
 <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
-		
-		<!-- swiper -->
-		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-		
-		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 				
-		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
 		$(function(){
 			$('form[name=frmJoin]').submit(function(){
@@ -46,7 +39,7 @@
 					event.preventDefault();
 				}
 
-				$('#email2').change(function(){
+				/* $('#email2').change(function(){
 					if($(this).val()=='etc'){
 						$('#email3').val("");
 						$('#email3').css('visibility','visible');
@@ -54,8 +47,18 @@
 					}else{
 						$('#email3').css('visibility','hidden');
 					}
-				});
+				}); */
 			});
+			
+			window.changeEmail = function(){
+				if($('#email2').val()=='etc'){
+					$('#email3').val("");
+					$('#email3').css('visibility','visible');
+					$('#email3').focus();
+				}else{
+					$('#email3').css('visibility','hidden');
+				}
+			}
 			
 			window.chkIds = function(){
 				window.open('checkUserid.jsp?userid='+$('#userid').val(),'chk','width=400,height=300,left=0,top=0,location=yes,resizable=yes');
@@ -164,7 +167,8 @@
 							    <div>
 							        <label for="email1">이메일 주소</label><br>
 							        <input type="text" name="email1"  id="email1" title="이메일주소 앞자리">@
-							        <select name="email2" id="email2"  title="이메일주소 뒷자리">
+							        <select name="email2" id="email2"  title="이메일주소 뒷자리"
+							        	onchange="changeEmail();">
 							            <option value="naver.com">naver.com</option>
 							            <option value="hanmail.net">hanmail.net</option>
 							            <option value="nate.com">nate.com</option>
@@ -190,7 +194,7 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
+			<script src="<%=request.getContextPath() %>/assets/js/jquery.min.js"></script>
 			<script src="../assets/js/jquery.dropotron.min.js"></script>
 			<script src="../assets/js/browser.min.js"></script>
 			<script src="../assets/js/breakpoints.min.js"></script>
