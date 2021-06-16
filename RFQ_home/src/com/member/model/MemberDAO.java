@@ -21,7 +21,7 @@ public class MemberDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="insert into member(userid,pwd,name,address,hp,zipcode,email)"
+			String sql="insert into member2(userid,pwd,name,address,hp,zipcode,email)"
 					+ " values(?,?,?,?,?,?,?)";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, vo.getUserid());
@@ -49,7 +49,7 @@ public class MemberDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="select count(*) from member where userid=?";
+			String sql="select count(*) from member2 where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
 			
@@ -80,7 +80,7 @@ public class MemberDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="select * from member where userid=?";
+			String sql="select * from member2 where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
 			
@@ -111,7 +111,7 @@ public class MemberDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="select pwd from member"
+			String sql="select pwd from member2"
 					+ " where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
