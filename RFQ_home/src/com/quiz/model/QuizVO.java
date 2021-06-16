@@ -1,14 +1,14 @@
-package com.quiz.model;
+package com.semi.quiz;
 
 public class QuizVO {
-	private int no;
-	private String category;
-	private String content;
-	private String exam1;
-	private String exam2;
-	private String exam3;
-	private String exam4;
-	private int answer;
+	private int no;	//번호
+	private String category;	//장르
+	private String content;	//퀴즈내용
+	private String exam1;	//보기1
+	private String exam2;	//보기2
+	private String exam3;	//보기3
+	private String exam4;	//보기4
+	private int answer;	//정답
 	
 	public QuizVO() {
 		super();
@@ -96,6 +96,6 @@ public class QuizVO {
 		return "QuizVO [no=" + no + ", category=" + category + ", content=" + content + ", exam1=" + exam1 + ", exam2="
 				+ exam2 + ", exam3=" + exam3 + ", exam4=" + exam4 + ", answer=" + answer + "]";
 	}
-	
+
 	
 }
