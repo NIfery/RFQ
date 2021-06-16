@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+	String type = request.getParameter("type");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +39,14 @@
 			<!-- Main -->
 				<section id="main_map">
 					<div class="container" style="text-align:center;">
-						<iframe src="<%=request.getContextPath() %>/shoPage/index2.html"
+						<iframe 
+						<%if("1".equals(type)){ %>
+							src="<%=request.getContextPath() %>/shoPage/category.html"
+						<%}else if("2".equals(type)){ %>
+							src="<%=request.getContextPath() %>/shoPage/single-product.html"
+						<%}else{ %>
+							src="<%=request.getContextPath() %>/shoPage/index2.html"
+						<%} %>
 						id="the_iframe" onload="calcHeight();" scrolling="no"
 						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;"></iframe>
 					</div>

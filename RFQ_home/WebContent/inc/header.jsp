@@ -8,6 +8,12 @@
 	}
 %>
 <!-- Header -->
+	<script type="text/javascript">
+		$(function(){
+			
+		});
+	</script>
+
 				<section id="header">
 					<div class="container">
 
@@ -40,7 +46,14 @@
 											</li>
 										</ul>
 									</li>
-									<li><a href="<%=request.getContextPath() %>/giftcon/giftconCon.jsp" class="icon solid fa-cog"><span>기프티콘</span></a></li>
+									<li>
+										<a href="<%=request.getContextPath() %>/giftcon/giftconCon.jsp" class="icon solid fa-cog"><span>기프티콘</span></a>
+										<ul>
+											<li><a href="<%=request.getContextPath()%>/giftcon/giftconCon.jsp?type=1">전체상품</a></li>
+											<li><a href="<%=request.getContextPath()%>/giftcon/giftconCon.jsp?type=2">상품상세</a></li>
+											<%-- <li><a href="<%=request.getContextPath()%>/shoPage/cart.html">장바구니</a></li> --%>
+										</ul>
+									</li>
 									<li><a href="#" class="icon solid fa-retweet"><span>이용안내</span></a></li>
 									<li><a href="<%=request.getContextPath() %>/etc/customer.jsp" class="icon solid fa-sitemap"><span>고객센터</span></a></li>
 								</ul>
