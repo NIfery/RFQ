@@ -53,11 +53,16 @@ h3 {
     margin-left: 5px;
 }
 
+.giftCon_d {
+    position: relative;
+    left: 20%;
+}
+
 table{
     border: 1px solid gray;
     border-collapse: collapse;
     text-align: center;
-    width: 950px;
+    width: 60%;
     font-size: 0.9em;
 }
 
