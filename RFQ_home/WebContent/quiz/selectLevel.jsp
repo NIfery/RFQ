@@ -1,4 +1,4 @@
-<%@page import="com.semi.quiz.QuizService"%>
+<%@page import="com.quiz.model.QuizService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

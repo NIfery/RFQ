@@ -1,13 +1,11 @@
-package com.semi.quiz;
+package com.quiz.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.semi.db.ConnectionPoolMgr;
+import com.db.ConnectionPoolMgr;
 
 public class QuizDAO {
 	private ConnectionPoolMgr pool;

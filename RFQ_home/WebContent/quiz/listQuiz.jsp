@@ -1,8 +1,8 @@
+<%@page import="com.quiz.model.QuizDAO"%>
+<%@page import="com.quiz.model.QuizVO"%>
+<%@page import="com.quiz.model.QuizService"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.semi.quiz.QuizDAO"%>
-<%@page import="com.semi.quiz.QuizVO"%>
-<%@page import="com.semi.quiz.QuizService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

@@ -1,4 +1,4 @@
-package com.semi.quiz;
+package com.quiz.model;
 
 public class QuizVO {
 	private int no;	//번호

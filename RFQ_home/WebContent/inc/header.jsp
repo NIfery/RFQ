@@ -40,7 +40,7 @@
 											</li>
 										</ul>
 									</li>
-									<li><a href="<%=request.getContextPath() %>/etc/giftcon.jsp" class="icon solid fa-cog"><span>기프티콘</span></a></li>
+									<li><a href="<%=request.getContextPath() %>/giftcon/giftconCon.jsp" class="icon solid fa-cog"><span>기프티콘</span></a></li>
 									<li><a href="#" class="icon solid fa-retweet"><span>이용안내</span></a></li>
 									<li><a href="<%=request.getContextPath() %>/etc/customer.jsp" class="icon solid fa-sitemap"><span>고객센터</span></a></li>
 								</ul>

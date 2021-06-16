@@ -1,4 +1,4 @@
-package com.semi.quiz;
+package com.quiz.model;
 
 public class QuizService {
 	//장르별 고유 번호
