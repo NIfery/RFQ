@@ -24,9 +24,13 @@
 										<ul>
 											<li><a href="<%=request.getContextPath()%>/quiz/quizMain.jsp">전체보기</a></li>
 											<li><a href="#">&nbsp;&nbsp;&nbsp;영화</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;넌센스</a></li>
+											<li><a href="#">&nbsp;&nbsp;&nbsp;역사</a></li>
+											<li><a href="#">&nbsp;&nbsp;&nbsp;스포츠</a></li>
+											<li><a href="#">&nbsp;&nbsp;&nbsp;게임</a></li>
 											<li><a href="#">&nbsp;&nbsp;&nbsp;상식</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;사자성어</a>
+											<li><a href="#">&nbsp;&nbsp;&nbsp;학습</a></li>
+											<li><a href="#">&nbsp;&nbsp;&nbsp;연예인</a></li>
+											<li><a href="#">&nbsp;&nbsp;&nbsp;신조어</a>
 												<!-- <a href="#">Phasellus consequat</a>
 												<ul>
 													<li><a href="#">Magna phasellus</a></li>
