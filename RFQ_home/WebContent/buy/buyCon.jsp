@@ -11,22 +11,7 @@
 		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(function() {
-				const swiper = new Swiper('.swiper-container', {
-					// Optional parameters
-					direction : 'horizontal',
-					loop : true,
-		
-					// If we need pagination
-					pagination : {
-						el : '.swiper-pagination',
-						clickable: true,
-					},
-		
-					autoplay: {
-						delay: 3000,
-						disableOnInteraction : false,
-					},
-				});
+			
 			});
 			
 			function calcHeight() {
@@ -41,18 +26,7 @@
 		
 		<!-- 사용자 정의 css -->
 		<style type="text/css">
-			.swiper-container {
-				border: 1px solid black;
-				width: 80%;
-				height: 500px;
-			}
-			table, thead, tbody, tfoot, tr, th, td{
-				border:1px solid black;
-				border-collapse: collapse;
-			}
-			.giftCon_d{
-				text-align: center;
-			}
+		
 		</style>
 	</head>
 	<body class="homepage is-preload">
