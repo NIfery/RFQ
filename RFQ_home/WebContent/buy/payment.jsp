@@ -1,3 +1,6 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="com.giftcon.model.GiftconVO"%>
+<%@page import="com.giftcon.model.GiftconDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +11,18 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/assets/css/layout.css" />
 </head>
 <body>
+<%
+	String no="1";
+	
+	GiftconDAO dao=new GiftconDAO();
+	GiftconVO vo=new GiftconVO();
+	try{
+		
+		vo=dao.selectByNo(1);
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
+%>
 <div id="wrapper">
 	
 	<div class="center">
@@ -63,7 +78,7 @@
 				</tr>
 				<tr>
 					<td id="giftImg">
-						<img src="images/starbuck1.jpg">
+						<img src="../shoPage/img/product/<%=vo.getName() %>.PNG">
 					</td>
 					<td id="detail">
 						<p id="tag">[RFQ-GiftCon]</p>
