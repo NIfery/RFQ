@@ -37,9 +37,10 @@
 			<!-- Main -->
 				<section id="main_map">
 					<div class="container" style="text-align:center;">
-						<iframe src="<%=request.getContextPath() %>/buy/payment.jsp"
+					<iframe src="<%=request.getContextPath() %>/buy/payment.jsp"
 						id="the_iframe" onload="calcHeight();" scrolling="no"
-						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;"></iframe>
+						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;">
+					</iframe>
 					</div>
 				</section>
 			<%@ include file="../inc/footer.jsp"%>

@@ -55,14 +55,13 @@ h3 {
 
 .giftCon_d {
     position: relative;
-    left: 20%;
 }
 
 table{
     border: 1px solid gray;
     border-collapse: collapse;
     text-align: center;
-    width: 60%;
+    width:100%;
     font-size: 0.9em;
 }
 
