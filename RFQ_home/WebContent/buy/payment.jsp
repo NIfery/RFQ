@@ -35,51 +35,45 @@
 	
 %>
 <div id="wrapper">
-	<div class="center">
+<form name="frmBuy" method="post" action="payment_ok.jsp">
+	 <fieldset>
 		<h3>주문 / 결제</h3>
 		<div class="status">
 			<span>장바구니&nbsp > &nbsp</span>
 			<span id="status">주문 / 결제</span>
 			<span>&nbsp > &nbsp완료</span>
 		</div>
-		<div class="giftCon_d">
 			<table class="purchase">
-			<colgroup>
-				<col style="width:10%;" />
-				<col style="width:50%;" />
-				<col style="width:15%;" />
-				<col style="width:15%;" />
-				<col style="width:10%;" />		
-			</colgroup>
-			<thead>
-			  <tr>
-			    <th colspan="2" scope="col">상품정보</th>
-			    <th scope="col">판매자</th>
-			    <th scope="col">구매수량</th>
-			    <th scope="col">차감포인트</th>
-			  </tr>
-			</thead> 
-			<tbody>
-				<tr>
-					<td id="giftImg">
-						<img src="../images/product/<%=vo.getImage() %>.PNG">
-					</td>
-					<td id="detail">
-						<p id="tag">[RFQ-GiftCon]</p>
-						<p><%=vo.getName() %></p>
-					</td>
-					<td id="seller"><%=vo.getSeller() %></td>
-					<td>
-						<input type="text" name="qty" id="qty" value="1">개
-					</td>
-					<td>
-						<input type="text" name="s_Point" id="s_Point" value="<%=vo.getPrice()%>">Point
-					</td>
-				</tr>
-			</tbody>
+				<colgroup>
+					<col style="width: 10%;" />
+					<col style="width: 50%;" />
+					<col style="width: 15%;" />
+					<col style="width: 15%;" />
+					<col style="width: 10%;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th colspan="2" scope="col">상품정보</th>
+						<th scope="col">판매자</th>
+						<th scope="col">구매수량</th>
+						<th scope="col">차감포인트</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="giftImg">
+							<img src="../images/product/<%=vo.getImage()%>.png"></td>
+						<td id="detail">
+							<p id="tag">[RFQ-GiftCon]</p>
+							<p><%=vo.getName()%></p></td>
+						<td id="seller"><%=vo.getSeller()%></td>
+						<td><input type="text" name="qty" id="qty" value="1">개</td>
+						<td><input type="text" name="s_Point" id="s_Point"
+								value="<%=vo.getPrice()%>">Point</td>
+					</tr>
+				</tbody>
 			</table>
-		</div><br>
-		<hr><br>
+			<hr><br>
 		<div class="buyer">
 			<label>구매자 이름</label><span id="name"><%=memVo.getName()%></span><br><br>
 			<label>구매자 연락처</label><span id="hp"><%=memVo.getHp() %></span><br><br>
@@ -95,8 +89,8 @@
 		<div class="pay">	
 			<input type="submit" name="pay" id="pay" value="결제하기">
 		</div><br>
-		<hr>
-	</div>
+		</fieldset>
+	</form><hr>
 </div>
 </body>
 </html>
