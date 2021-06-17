@@ -73,7 +73,7 @@
 						<input type="text" name="qty" id="qty" value="1">개
 					</td>
 					<td>
-						<input type="text" name="s_Point" id="s_Point" value="<%=vo.getPrice()%>">Point
+						<input type="text" name="outPoint" id="outPoint" value="<%=vo.getPrice()%>">Point
 					</td>
 				</tr>
 			</tbody>
@@ -81,10 +81,11 @@
 		</div><br>
 		<hr><br>
 		<div class="buyer">
+			<input type="hidden" name="userid" id="userid" value="<%=userid%>">
 			<label>구매자 이름</label><span id="name"><%=memVo.getName()%></span><br><br>
 			<label>구매자 연락처</label><span id="hp"><%=memVo.getHp() %></span><br><br>
 			<label for="point">보유 포인트</label>
-			<input type="text" name="g_Point" id="g_Point" value="<%=memVo.getPoint()%>">Point<br>
+			<input type="text" name="getPoint" id="getPoint" value="<%=memVo.getPoint()%>">Point<br>
 		</div><br>
 		<hr>
 		<div class="agree">
