@@ -1,5 +1,17 @@
+<%@page import="com.giftcon.model.GiftconVO"%>
+<%@page import="com.giftcon.model.GiftconService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%
+ 	String no = request.getParameter("no");
+ 	
+ 	GiftconService gs = new GiftconService();
+ 	GiftconVO vo = new GiftconVO();
+ 	vo = gs.selectByNo(Integer.parseInt(no));
+ 	
+ 	
+ %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +38,7 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<a href="#";><h1>RFQ POINT SHOP</h1></a><br>
+					<a href="#"><h1>RFQ POINT SHOP</h1></a><br>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Ready for the Quiz</a></li>
@@ -47,7 +59,7 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+							<img class="img-fluid" src="../images/product/<%=vo.getName() %>.PNG" alt="">
 						</div>
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
@@ -59,13 +71,13 @@
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<h3>상품 이름</h3>
-						<h2>$상품가격</h2>
+						<h3><%=vo.getName() %></h3>
+						<h2><%=vo.getPrice() %> Point</h2>
 						<ul class="list">
-							<li><a class="active" href="#"><span>카테고리</span> : ???</a></li>
+							<li><a class="active" href="#"><span>카테고리</span> : <%=vo.getCategory() %></a></li>
 							<li><a href="#"><span>판매처</span> : ???</a></li>
 						</ul>
-						<p>상품 상세 설명 들어올 자리</p>
+						<p><%= vo.getDetail() %></p>
 						<div class="product_count">
               <label for="qty">수량:</label>
               <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"

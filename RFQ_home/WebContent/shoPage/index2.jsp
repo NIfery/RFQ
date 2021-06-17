@@ -1,5 +1,11 @@
+<%@page import="com.giftcon.model.GiftconVO"%>
+<%@page import="com.giftcon.model.GiftconService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%
+
+ %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +48,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk1.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp?no=1'"><i class="ti-search"></i></button></li>
 
                 </ul>
               </div>
@@ -58,7 +64,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk2.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button>
+                  <li><button onclick="location.href='single-product.jsp?no=2'"><i class="ti-search"></i></button>
                   </li>
 
                 </ul>
@@ -75,7 +81,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk3.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button>
+                  <li><button onclick="location.href='single-product.jsp?no=3'"><i class="ti-search"></i></button>
                   </li>
                 </ul>
               </div>
@@ -91,7 +97,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk4.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button>
+                  <li><button onclick="location.href='single-product.jsp?no=4'"><i class="ti-search"></i></button>
                   </li>
                 </ul>
               </div>
@@ -107,7 +113,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof1.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp?no=5'"><i class="ti-search"></i></button></li>
                 </ul>
               </div>
               <div class="card-body">
@@ -122,7 +128,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof2.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp?no=6'"><i class="ti-search"></i></button></li>
 
                 </ul>
               </div>
@@ -138,7 +144,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof3.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp?no=7'"><i class="ti-search"></i></button></li>
 
                 </ul>
               </div>
@@ -154,7 +160,7 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof4.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp?no=8'"><i class="ti-search"></i></button></li>
 
                 </ul>
               </div>
