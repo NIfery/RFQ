@@ -61,8 +61,8 @@
 							<!-- Additional required wrapper -->
 							<div class="swiper-wrapper">
 								<!-- Slides -->
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic01.jpg" style="width:100%;height:100%"></div>
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic02.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/swipe1.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/swipe2.jpg" style="width:100%;height:100%"></div>
 								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic03.jpg" style="width:100%;height:100%"></div>
 								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic04.jpg" style="width:100%;height:100%"></div>
 							</div>

@@ -16,7 +16,6 @@
 <body>
 <%
 	String no=request.getParameter("no");
-
 	GiftconVO vo=new GiftconVO();
 	try{
 		vo=giftconService.selectByNo(Integer.parseInt(no));
