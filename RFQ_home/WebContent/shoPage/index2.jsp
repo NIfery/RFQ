@@ -42,14 +42,13 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk1.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+
                 </ul>
               </div>
               <div class="card-body">
                 <p>네네치킨</p>
-                <h4 class="card-product__title"><a href="single-product.html">후라이드 + 콜라1.25L</a></h4>
+                <h4 class="card-product__title">후라이드 + 콜라1.25L</h4>
                 <p class="card-product__price">15800 point</p>
               </div>
             </div>
@@ -59,14 +58,14 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk2.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button>
+                  </li>
+
                 </ul>
               </div>
               <div class="card-body">
                 <p>BHC</p>
-                <h4 class="card-product__title"><a href="single-product.html">뿌링클 + 콜라1.25L</a></h4>
+                <h4 class="card-product__title">뿌링클 + 콜라1.25L</h4>
                 <p class="card-product__price">17000 point</p>
               </div>
             </div>
@@ -76,14 +75,13 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk3.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button>
+                  </li>
                 </ul>
               </div>
               <div class="card-body">
                 <p>굽네치킨</p>
-                <h4 class="card-product__title"><a href="single-product.html">굽네치킨 볼케이노 + 콜라1.25L</a></h4>
+                <h4 class="card-product__title">굽네치킨 볼케이노 + 콜라1.25L</h4>
                 <p class="card-product__price">16800 point</p>
               </div>
             </div>
@@ -93,14 +91,13 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/chk4.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button>
+                  </li>
                 </ul>
               </div>
               <div class="card-body">
                 <p>KFC</p>
-                <h4 class="card-product__title"><a href="single-product.html">KFC 징거버거세트</a></h4>
+                <h4 class="card-product__title">KFC 징거버거세트</h4>
                 <p class="card-product__price">9700 point</p>
               </div>
             </div>
@@ -110,14 +107,12 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof1.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
                 </ul>
               </div>
               <div class="card-body">
                 <p>스타벅스</p>
-                <h4 class="card-product__title"><a href="single-product.html">아메리카노</a></h4>
+                <h4 class="card-product__title">아메리카노</h4>
                 <p class="card-product__price">4100 point</p>
               </div>
             </div>
@@ -127,14 +122,13 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof2.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+
                 </ul>
               </div>
               <div class="card-body">
                 <p>이디야</p>
-                <h4 class="card-product__title"><a href="single-product.html">토피넛 라떼</a></h4>
+                <h4 class="card-product__title">토피넛 라떼</a></h4>
                 <p class="card-product__price">3800 point</p>
               </div>
             </div>
@@ -144,14 +138,13 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof3.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+
                 </ul>
               </div>
               <div class="card-body">
                 <p>빽다방</p>
-                <h4 class="card-product__title"><a href="single-product.html">초코칩 피스타치오</a></h4>
+                <h4 class="card-product__title">초코칩 피스타치오</a></h4>
                 <p class="card-product__price">3800 point</p>
               </div> 
             </div>
@@ -161,14 +154,13 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/cof4.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
-                  <li><button><i class="ti-shopping-cart"></i></button></li>
-                  <li><button><i class="ti-heart"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp'"><i class="ti-search"></i></button></li>
+
                 </ul>
               </div>
               <div class="card-body">
                 <p>베스킨라빈스</p>
-                <h4 class="card-product__title"><a href="#">파인트</a></h4>
+                <h4 class="card-product__title">파인트</h4>
                 <p class="card-product__price">12300 point</p>
               </div>
             </div>

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aroma Shop - Product Details</title>
+  <title>RFQ POINT SHOP</title>
 	<link rel="icon" href="img/Fevicon.png" type="image/png">
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
@@ -26,11 +26,11 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Shop Single</h1>
+					<a href="#";><h1>RFQ POINT SHOP</h1></a><br>
 					<nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Shop Single</li>
+              <li class="breadcrumb-item"><a href="#">Ready for the Quiz</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Point shop</li>
             </ol>
           </nav>
 				</div>
@@ -59,22 +59,20 @@
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<h3>Faded SkyBlu Denim Jeans</h3>
-						<h2>$149.99</h2>
+						<h3>상품 이름</h3>
+						<h2>$상품가격</h2>
 						<ul class="list">
-							<li><a class="active" href="#"><span>Category</span> : Household</a></li>
-							<li><a href="#"><span>Availibility</span> : In Stock</a></li>
+							<li><a class="active" href="#"><span>카테고리</span> : ???</a></li>
+							<li><a href="#"><span>판매처</span> : ???</a></li>
 						</ul>
-						<p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-							something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-							during the winter.</p>
+						<p>상품 상세 설명 들어올 자리</p>
 						<div class="product_count">
-              <label for="qty">Quantity:</label>
+              <label for="qty">수량:</label>
               <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
 							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-               class="reduced items-count" type="button"><i class="ti-angle-right"></i></button>
-							<a class="button primary-btn" href="#">Add to Cart</a>               
+               <i class="ti-angle-right"></i></button>
+							<a class="button primary-btn" href="#">구매하기</a>               
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
