@@ -1,5 +1,8 @@
+<%@page import="com.quiz.model.QuizService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+    	QuizService qs = new QuizService();
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +59,7 @@
 									<span class="image">
 										<img src="<%=request.getContextPath() %>/images/pic01.jpg" alt="" />
 									</span>
-									<a href="generic.html">
+									<a href="selectLevel.jsp?category=<%=qs.MOVIE%>">
 										<h2>영화</h2>
 										<div class="content">
 											<p></p>
