@@ -9,12 +9,15 @@ public class GiftconVO {
 	private int price;
 	private String detail;
 	private Timestamp exdate;
+	private String image;
+	private String seller;
 	
 	public GiftconVO() {
 		super();
 	}
 
-	public GiftconVO(int no, String category, String name, int price, String detail, Timestamp exdate) {
+	public GiftconVO(int no, String category, String name, int price, String detail, 
+			Timestamp exdate, String image, String seller) {
 		super();
 		this.no = no;
 		this.category = category;
@@ -22,6 +25,8 @@ public class GiftconVO {
 		this.price = price;
 		this.detail = detail;
 		this.exdate = exdate;
+		this.image = image;
+		this.seller = seller;
 	}
 
 	public int getNo() {
@@ -72,9 +77,28 @@ public class GiftconVO {
 		this.exdate = exdate;
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
+	public String getSeller() {
+		return seller;
+	}
+
+	public void setSeller(String seller) {
+		this.seller = seller;
+	}
+
 	@Override
 	public String toString() {
-		return "GiftconVO [no=" + no + ", category=" + category + ", name=" + name + ", price=" + price + ", detail="
-				+ detail + ", exdate=" + exdate + "]";
+		return "GiftconVO [no=" + no + ", category=" + category + ", name=" + name 
+				+ ", price=" + price + ", detail=" + detail + ", exdate=" + exdate 
+				+ ", image=" + image + ", seller=" + seller + "]";
 	}
+
+	
 }

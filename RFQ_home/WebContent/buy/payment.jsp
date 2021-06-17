@@ -62,18 +62,18 @@
 			<tbody>
 				<tr>
 					<td id="giftImg">
-						<img src="../shoPage/img/product/<%=vo.getName() %>.PNG">
+						<img src="../images/product/<%=vo.getImage() %>.PNG">
 					</td>
 					<td id="detail">
 						<p id="tag">[RFQ-GiftCon]</p>
-						<p>돌체 카라멜 칩 커피 프라푸치노 T</p>
+						<p><%=vo.getName() %></p>
 					</td>
-					<td id="seller">스타벅스</td>
+					<td id="seller"><%=vo.getSeller() %></td>
 					<td>
 						<input type="text" name="qty" id="qty" value="1">개
 					</td>
 					<td>
-						<input type="text" name="s_Point" id="s_Point" value="">Point
+						<input type="text" name="s_Point" id="s_Point" value="<%=vo.getPrice()%>">Point
 					</td>
 				</tr>
 			</tbody>
@@ -90,7 +90,7 @@
 		<div class="agree">
 			<span>결제 조건 확인 및 개인정보 제공에 동의합니다</span>
 			<input type="checkbox" name="agree" id="agree"><br>
-			<p>구매하신 상품 주문처리를 위해 개인정보를 제공받는 판매자 : 스타벅스</p>
+			<p>구매하신 상품 주문처리를 위해 개인정보를 제공받는 판매자 : <%=vo.getSeller() %></p>
 		</div><br>
 		<div class="pay">	
 			<input type="submit" name="pay" id="pay" value="결제하기">
