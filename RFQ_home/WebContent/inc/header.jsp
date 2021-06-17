@@ -55,7 +55,7 @@
 										</ul>
 									</li>
 									<li><a href="#" class="icon solid fa-retweet"><span>이용안내</span></a></li>
-									<li><a href="<%=request.getContextPath() %>/etc/customer.jsp" class="icon solid fa-sitemap"><span>고객센터</span></a></li>
+									<li><a href="<%=request.getContextPath() %>/customer/customer.jsp" class="icon solid fa-sitemap"><span>고객센터</span></a></li>
 								</ul>
 							</nav>
 								<nav id="nav2">

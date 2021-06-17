@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String c_userid = (String)session.getAttribute("userid");
+	boolean c_login = false;
+	if(c_userid!=null && !c_userid.isEmpty()){ //세션에 값이 있으면
+		c_login = true; //로그인이 된 경우
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +41,23 @@
 			    	icons: false,
 			    	heightStyle: "content"
 			    });
+			    
+			    $('#btnQ').click(function(){
+			    	if(<%=c_login%>){
+				    	location.href="<%=request.getContextPath()%>/customer/question.jsp";
+			    	}else{
+				    	alert('로그인이 필요합니다.');
+			    	}
+			    });
+			    $('#btnQL').click(function(){
+			    	if(<%=c_login%>){
+				    	alert('문의내역입니다.');
+			    	}else{
+				    	alert('로그인이 필요합니다.');
+			    	}
+			    });
 			});
+			
 		</script>
 		
 		<!-- 사용자 정의 css -->
@@ -46,14 +69,15 @@
 		<div id="page-wrapper">
 
 			<%@ include file="../inc/header.jsp" %>
-			
+						
 			<!-- Main -->
 				<section id="main_customer">
 					<div class="container" style="text-align:center;">
 						<div id="customer_title">
 							<h2 id="customer_h2"><b>고객센터</b></h2>
 							<p style="font-size:0.8em">원하는 답변이 없는 경우 문의사항을 남겨주세요.</p>
-							<button class="question" type="button">문의하기</button>			
+							<button id="btnQ" class="question" type="button">문의하기</button>	&nbsp;&nbsp;&nbsp;
+							<button id="btnQL" class="question" type="button">문의내역</button>			
 						</div>
 						<div id="tabs">
 							<ul>

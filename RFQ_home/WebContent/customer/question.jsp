@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	String type = request.getParameter("type");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +6,8 @@
 <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		
+		<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 		
 		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
@@ -39,17 +38,27 @@
 			<!-- Main -->
 				<section id="main_map">
 					<div class="container" style="text-align:center;">
-						<iframe 
-						<%if("1".equals(type)){ %>
-							src="<%=request.getContextPath() %>/shoPage/category.jsp"
-						<%}else if("2".equals(type)){ %>
-							src="<%=request.getContextPath() %>/shoPage/single-product.jsp"
-						<%}else{ %>
-							src="<%=request.getContextPath() %>/shoPage/index2.jsp"
-						<%} %>
-						id="the_iframe" onload="calcHeight();" scrolling="no"
-						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;"></iframe>
-					</div>
+						<div id="customer_title">
+							<h2 id="customer_h2"><b>고객센터</b></h2>
+							<p style="font-size:0.8em">원하는 답변이 없는 경우 문의사항을 남겨주세요.</p>
+							<button id="btnQ" class="question" type="button">문의하기</button>	&nbsp;&nbsp;&nbsp;
+							<button id="btnQL" class="question" type="button">문의내역</button>			
+						</div>
+						
+						
+						 <!-- 2. TEXT 편집 툴을 사용할 textarea -->
+    <textarea name="content" id="editor"></textarea>
+    <script>
+    // 3. CKEditor5를 생성할 textarea 지정
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+						
+						
+						</div>
 				</section>
 
 				
