@@ -51,7 +51,7 @@
 			    });
 			    $('#btnQL').click(function(){
 			    	if(<%=c_login%>){
-				    	alert('문의내역입니다.');
+			    		location.href="<%=request.getContextPath()%>/customer/questionList.jsp";
 			    	}else{
 				    	alert('로그인이 필요합니다.');
 			    	}

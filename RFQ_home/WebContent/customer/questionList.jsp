@@ -14,8 +14,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		
-		<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
-		
 		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(function() {
@@ -48,12 +46,7 @@
 		
 		<!-- 사용자 정의 css -->
 		<style type="text/css">
-			.ck.ck-editor{
-				height:500px;
-			}
-			.ck-editor__editable{
-				height:500px;
-			}
+			
 		</style>
 	</head>
 	<body class="homepage is-preload">
@@ -74,7 +67,7 @@
 
 						<iframe 
 						
-							src="<%=request.getContextPath() %>/customer/test.jsp?userid=<%=t_userid %>"
+							src="<%=request.getContextPath() %>/customer/test3.jsp?userid=<%=t_userid %>"
 
 						id="the_iframe" onload="calcHeight();" scrolling="no"
 						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;"></iframe>
@@ -98,12 +91,3 @@
 
 	</body>
 </html>
-
-
-
-
-
-
-
-	
-	
