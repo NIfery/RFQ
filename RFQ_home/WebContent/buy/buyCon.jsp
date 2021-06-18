@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String no = request.getParameter("no");
+	String userid=request.getParameter("userid");
+	System.out.println("userid="+userid);
 %>
 <!DOCTYPE html>
 <html>

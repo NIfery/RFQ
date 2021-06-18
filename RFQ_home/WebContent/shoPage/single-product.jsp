@@ -32,6 +32,31 @@
 
   <link rel="stylesheet" href="css/style.css">
 </head>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function('#buyBtn').click(){
+		$('')
+		
+	});
+		
+	});
+</script>
+<style type="text/css">
+	#arrow {
+    display: inline;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    position: relative;
+    right: 0px;
+    font-size: 14px;
+    color: #cccccc;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+</style>
 <body>
 	
 	
@@ -82,11 +107,14 @@
 						<p><%= vo.getDetail() %></p>
 						<div class="product_count">
               <label for="qty">수량:</label>
-              <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-							 class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
+              <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value--;return false;"
+							 class="increase items-count" type="button" id="arrow">
+				<i class="ti-angle-left"></i></button>
 							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+               <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+							 class="increase items-count" type="button" id="arrow">
                <i class="ti-angle-right"></i></button>
-							<a class="button primary-btn" href="../buy/buyCon.jsp?userid=<%=userid %>&no=<%=no%>">구매하기</a>               
+							<span class="button primary-btn" id="buyBtn">구매하기</span>               
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
