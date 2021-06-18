@@ -12,6 +12,8 @@
  	GiftconService gs = new GiftconService();
  	GiftconVO vo = new GiftconVO();
  	vo = gs.selectByNo(Integer.parseInt(no));
+ 	
+ 	
  %>
  
 <!DOCTYPE html>
@@ -34,12 +36,7 @@
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
-	$(function('#buyBtn').click(){
-		$('')
-		
-	});
-		
-	});
+
 </script>
 <style type="text/css">
 	#arrow {
@@ -114,7 +111,7 @@
                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button" id="arrow">
                <i class="ti-angle-right"></i></button>
-							<span class="button primary-btn" id="buyBtn">구매하기</span>               
+							<a class="button primary-btn" id="buyBtn" href="../buy/buyCon.jsp?no=<%=no%>" target="_blank">구매하기</a>               
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
