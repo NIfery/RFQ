@@ -1,10 +1,20 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="com.giftcon.model.GiftconVO"%>
 <%@page import="com.giftcon.model.GiftconService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
  <%
-
+	GiftconService gs = new GiftconService();
+ 	List<GiftconVO> list = null;
+ 	
+ 	try{
+ 		list = gs.selectAll();
+ 	}catch(SQLException e){
+ 		e.printStackTrace();
+ 	}
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,135 +52,31 @@
           <p>Popular Item in the RFQ point shop</p>
           <h2>인기 <span class="section-intro__style">상품</span></h2>
         </div>
+       
         <div class="row">
+        <%for (int i=0; i<9; i++){
+        	GiftconVO vo = list.get(i);
+        	%>
+        
+          <!-- 인기상품 품목 처리 예정 -->
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
-                <img class="card-img" src="img/product/chk1.png" alt="">
+                <img class="card-img" src="../images/product/<%=vo.getImage() %>.png">
                 <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=1'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
 
                 </ul>
               </div>
               <div class="card-body">
-                <p>네네치킨</p>
-                <h4 class="card-product__title">후라이드 + 콜라1.25L</h4>
-                <p class="card-product__price">15800 point</p>
+                <p><%=vo.getSeller() %></p>
+                <h4 class="card-product__title"><%=vo.getName() %></h4>
+                <p class="card-product__price"><%=vo.getPrice() %></p>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/chk2.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=2'"><i class="ti-search"></i></button>
-                  </li>
-
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>BHC</p>
-                <h4 class="card-product__title">뿌링클 + 콜라1.25L</h4>
-                <p class="card-product__price">17000 point</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/chk3.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=3'"><i class="ti-search"></i></button>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>굽네치킨</p>
-                <h4 class="card-product__title">굽네치킨 볼케이노 + 콜라1.25L</h4>
-                <p class="card-product__price">16800 point</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/chk4.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=4'"><i class="ti-search"></i></button>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>KFC</p>
-                <h4 class="card-product__title">KFC 징거버거세트</h4>
-                <p class="card-product__price">9700 point</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/cof1.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=5'"><i class="ti-search"></i></button></li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>스타벅스</p>
-                <h4 class="card-product__title">아메리카노</h4>
-                <p class="card-product__price">4100 point</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/cof2.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=6'"><i class="ti-search"></i></button></li>
-
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>이디야</p>
-                <h4 class="card-product__title">토피넛 라떼</a></h4>
-                <p class="card-product__price">3800 point</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/cof3.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=7'"><i class="ti-search"></i></button></li>
-
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>빽다방</p>
-                <h4 class="card-product__title">초코칩 피스타치오</a></h4>
-                <p class="card-product__price">3800 point</p>
-              </div> 
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="card text-center card-product">
-              <div class="card-product__img">
-                <img class="card-img" src="img/product/cof4.png" alt="">
-                <ul class="card-product__imgOverlay">
-                  <li><button onclick="location.href='single-product.jsp?no=8'"><i class="ti-search"></i></button></li>
-
-                </ul>
-              </div>
-              <div class="card-body">
-                <p>베스킨라빈스</p>
-                <h4 class="card-product__title">파인트</h4>
-                <p class="card-product__price">12300 point</p>
-              </div>
-            </div>
-          </div>
+          <!-- 인기상품 품목 처리 끝 -->
+          <%} //for %>
         </div>
       </div>
     </section>

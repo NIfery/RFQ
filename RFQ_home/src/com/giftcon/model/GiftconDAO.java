@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.db.ConnectionPoolMgr;
 
@@ -42,6 +45,42 @@ public class GiftconDAO {
 			return vo;
 		}finally {
 			pool.dbClose(rs, ps, conn);
+		}
+	}
+	
+	public List<GiftconVO> selectAll() throws SQLException {
+		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		List<GiftconVO> list = new ArrayList<GiftconVO>();
+		try {
+			conn = pool.getConnection();
+			
+			String sql ="select * from giftcon";
+			ps = conn.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int no = rs.getInt("no");
+				String seller = rs.getString("seller");
+				String category = rs.getString("category");
+				String name = rs.getString("name");
+				int price = rs.getInt("price");
+				String detail = rs.getString("detail");
+				String image = rs.getString("image");
+				Timestamp exdate = rs.getTimestamp("exdate");
+				
+				GiftconVO vo = new GiftconVO(no, category, name, price, detail, exdate, image, seller);
+				
+				list.add(vo);
+			}
+			System.out.println("list.size ="+list.size());
+			
+			return list;
+		}finally {
+			
 		}
 	}
 }

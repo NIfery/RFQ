@@ -86,7 +86,7 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="../images/product/<%=vo.getName() %>.png" alt="">
+							<img class="img-fluid" src="../images/product/<%=vo.getImage()%>.png">
 						</div>
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
