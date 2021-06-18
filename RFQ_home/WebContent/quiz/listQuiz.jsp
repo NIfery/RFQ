@@ -49,49 +49,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>퀴즈 풀이 창</title>
-<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
-$(function(){
-	var count=0;
-	$('.next').click(function(){
-		<%if(level.equals("0")){%>
-			if(count<3){
-			var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
-			count++;
-			
-			$('#test').attr('src', 'test.jsp?r_num1='+rnd);
-		}
-			if(count==3){
-				location.href="resultQuiz.jsp";
-			}
-		<%}else if(level.equals("1")){%>
-			if(count<15){
-				var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
-				count++;
-				
-				$('#test').attr('src', 'test.jsp?r_num1='+rnd);
-			}
-			if(count==15){
-				location.href="resultQuiz.jsp";
-			}
-		<%}else if(level.equals("2")){%>
-			if(count<20){
-				var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
-				count++;
-				
-				$('#test').attr('src', 'test.jsp?r_num1='+rnd);
-			}
-			if(count==20){
-				location.href="resultQuiz.jsp";
-			}
-		<%}%>
-	});
-		
-		
-		
-});
-</script>
+			$(function() {
+				var count=0;
+				$('.next').click(function(){
+					<%if(level.equals("0")){%>
+						if(count<3){
+						var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
+						count++;
+						
+						$('#quizList').attr('src', 'test.jsp?r_num1='+rnd);
+					}
+						if(count==3){
+							location.href="resultQuiz.jsp";
+						}
+					<%}else if(level.equals("1")){%>
+						if(count<15){
+							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
+							count++;
+							
+							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd);
+						}
+						if(count==15){
+							location.href="resultQuiz.jsp";
+						}
+					<%}else if(level.equals("2")){%>
+						if(count<20){
+							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
+							count++;
+							
+							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd);
+						}
+						if(count==20){
+							location.href="resultQuiz.jsp";
+						}
+					<%}%>
+				});
+			});
+		</script>
+<title>퀴즈 풀이 창</title>
+
 <style type="text/css">
 	#category{
 		border:1px solid lightgray;
@@ -110,15 +112,25 @@ $(function(){
 	}
 </style>
 </head>
-<body>
+<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<%@ include file="../inc/header.jsp" %>
+	<section id="features">
 	<div>
-		<span id="category"><%=r_category%></span>
-		<span id="level"><%=r_level %></span>
+			<span id="category"><%=r_category%></span>
+			<span id="level"><%=r_level %></span>
 	</div>
-	<iframe src="test.jsp?r_num1=<%=r_num %>" id="test"></iframe>
-	<hr>
-	<div>
-		<button class="next">다음</button>
+	<iframe src="test.jsp?r_num1=<%=r_num %>" id="quizList"></iframe>
+	<button class="next">다음문제</button>
+	</section>
+	<%@ include file="../inc/footer.jsp"%>
 	</div>
+	<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 </body>
 </html>
