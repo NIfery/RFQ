@@ -25,7 +25,7 @@
 		try{
 			int cnt = customerService.insertCustomer(vo);
 			if(cnt>0){
-				response.sendRedirect("test.jsp");
+				response.sendRedirect("question_content.jsp");
 			}
 		}catch(SQLException e){
 			e.printStackTrace();

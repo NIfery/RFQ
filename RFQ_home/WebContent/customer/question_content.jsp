@@ -10,14 +10,26 @@
 <title>Insert title here</title>
 <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$('form[name=frmQuestion]').submit(function(){
+			if($('input[name=title]').val().length<1){
+				alert('제목을 입력해주세요.');
+				$('input[name=title]').focus();
+				event.preventDefault();
+			}else{
+				alert('문의가 접수되었습니다.');
+			}
+		});
+	});
+</script>
 <!-- 사용자 정의 css -->
 		<style type="text/css">
 			.ck.ck-editor{
 				height:500px;
 			}
-			.ck-editor__editable{
-				height:500px;
+		 	.ck.ck-content {
+			    height: 500px;
 			}
 			input[type="text"] {
 			    width: 40%;
@@ -89,7 +101,7 @@
 		</style>
 </head>
 <body>
-	<form name="frmQuestion" method="post" action="test2.jsp">
+	<form name="frmQuestion" method="post" action="question_content_ok.jsp">
 		<input type="hidden" name="id" value="<%=tt_userid%>">
 		<label for="title">제목</label>
 		<input type="text" name="title">
@@ -98,7 +110,6 @@
 		<script>
 			ClassicEditor
 				.create( document.querySelector( '#editor' ))
-				.resize(300,600)
 				.catch( error => {
 				console.error( error );
 			} );

@@ -74,7 +74,7 @@
 
 						<iframe 
 						
-							src="<%=request.getContextPath() %>/customer/test.jsp?userid=<%=t_userid %>"
+							src="<%=request.getContextPath() %>/customer/question_content.jsp?userid=<%=t_userid %>"
 
 						id="the_iframe" onload="calcHeight();" scrolling="no"
 						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;"></iframe>

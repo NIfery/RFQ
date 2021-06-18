@@ -50,7 +50,7 @@
 				CustomerVO vo = list.get(i);
 			%>
 				<tr>
-					<td><a href="test4.jsp?no=<%=vo.getNo()%>"><%=vo.getTitle() %></a></td>
+					<td><a href="questionList_content_view.jsp?no=<%=vo.getNo()%>"><%=vo.getTitle() %></a></td>
 					<td><%=vo.getRegdate() %></td>
 				</tr>
 		<%	}
