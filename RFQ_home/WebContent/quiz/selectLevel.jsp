@@ -47,7 +47,7 @@ QuizService qs = new QuizService();
 						<h1>난이도를 선택하세요!</h1>
 					</header>
 					<section class="tiles">
-						<article class="style1">
+						<article class="style2">
 							<span class="image"> <img
 								src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" />
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.HARD%>">
@@ -69,7 +69,7 @@ QuizService qs = new QuizService();
 								</div>
 							</a>
 						</article>
-						<article class="style3">
+						<article class="style2">
 							<span class="image"> <img
 								src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" />
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.EASY%>">

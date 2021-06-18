@@ -118,6 +118,15 @@ input::-moz-focus-inner {
 		margin: 0 0 1.5em 0;
 		line-height: 1.75em;
 	}
+	
+	.quizTitle{
+		font-size : 1.8em;
+		font-weight: 400;
+		letter-spacing: 4px;
+		margin: 0 0 1.5em 0;
+		line-height: 1.75em;
+		color:white;
+	}
 
 	h3 {
 		font-size: 1em;
@@ -2956,11 +2965,11 @@ input::-moz-focus-inner {
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #f2849e;
+				background-color: #D5D5D5;
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #7ecaf6;
+				background-color: #D5D5D5;
 			}
 
 			.tiles article.style3 > .image:before {

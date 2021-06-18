@@ -16,8 +16,23 @@
    	String r_category="",r_level="";
    	
    	if(category.equals("1")){
-   		r_category="신조어";
+   		r_category="영화";	
+   	}else if(category.equals("2")){
+   		r_category="역사";	
+   	}else if(category.equals("3")){
+   		r_category="스포츠";	
+   	}else if(category.equals("4")){
+   		r_category="게임";	
+   	}else if(category.equals("5")){
+   		r_category="상식";	
+   	}else if(category.equals("6")){
+   		r_category="학습";	
+   	}else if(category.equals("7")){
+   		r_category="연예인";	
+   	}else if(category.equals("8")){
+   		r_category="스포츠";	
    	}
+   	
    	if(level.equals("0")){
    		r_level="쉬움";
    	}else if(level.equals("1")){
