@@ -30,11 +30,13 @@ public class GiftconDAO {
 			rs=ps.executeQuery();
 			if(rs.next()) {
 				vo.setNo(rs.getInt(1));
+				vo.setCategory(rs.getString("category"));
 				vo.setName(rs.getString("name"));
 				vo.setPrice(rs.getInt("price"));
-				vo.setCategory(rs.getString("category"));
 				vo.setDetail(rs.getString("detail"));
 				vo.setExdate(rs.getTimestamp("exdate"));
+				vo.setImage(rs.getString("image"));
+				vo.setSeller(rs.getString("seller"));
 			}
 			System.out.println("기프티콘 번호로 조회 vo="+vo+", 매개변수 no="+no);
 			return vo;

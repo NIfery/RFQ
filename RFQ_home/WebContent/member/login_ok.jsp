@@ -19,6 +19,7 @@
 		String chkSave = request.getParameter("chkSave");
 		
 		//2
+		
 		String msg="로그인 처리 실패", url="/member/login.jsp";
 		try{
 			int result = memberService.loginProc(userid, pwd);

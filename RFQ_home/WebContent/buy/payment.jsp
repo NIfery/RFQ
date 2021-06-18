@@ -15,15 +15,24 @@
 </head>
 <body>
 <%
+	String userid=request.getParameter("userid");
 	String no=request.getParameter("no");
+	System.out.println("매개변수 no="+no+", userid="+userid);
+		
+	if(no==null || no.isEmpty()){
+		request.setAttribute("msg", "잘못된 접근입니다!");
+		request.setAttribute("url", "../shoPage/single-product.jsp?no="+no);
+	}else if(userid==null || userid.isEmpty()){
+		request.setAttribute("msg", "로그인을 하세요!");
+		request.setAttribute("url", "../member/login.jsp");
+	}
+	
 	GiftconVO vo=new GiftconVO();
 	try{
 		vo=giftconService.selectByNo(Integer.parseInt(no));
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
-	
-	String userid=request.getParameter("userid");
 	
 	MemberVO memVo=new MemberVO();
 	try{
@@ -37,7 +46,7 @@
 	<div class="center">
 		<h3>주문 / 결제</h3>
 		<div class="status">
-			<span>장바구니&nbsp > &nbsp</span>
+			<span>상품 상세정보&nbsp > &nbsp</span>
 			<span id="status">주문 / 결제</span>
 			<span>&nbsp > &nbsp완료</span>
 		</div>
@@ -61,7 +70,7 @@
 			<tbody>
 				<tr>
 					<td id="giftImg">
-						<img src="../images/product/<%=vo.getImage() %>.PNG">
+						<img src="../images/product/<%=vo.getImage() %>.png">
 					</td>
 					<td id="detail">
 						<p id="tag">[RFQ-GiftCon]</p>

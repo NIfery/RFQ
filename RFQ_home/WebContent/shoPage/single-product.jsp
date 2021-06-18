@@ -1,3 +1,5 @@
+<%@page import="com.member.model.MemberVO"%>
+<%@page import="com.member.model.MemberService"%>
 <%@page import="com.giftcon.model.GiftconVO"%>
 <%@page import="com.giftcon.model.GiftconService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -5,13 +7,13 @@
     
  <%
  	String no = request.getParameter("no");
- 	
+ 	String userid=request.getParameter("userid");	
+ 
  	GiftconService gs = new GiftconService();
  	GiftconVO vo = new GiftconVO();
  	vo = gs.selectByNo(Integer.parseInt(no));
- 	
- 	
  %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +61,7 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="../images/product/<%=vo.getName() %>.PNG" alt="">
+							<img class="img-fluid" src="../images/product/<%=vo.getName() %>.png" alt="">
 						</div>
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
@@ -75,7 +77,7 @@
 						<h2><%=vo.getPrice() %> Point</h2>
 						<ul class="list">
 							<li><a class="active" href="#"><span>카테고리</span> : <%=vo.getCategory() %></a></li>
-							<li><a href="#"><span>판매처</span> : ???</a></li>
+							<li><a href="#"><span>판매처</span> : <%=vo.getSeller() %></a></li>
 						</ul>
 						<p><%= vo.getDetail() %></p>
 						<div class="product_count">
@@ -84,7 +86,7 @@
 							 class="increase items-count" type="button"><i class="ti-angle-left"></i></button>
 							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
                <i class="ti-angle-right"></i></button>
-							<a class="button primary-btn" href="#">구매하기</a>               
+							<a class="button primary-btn" href="../buy/buyCon.jsp?userid=<%=userid %>&no=<%=no%>">구매하기</a>               
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>

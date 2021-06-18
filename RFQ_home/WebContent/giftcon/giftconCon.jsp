@@ -43,7 +43,7 @@
 						<%if("1".equals(type)){ %>
 							src="<%=request.getContextPath() %>/shoPage/category.jsp"
 						<%}else if("2".equals(type)){ %>
-							src="<%=request.getContextPath() %>/shoPage/single-product.jsp"
+							src="<%=request.getContextPath() %>/shoPage/single-product.jsp?userid=<%=t_userid %>"
 						<%}else{ %>
 							src="<%=request.getContextPath() %>/shoPage/index2.jsp"
 						<%} %>
