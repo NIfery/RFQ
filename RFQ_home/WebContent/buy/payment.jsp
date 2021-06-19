@@ -17,7 +17,9 @@
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-		
+		$('#agree').change(function({
+			
+		}));	
 	});
 </script>
 <style type="text/css">
@@ -69,7 +71,7 @@
 	DecimalFormat df=new DecimalFormat();
 %>
 <div id="wrapper">
-	<form name="frmBuy" method="post" action="payment_ok.jsp?no=<%=no%>&userid=<%=userid%>">
+	<form name="frmBuy" method="post" action="payment_ok.jsp">
 	<div class="center">
 		<h3>주문 / 결제</h3>
 		<div class="status">

@@ -22,11 +22,9 @@
 				alert "보유포인트가 부족합니다."
 				history.back();
 			</script>
-		<% }else{
-				
-		}		
+		<% }	
 	}catch(SQLException e){
-		
+		e.printStackTrace();
 	}
 	
 %>
