@@ -18,4 +18,7 @@ public class GiftconService {
 		return giftconDao.selectAll();
 	}
 	
+	public List<GiftconVO> selectRelationship(String category) throws SQLException {
+		return giftconDao.selectRelationship(category);
+	}
 }

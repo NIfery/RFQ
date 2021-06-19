@@ -1,3 +1,5 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.util.List"%>
 <%@page import="com.member.model.MemberVO"%>
 <%@page import="com.member.model.MemberService"%>
 <%@page import="com.giftcon.model.GiftconVO"%>
@@ -11,8 +13,13 @@
  
  	GiftconService gs = new GiftconService();
  	GiftconVO vo = new GiftconVO();
+   	List<GiftconVO> list = null;
+ 	try{
  	vo = gs.selectByNo(Integer.parseInt(no));
- 	
+   	list = gs.selectRelationship(vo.getCategory());
+ 	}catch(SQLException e){
+ 		e.printStackTrace();
+ 	}
  	
  %>
  
@@ -36,7 +43,12 @@
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
-
+	$(function('#buyBtn').click(){
+		$('')
+		
+	});
+		
+	});
 </script>
 <style type="text/css">
 	#arrow {
@@ -111,7 +123,7 @@
                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button" id="arrow">
                <i class="ti-angle-right"></i></button>
-							<a class="button primary-btn" id="buyBtn" href="../buy/buyCon.jsp?no=<%=no%>" target="_blank">구매하기</a>               
+							<span class="button primary-btn" id="buyBtn">구매하기</span>               
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
@@ -128,13 +140,7 @@
 	<section class="product_description_area">
 		<div class="container">
 			
-							
-				
-								
-				
-								
-							
-						
+		
 	</section>
 	<!--================End Product Description Area =================-->
 
@@ -145,33 +151,24 @@
         <p>related product in the RFQ SHOP </p>
         <h2>관련 <span class="section-intro__style">상품</span></h2>
       </div>
-			<div class="row mt-30">
+			
+	 <div class="row mt-30">
         <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
           <div class="single-search-product-wrapper">
+                     <!-- 관련상품 반복처리 --> 
+            <%for(int i=0; i<3; i++) {
+            	GiftconVO vo2 = list.get(i);
+            	%>   
+            
             <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
+              <a href="'single-product.jsp?no=<%=vo2.getNo()%>'"><img src="../images/product/<%=vo2.getImage() %>.png"></a>
               <div class="desc">
-                  <a href="#" class="title">Gray Coffee Cup</a>
-                  <div class="price">$170.00</div>
+                  <a href="#" class="title"><%=vo2.getName() %></a>
+                  <div class="price"><%=vo2.getPrice() %></div>
               </div>
             </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+	<%} //for1%>
+        
         <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
           <div class="single-search-product-wrapper">
             <div class="single-search-product d-flex">
@@ -250,6 +247,8 @@
           </div>
         </div>
       </div>
+		</div>
+		</div>
 		</div>
 	</section>
 	<!--================ end related Product area =================-->  	

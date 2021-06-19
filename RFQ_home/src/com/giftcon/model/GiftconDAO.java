@@ -80,7 +80,46 @@ public class GiftconDAO {
 			
 			return list;
 		}finally {
-			
+			pool.dbClose(rs, ps, conn);
 		}
 	}
+	
+	public List<GiftconVO> selectRelationship(String category) throws SQLException {
+		Connection conn =null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		List<GiftconVO> list = new ArrayList<GiftconVO>();
+		try {
+			conn = pool.getConnection();
+			
+			String sql = "select * from giftcon "
+					+ " where category =?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, category);
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int no = rs.getInt("no");
+				String seller = rs.getString("seller");
+				String category2 = rs.getString("category");
+				String name = rs.getString("name");
+				int price = rs.getInt("price");
+				String detail = rs.getString("detail");
+				String image = rs.getString("image");
+				Timestamp exdate = rs.getTimestamp("exdate");
+				
+				GiftconVO vo = new GiftconVO(no, category2, name, price, detail, exdate, image, seller);
+				
+				list.add(vo);
+			}
+				System.out.println("category ="+category+", list"+list);
+				return list;
+			
+		}finally {
+			pool.dbClose(rs, ps, conn);
+		}
+	}
+	
 }
