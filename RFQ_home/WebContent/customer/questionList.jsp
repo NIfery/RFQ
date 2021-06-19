@@ -60,7 +60,9 @@
 						<div id="customer_title">
 							<h2 id="customer_h2"><b>고객센터</b></h2>
 							<p style="font-size:0.8em">원하는 답변이 없는 경우 문의사항을 남겨주세요.</p>
-							<button id="btnQ" class="question" type="button">문의하기</button>	&nbsp;&nbsp;&nbsp;
+							<%if(!c_userid.equals("admin")){ %>
+								<button id="btnQ" class="question" type="button">문의하기</button>	&nbsp;&nbsp;&nbsp;
+							<%} %>
 							<button id="btnQL" class="question" type="button">문의내역</button>			
 						</div>
 						

@@ -21,4 +21,12 @@ public class CustomerService {
 	public CustomerVO selectByNo(int no) throws SQLException{
 		return customerDao.selectByNo(no);
 	}
+	
+	public int deleteCustomer(int no) throws SQLException {
+		return customerDao.deleteCustomer(no);
+	}
+	
+	public int answerCustomer(String answer, int no) throws SQLException {
+		return customerDao.answerCustomer(answer, no);
+	}
 }

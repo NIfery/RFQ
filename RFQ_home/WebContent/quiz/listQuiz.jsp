@@ -90,6 +90,20 @@
 						}
 					<%}%>
 				});
+				
+				
+				$(function() {
+					
+				});
+				
+				function calcHeight() {
+
+					var the_height = document.getElementById('the_iframe').contentWindow.document.body.scrollHeight;
+
+					document.getElementById('the_iframe').height = the_height;
+
+					document.getElementById('the_iframe').style.overflow = "hidden";
+				}
 			});
 		</script>
 <title>퀴즈 풀이 창</title>
@@ -121,7 +135,9 @@
 			<span id="category"><%=r_category%></span>
 			<span id="level"><%=r_level %></span>
 	</div>
-	<iframe src="test.jsp?r_num1=<%=r_num %>" id="quizList"></iframe>
+	<iframe src="quiz/index.html" id="quizList, the_iframe"
+	onload="calcHeight();" scrolling="no" style="overflow-x:hidden; overflow:auto; width:100%; height:1000px;"></iframe>
+	
 	<button class="next">다음문제</button>
 	</section>
 	<%@ include file="../inc/footer.jsp"%>

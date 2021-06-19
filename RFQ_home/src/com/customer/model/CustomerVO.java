@@ -8,18 +8,22 @@ public class CustomerVO {
 	private String title;
 	private String content;
 	private Timestamp regdate;
+	private String answer;
+	private String answer_flag;
 	
 	public CustomerVO() {
 		super();
 	}
 
-	public CustomerVO(int no, String userid, String title, String content, Timestamp regdate) {
+	public CustomerVO(int no, String userid, String title, String content, Timestamp regdate, String answer, String answer_flag) {
 		super();
 		this.no = no;
 		this.userid = userid;
 		this.title = title;
 		this.content = content;
 		this.regdate = regdate;
+		this.answer = answer;
+		this.answer_flag = answer_flag;
 	}
 
 	public int getNo() {
@@ -62,11 +66,28 @@ public class CustomerVO {
 		this.regdate = regdate;
 	}
 
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public String getAnswer_flag() {
+		return answer_flag;
+	}
+
+	public void setAnswer_flag(String answer_flag) {
+		this.answer_flag = answer_flag;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerVO [no=" + no + ", userid=" + userid + ", title=" + title + ", content=" + content
-				+ ", regdate=" + regdate + "]";
+				+ ", regdate=" + regdate + ", answer=" + answer + ", answer_flag=" + answer_flag + "]";
 	}
+
 	
 	
 }

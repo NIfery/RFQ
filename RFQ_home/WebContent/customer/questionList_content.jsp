@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="com.customer.model.CustomerService"%>
 <%@page import="com.customer.model.CustomerVO"%>
@@ -16,6 +17,8 @@
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 %>
 <!DOCTYPE html>
@@ -25,37 +28,77 @@
 <title>Insert title here</title>
 </head>
 <style type="text/css">
+	.con {
+		position: relative;
+		left: 10%;
+	}
+	
 	table{
-	    border: 1px solid gray;
+		width: 80%;
+	    border: solid silver 10px;
 	    border-collapse: collapse;
-	    text-align: center;
-	    width:100%;
 	    font-size: 0.9em;
 	}
-	th, td {
-	    border: 1px solid gray;
-	    height: 45px;
+	
+	th{
+		background-color: #eeeeee;
+		border: solid silver 1px;
+	    padding: 15px;
 	}
+
+	td{
+		border: solid silver 1px;
+		text-align: center;
+		padding: 10px;
+		font-size: 1.2em;
+	}
+	
+	td.line
+	{
+		border-bottom:solid 1px silver;
+	}
+	
+	a:link{color:#555555;text-decoration:none}
+	a:visited{color:#555555;text-decoration:none}
+	a:hover{color:#047CC1;text-decoration:underline;}
+	a:active{color:#047CC1;text-decoration:underline;}
+	
+	
 </style>
 <body>
-	<table border="1">
-		<tr>
-			<td>문의제목</td>
-			<td>문의일자</td>
-		</tr>
-		<%if(list==null || list.isEmpty()) {%>
-			<tr><th colspan="2">문의내역이 없습니다.</th></tr>
-		<%}else{ 
-			for(int i=0;i<list.size();i++){
-				CustomerVO vo = list.get(i);
-			%>
-				<tr>
-					<td><a href="questionList_content_view.jsp?no=<%=vo.getNo()%>"><%=vo.getTitle() %></a></td>
-					<td><%=vo.getRegdate() %></td>
-				</tr>
-		<%	}
-		} %>
-	</table>
+	<hr><br><br><br>
+	<div class="con">
+		<table>
+			<colgroup>
+				<col style="width:15%;" />
+				<col style="width:70%;" />	
+				<col style="width:15%;" />
+			</colgroup>
+			<tr>
+				<th>문의일</th>
+				<th>제목</th>
+				<th>상태</th>
+			</tr>
+			<%if(list==null || list.isEmpty()) {%>
+				<tr><td colspan="3">문의내역이 없습니다.</td></tr>
+			<%}else{ 
+				for(int i=0;i<list.size();i++){
+					CustomerVO vo = list.get(i);
+				%>
+					<tr>
+						<td><%=sdf.format(vo.getRegdate()) %></td>
+						<td><a href="questionList_content_view.jsp?no=<%=vo.getNo()%>&userid=<%=userid%>"><%=vo.getTitle() %></a></td>
+						<%if(vo.getAnswer_flag().equals("N")){ %>
+							<td style="color:skyblue">대기중</td>
+						<%}else{ %>
+							<td>답변완료</td>
+						<%} %>
+					</tr>
+			<%	}
+			} %>
+		</table>
+	</div>
+	<br><br><br><hr>
 	<br><br><br><br><br>
 </body>
 </html>
