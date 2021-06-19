@@ -9,9 +9,11 @@
  <%
 	GiftconService gs = new GiftconService();
  	List<GiftconVO> list = null;
- 	
+ 	List<GiftconVO> list2 = null;
+ 	String recommend = "추천";
  	try{
  		list = gs.selectAll();
+ 		list2 = gs.selectRecommend(recommend);
  	}catch(SQLException e){
  		e.printStackTrace();
  	}
@@ -92,7 +94,7 @@
               <h3>Open Event</h3>
               <h4>지금 가입시 500P 지급!</h4>
               <p>Ready for the quiz ?</p>
-              <a class="button button--active mt-3 mt-xl-4" href="#">전체상품</a>
+              <a class="button button--active mt-3 mt-xl-4" href="../member/agreement.jsp">회원가입</a>
             </div>
           </div>
         </div>
@@ -101,146 +103,55 @@
     <!-- ================ offer section end ================= --> 
 
     <!-- ================ Best Selling item  carousel ================= --> 
-    <section class="section-margin calc-60px">
+     <section class="section-margin calc-60px">
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Popular Item in the market</p>
           <h2>추천 <span class="section-intro__style">상품</span></h2>
         </div>
-        <div class="owl-carousel owl-theme" id="bestSellerCarousel">
+        <div class="owl-carousel owl-theme" id="bestSellerCarousel">    
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product1.png"> alt="">
+              <img class="img-fluid" src="img/product/product1.png">
               <ul class="card-product__imgOverlay">
                 <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
             </div>
+          
+
             <div class="card-body">
-              <p>Accessories</p>
-              <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p></p>
+              <h4 class="card-product__title"><a href="single-product.jsp?no=1"></a></h4>
+              <p class="card-product__price"></p>
             </div>
           </div>
+		
+          	<%for (int i=0; i<list2.size(); i++){
+					GiftconVO vo2 = list2.get(i);
+				%>
 
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product2.png" alt="">
+              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
+                <li><button onclick="location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
               </ul>
             </div>
             <div class="card-body">
-              <p>Beauty</p>
-              <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
-              <p class="card-product__price">$150.00</p>
+              <p><%=vo2.getSeller() %></p>
+              <h4 class="card-product__title"><a href="single-product.html"><%=vo2.getName() %></a></h4>
+              <p class="card-product__price"><%=vo2.getPrice() %> Point</p>
             </div>
           </div>
-
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product3.png" alt="">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <p>Decor</p>
-              <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-              <p class="card-product__price">$150.00</p>
-            </div>
-          </div>
-
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product4.png" alt="">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <p>Decor</p>
-              <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-              <p class="card-product__price">$150.00</p>
-            </div>
-          </div>
-
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product1.png" alt="">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <p>악세사리</p>
-              <h4 class="card-product__title"><a href="single-product.html">손목 시계</a></h4>
-              <p class="card-product__price">49000 point</p>
-            </div>
-          </div>
-
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product2.png" alt="">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <p>핸드크림</p>
-              <h4 class="card-product__title"><a href="single-product.html">여성용 핸드크림</a></h4>
-              <p class="card-product__price">9800 point</p>
-            </div>
-          </div>
-
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product3.png" alt="">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <p>인테리어</p>
-              <h4 class="card-product__title"><a href="single-product.html">침대 조명등</a></h4>
-              <p class="card-product__price">19900 point</p>
-            </div>
-          </div>
-
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product4.png" alt="">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <p>소품</p>
-              <h4 class="card-product__title"><a href="single-product.html">가죽 공병</a></h4>
-              <p class="card-product__price">28000 point</p>
-            </div>
-          </div>
+	<%} %>
         </div>
       </div>
     </section>
     <!-- ================ Best Selling item  carousel end ================= --> 
 
-    <!-- ================ Blog section start ================= -->  
+    <!-- ================ Event section start ================= -->  
     <section class="blog">
       <div class="container">
         <div class="section-intro pb-60px">

@@ -21,4 +21,8 @@ public class GiftconService {
 	public List<GiftconVO> selectRelationship(String category) throws SQLException {
 		return giftconDao.selectRelationship(category);
 	}
+	
+	public List<GiftconVO> selectRecommend(String recommend) throws SQLException {
+		return giftconDao.selectRecommend(recommend);
+	}
 }

@@ -50,7 +50,7 @@
 										<a href="<%=request.getContextPath() %>/giftcon/giftconCon.jsp" class="icon solid fa-cog"><span>기프티콘</span></a>
 										<ul>
 											<li><a href="<%=request.getContextPath()%>/giftcon/giftconCon.jsp?type=1">전체상품</a></li>
-											<li><a href="<%=request.getContextPath()%>/giftcon/giftconCon.jsp?type=2">상품상세</a></li>
+											<%-- <li><a href="<%=request.getContextPath()%>/giftcon/giftconCon.jsp?type=2">상품상세</a></li> --%>
 											<%-- <li><a href="<%=request.getContextPath()%>/shoPage/cart.html">장바구니</a></li> --%>
 										</ul>
 									</li>
