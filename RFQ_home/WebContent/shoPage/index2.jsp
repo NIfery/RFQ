@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -17,6 +18,8 @@
  	}catch(SQLException e){
  		e.printStackTrace();
  	}
+ 	
+ 	DecimalFormat df=new DecimalFormat();
  %>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +76,7 @@
               <div class="card-body">
                 <p><%=vo.getSeller() %></p>
                 <h4 class="card-product__title"><%=vo.getName() %></h4>
-                <p class="card-product__price"><%=vo.getPrice() %> point</p>
+                <p class="card-product__price"><%=df.format(vo.getPrice()) %> point</p>
               </div>
             </div>
           </div>

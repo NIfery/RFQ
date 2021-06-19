@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.util.List"%>
 <%@page import="com.member.model.MemberVO"%>
@@ -21,6 +22,7 @@
  		e.printStackTrace();
  	}
  	
+ 	DecimalFormat df=new DecimalFormat();
  %>
  
 <!DOCTYPE html>
@@ -105,7 +107,7 @@
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
 						<h3><%=vo.getName() %></h3>
-						<h2><%=vo.getPrice() %> Point</h2>
+						<h2><%=df.format(vo.getPrice()) %> Point</h2>
 						<ul class="list">
 							<li><a class="active" href="#"><span>카테고리</span> : <%=vo.getCategory() %></a></li>
 							<li><a href="#"><span>판매처</span> : <%=vo.getSeller() %></a></li>
@@ -120,7 +122,7 @@
                <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button" id="arrow">
                <i class="ti-angle-right"></i></button>
-							<span class="button primary-btn" id="buyBtn">구매하기</span>               
+							<a class="button primary-btn" id="buyBtn" href="../buy/buyCon.jsp?no=<%=no%>" target="_blank">구매하기</a>               
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>

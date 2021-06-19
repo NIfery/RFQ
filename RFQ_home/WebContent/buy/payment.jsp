@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.member.model.MemberVO"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="com.giftcon.model.GiftconVO"%>
@@ -13,19 +14,24 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/assets/css/layout.css" />
 </head>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <body>
 <%
 	String userid=request.getParameter("userid");
 	String no=request.getParameter("no");
 	System.out.println("매개변수 no="+no+", userid="+userid);
 		
-	if(no==null || no.isEmpty()){
-		request.setAttribute("msg", "잘못된 접근입니다!");
-		request.setAttribute("url", "../shoPage/single-product.jsp?no="+no);
-	}else if(userid==null || userid.isEmpty()){
-		request.setAttribute("msg", "로그인을 하세요!");
-		request.setAttribute("url", "../member/login.jsp");
-	}
+	if(no==null || no.isEmpty()){ %>
+		<script type="text/javascript">
+			alert('잘못된 접근입니다!');
+			history.back();
+		</script>
+	<% }else if(userid==null || userid.isEmpty()){ %>
+		<script type="text/javascript">
+			alert('로그인을 하세요!');
+			history.back();
+		</script>
+	<% }
 	
 	GiftconVO vo=new GiftconVO();
 	try{
@@ -41,6 +47,8 @@
 		e.printStackTrace();
 	}
 	
+	DecimalFormat df=new DecimalFormat();
+
 %>
 <div id="wrapper">
 	<div class="center">
@@ -81,7 +89,7 @@
 						<input type="text" name="qty" id="qty" value="1">개
 					</td>
 					<td>
-						<input type="text" name="outPoint" id="outPoint" value="<%=vo.getPrice()%>">Point
+						<input type="text" name="outPoint" id="outPoint" value="<%=df.format(vo.getPrice())%>">Point
 					</td>
 				</tr>
 			</tbody>
@@ -93,7 +101,7 @@
 			<label>구매자 이름</label><span id="name"><%=memVo.getName()%></span><br><br>
 			<label>구매자 연락처</label><span id="hp"><%=memVo.getHp() %></span><br><br>
 			<label for="point">보유 포인트</label>
-			<input type="text" name="getPoint" id="getPoint" value="<%=memVo.getPoint()%>">Point<br>
+			<input type="text" name="getPoint" id="getPoint" value="<%=df.format(memVo.getPoint())%>">Point<br>
 		</div><br>
 		<hr>
 		<div class="agree">
