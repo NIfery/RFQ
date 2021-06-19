@@ -48,8 +48,8 @@ QuizService qs = new QuizService();
 					</header>
 					<section class="tiles">
 						<article class="style2">
-							<span class="image"> <img
-								src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" />
+							<span class="image">
+							<img src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" /> 
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.HARD%>">
 								<h2>상</h2>
 								<h2>(20문제, 50p)</h2>
@@ -60,7 +60,7 @@ QuizService qs = new QuizService();
 						</article>
 						<article class="style2">
 							<span class="image"> <img
-								src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" />
+								src="<%=request.getContextPath()%>/images/pic02.jpg" alt="" />
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.NOMAL%>">
 								<h2>중</h2>
 								<h2>(20문제, 30p)</h2>
@@ -71,7 +71,7 @@ QuizService qs = new QuizService();
 						</article>
 						<article class="style2">
 							<span class="image"> <img
-								src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" />
+								src="<%=request.getContextPath()%>/images/pic03.jpg" alt="" />
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.EASY%>">
 								<h2>하</h2>
 								<h2>(10문제, 10p)</h2>

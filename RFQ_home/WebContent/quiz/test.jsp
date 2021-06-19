@@ -12,41 +12,34 @@
     %>
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#options').click(function(){
+			var radio = $('input[name="options"]:checked').val();
+			alert(radio);
+		});
+	});
+</script>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	var corr=0;
-	$("input:radio[name=exam]").click(function(){
-	if($("input[name=exam]:checked").val()==<%=vo.getAnswer()%>){
-		alert("정답");
-	}else{
-		alert("오답");
-	}
-	alert(corr);
-});
-})
-
-</script>
+<style type="text/css">
+	
+</style>
 </head>
 <body>
-<div>
+
+<div class="question">
 		<h1><%=vo.getContent() %></h1>
 	</div>
-	<div>
-		<input type="radio" name="exam" class="exam" value="1"><%=vo.getExam1() %>
-		<br>
-		<br>
-		<input type="radio" name="exam" class="exam" value="2"><%=vo.getExam2() %>
-		<br>
-		<br>
-		<input type="radio" name="exam" class="exam" value="3"><%=vo.getExam3() %>
-		<br>
-		<br>
-		<input type="radio" name="exam" class="exam" value="4"><%=vo.getExam4() %>
+	<br><br><br>
+	<div class="choice">
+		
+		<input type="radio" name="options" id="options" value="1"><%=vo.getExam1() %>
+        <input type="radio" name="options" id="options" value="2"><%=vo.getExam2() %>
+        <input type="radio" name="options" id="options" value="3"><%=vo.getExam3() %>
+        <input type="radio" name="options" id="options" value="4"><%=vo.getExam4() %>
 	</div>
-	
 </body>
 </html>

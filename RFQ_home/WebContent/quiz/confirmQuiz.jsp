@@ -29,6 +29,7 @@ if(category.equals("1")){
 <html>
 <head>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script> 
+    <link rel="stylesheet" href="../assets/css/main.css" />
     <title>Home</title>
     
     <style>
@@ -37,8 +38,8 @@ if(category.equals("1")){
     #popupDiv {  /* 팝업창 css */
     top : 0px;
     position: absolute;
-    background: white;
-    width: 500px;
+   background: white;
+    width:700px;
     height: 500px;
     display: none; 
     }
@@ -54,6 +55,15 @@ if(category.equals("1")){
          opacity: 0.8;
     }
     
+    #popupHeader{
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 10px;
+    }
+    
+    .con{
+    	margin: 20px 0px;
+    }
     </style>
 </head>
 <body>
@@ -62,18 +72,19 @@ if(category.equals("1")){
     <div id ="popup_mask" ></div> <!-- 팝업 배경 DIV -->
     
     <div id="popupDiv"> <!-- 팝업창 -->
-        <button id="popCloseBtn">닫기</button>
         <section id="features">
 			<div class="container">
 				<div class="inner">
-					<header>
-						<h1><%=r_category%>퀴즈를 시작하시겠습니까?
-						</h1>
+					<header id="popupHeader">
+						<h1>Ready For Quiz?</h1>
+						<h2><%=r_category%>퀴즈를 시작하시겠습니까?</h2>
 					</header>
 					<section>
-						<div>
-							<button id="ok">녜</button>
-							<button id="can">아니오</button>
+						<div class="con">
+							<button id="ok">네네네네네!!!!</button>
+						</div>
+						<div class="con">
+							<button id="can">다음에 할래요</button>
 						</div>
 					</section>
 
@@ -88,7 +99,6 @@ if(category.equals("1")){
     
     $(function(){
         
-        /* $("#popOpenBtn").click(function(event){  */ //팝업 Open 버튼 클릭 시 
  
              $("#popupDiv").css({
                 "top": (($(window).height()-$("#popupDiv").outerHeight())/2+$(window).scrollTop())+"px",
@@ -101,14 +111,7 @@ if(category.equals("1")){
             $("#popupDiv").css("display","block"); //팝업창 display block
             
             $("body").css("overflow","hidden");//body 스크롤바 없애기
-        /* }); */
         
-        $("#popCloseBtn").click(function(event){
-            $("#popup_mask").css("display","none"); //팝업창 뒷배경 display none
-            $("#popupDiv").css("display","none"); //팝업창 display none
-            $("body").css("overflow","auto");//body 스크롤바 생성
-            location.href="quizMain.jsp";
-        });
         
         $('#ok').click(function(){
         	location.href="selectLevel.jsp?category=<%=category%>";

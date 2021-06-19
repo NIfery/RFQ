@@ -4,9 +4,9 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
-   	//selectLevel에서 get방식으로 이동
+
    	String category=request.getParameter("category");
    	String level=request.getParameter("level");
    	QuizService qs = new QuizService();
@@ -57,7 +57,7 @@
 <script type="text/javascript">
 			$(function() {
 				var count=0;
-				$('.next').click(function(){
+				$('#next').click(function(){
 					<%if(level.equals("0")){%>
 						if(count<3){
 						var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
@@ -91,62 +91,55 @@
 					<%}%>
 				});
 				
-				
-				$(function() {
-					
-				});
-				
-				function calcHeight() {
-
-					var the_height = document.getElementById('the_iframe').contentWindow.document.body.scrollHeight;
-
-					document.getElementById('the_iframe').height = the_height;
-
-					document.getElementById('the_iframe').style.overflow = "hidden";
-				}
+				 $('.startQuiz').click(function(event){
+					 event.preventDefault();
+					 $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				 });
 			});
 		</script>
+		
 <title>퀴즈 풀이 창</title>
-
 <style type="text/css">
-	#category{
-		border:1px solid lightgray;
-		background: lightgray;
-		border-radius: 5px;
-		padding:5px;
-		margin: 5px;
-	}
-	
-	#level{
-		border:1px solid lightbule;
-		background: lightblue;
-		border-radius: 5px;
-		padding:5px;
-		margin: 5px;
-	}
+#category {
+	border: 1px solid lightgray;
+	background: lightgray;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+}
+
+#level {
+	border: 1px solid lightbule;
+	background: lightblue;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+}
 </style>
 </head>
-<body class="homepage is-preload">
-		<div id="page-wrapper">
-
-			<%@ include file="../inc/header.jsp" %>
-	<section id="features">
-	<div>
-			<span id="category"><%=r_category%></span>
-			<span id="level"><%=r_level %></span>
+<body>
+	<div id="page-wrapper">
+		<%@ include file="../inc/header.jsp"%>
+		<div id="wrapper">
+			<div id="form-box">
+				<form>
+				<span id="category"><%=r_category%></span> <span id="level"><%=r_level %></span>
+					<br><br><Br>
+					<a href="#quizList" class="startQuiz">퀴즈시작</a>
+				</form>
+			</div>
+		</div>
+		<div class="quiz">
+			<iframe src="test.jsp?r_num1=<%=r_num %>" id="quizList"></iframe>
+			<button id="next">다음문제</button>
+		</div>
 	</div>
-	<iframe src="quiz/index.html" id="quizList, the_iframe"
-	onload="calcHeight();" scrolling="no" style="overflow-x:hidden; overflow:auto; width:100%; height:1000px;"></iframe>
-	
-	<button class="next">다음문제</button>
-	</section>
 	<%@ include file="../inc/footer.jsp"%>
-	</div>
 	<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 </body>
 </html>

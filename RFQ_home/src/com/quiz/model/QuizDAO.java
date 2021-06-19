@@ -36,7 +36,7 @@ public class QuizDAO {
 				 vo.setExam2(rs.getString("exam2"));
 				 vo.setExam3(rs.getString("exam3"));
 				 vo.setExam4(rs.getString("exam4"));
-				 
+				 vo.setAnswer(rs.getInt("answer"));
 			 }
 			 
 			 System.out.println("퀴즈 보여주기="+vo+",매개변수="+no);
