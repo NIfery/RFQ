@@ -44,9 +44,6 @@
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function('#buyBtn').click(){
-		$('')
-		
-	});
 		
 	});
 </script>
@@ -116,7 +113,7 @@
 						<p><%= vo.getDetail() %></p>
 						<div class="product_count">
               <label for="qty">수량:</label>
-              <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value--;return false;"
+              <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst>1) result.value--;return false;"
 							 class="increase items-count" type="button" id="arrow">
 				<i class="ti-angle-left"></i></button>
 							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">

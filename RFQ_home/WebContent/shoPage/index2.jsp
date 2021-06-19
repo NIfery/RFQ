@@ -54,7 +54,7 @@
         </div>
        
         <div class="row">
-        <%for (int i=0; i<9; i++){
+        <%for (int i=0; i<list.size(); i++){
         	GiftconVO vo = list.get(i);
         	%>
         
@@ -71,7 +71,7 @@
               <div class="card-body">
                 <p><%=vo.getSeller() %></p>
                 <h4 class="card-product__title"><%=vo.getName() %></h4>
-                <p class="card-product__price"><%=vo.getPrice() %></p>
+                <p class="card-product__price"><%=vo.getPrice() %> point</p>
               </div>
             </div>
           </div>
