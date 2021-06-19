@@ -110,6 +110,7 @@ input[type=text] {
     width: 50px;
     margin-right: 10px;
     text-align: right;
+    border: none;
 }
 
 .agree span{
@@ -135,13 +136,13 @@ input[type=text] {
 }
 
 span#name {
-    margin: 30px;
+    margin: 40px;
 }
 
 span#hp {
     margin: 30px;
 }
 
-input#g_Point {
-    margin-left: 14px;
+input#getPoint {
+    margin-left: 27px;
 }

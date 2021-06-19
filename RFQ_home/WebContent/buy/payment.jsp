@@ -12,14 +12,26 @@
 <head>
 <title>Ready for the Quiz 결제</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/assets/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/layout.css"/>
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+	});
+</script>
+<style type="text/css">
+	.error{
+		color: red;
+		display : none;
+	}
+</style>
 <body>
 <%
 	String userid=request.getParameter("userid");
+	String qty=request.getParameter("qty");
 	String no=request.getParameter("no");
-	System.out.println("매개변수 no="+no+", userid="+userid);
+	System.out.println("매개변수 no="+no+", userid="+userid+", qty="+qty);
 		
 	if(no==null || no.isEmpty()){ %>
 		<script type="text/javascript">
@@ -31,11 +43,18 @@
 			alert('로그인을 하세요!');
 			history.back();
 		</script>
+	<% }else if(qty==null || qty.isEmpty()){ %>
+		<script type="text/javascript">
+			alert('수량을 다시 선택하세요!');
+		</script>
 	<% }
 	
 	GiftconVO vo=new GiftconVO();
+	int totalPrice=0;
 	try{
 		vo=giftconService.selectByNo(Integer.parseInt(no));
+		totalPrice=Integer.parseInt(qty)*vo.getPrice();
+		System.out.println("totalPrice="+totalPrice);
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
@@ -48,9 +67,9 @@
 	}
 	
 	DecimalFormat df=new DecimalFormat();
-
 %>
 <div id="wrapper">
+	<form name="frmBuy" method="post" action="payment_ok.jsp?no=<%=no%>&userid=<%=userid%>">
 	<div class="center">
 		<h3>주문 / 결제</h3>
 		<div class="status">
@@ -60,13 +79,6 @@
 		</div>
 		<div class="giftCon_d">
 			<table class="purchase">
-			<colgroup>
-				<col style="width:10%;" />
-				<col style="width:50%;" />
-				<col style="width:15%;" />
-				<col style="width:15%;" />
-				<col style="width:10%;" />		
-			</colgroup>
 			<thead>
 			  <tr>
 			    <th colspan="2" scope="col">상품정보</th>
@@ -86,10 +98,10 @@
 					</td>
 					<td id="seller"><%=vo.getSeller() %></td>
 					<td>
-						<input type="text" name="qty" id="qty" value="1">개
+						<input type="text" name="qty" id="qty" value="<%=qty%>" style="border:1px solid gray">개
 					</td>
 					<td>
-						<input type="text" name="outPoint" id="outPoint" value="<%=df.format(vo.getPrice())%>">Point
+						<input type="text" name="outPoint" id="outPoint" value="<%=df.format(totalPrice)%>">Point
 					</td>
 				</tr>
 			</tbody>
@@ -113,7 +125,7 @@
 			<input type="submit" name="pay" id="pay" value="결제하기">
 		</div><br>
 		<hr>
-	</div>
+	</div></form>
 </div>
 </body>
 </html>

@@ -16,8 +16,8 @@
  	GiftconVO vo = new GiftconVO();
    	List<GiftconVO> list = null;
  	try{
- 	vo = gs.selectByNo(Integer.parseInt(no));
-   	list = gs.selectRelationship(vo.getCategory());
+	 	vo = gs.selectByNo(Integer.parseInt(no));
+	   	list = gs.selectRelationship(vo.getCategory());
  	}catch(SQLException e){
  		e.printStackTrace();
  	}
@@ -45,9 +45,7 @@
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
-	$(function('#buyBtn').click(){
-		
-	});
+
 </script>
 <style type="text/css">
 	#arrow {
@@ -113,17 +111,19 @@
 							<li><a href="#"><span>판매처</span> : <%=vo.getSeller() %></a></li>
 						</ul>
 						<p><%= vo.getDetail() %></p>
+						<form action="../buy/buyCon.jsp?no=<%=no%>" method="post">
 						<div class="product_count">
-              <label for="qty">수량:</label>
-              <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst>1) result.value--;return false;"
+              			<label for="qty">수량:</label>
+              			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst>1) result.value--;return false;"
 							 class="increase items-count" type="button" id="arrow">
-				<i class="ti-angle-left"></i></button>
+						<i class="ti-angle-left"></i></button>
 							<input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-               <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+               			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button" id="arrow">
-               <i class="ti-angle-right"></i></button>
-							<a class="button primary-btn" id="buyBtn" href="../buy/buyCon.jsp?no=<%=no%>" target="_blank">구매하기</a>               
+               			<i class="ti-angle-right"></i></button>
+							<input type="submit" class="button primary-btn" id="buyBtn" value="구매하기">               
 						</div>
+						</form>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
