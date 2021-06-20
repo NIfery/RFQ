@@ -209,22 +209,27 @@ public class GiftconDAO {
 			conn = pool.getConnection();
 			
 			String sql = "select * from giftcon";
+			
 			if(category !=null && !category.isEmpty()) {
 				sql +=  " where category = ?";
-					if(keyword !=null && !keyword.isEmpty()) {
-						sql += " and name like '%'|| ? ||'%'";
-					}
 			}
-					sql+= " order by no desc";
-					
+			
+			if(keyword !=null && !keyword.isEmpty()) {
+				sql += " and name like '%'|| ? ||'%'";
+			}
+				sql+= " order by no desc";
+			
 			ps = conn.prepareStatement(sql);
 			
 			if(category !=null && !category.isEmpty()) {
 				ps.setString(1, category);
-					if(keyword != null && !keyword.isEmpty()) {
-						ps.setString(2, keyword);
-					}
 			}
+			
+			if(keyword != null && !keyword.isEmpty()) {
+				ps.setString(2, keyword);
+			}
+			
+
 			
 			rs = ps.executeQuery();
 			while(rs.next()) {

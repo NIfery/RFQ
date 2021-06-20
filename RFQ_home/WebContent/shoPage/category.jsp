@@ -5,15 +5,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%
-    	String SearchName = request.getParameter("searchName");
+    <%	
+    	request.setCharacterEncoding("utf-8");
+    	String category = request.getParameter("brand");
+    	String keyword = request.getParameter("searchName");
+    	
     
     	GiftconService gs = new GiftconService();
     	List<GiftconVO> list = null;
-    	List<GiftconVO> list2 = null;
+
     	try{
-    		list = gs.selectAll();
-    		list2 = gs.selectName(SearchName);
+    		list = gs.selectSearch(category, keyword);
     	}catch(SQLException e){
     		e.printStackTrace();
     	}
@@ -68,15 +70,15 @@
             <div class="head">기프티콘 카테고리</div>
             <ul class="main-categories">
               <li class="common-filter">
-                <form action="#">
+                <form name=frmCategory method="get" action="category.jsp">
                   <ul>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="men" name="brand">전체상품<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="women" name="brand">배달음식<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="accessories" name="brand">음료<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="footwear" name="brand">편의점<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="bayItem" name="brand">소품<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="electronics" name="brand">생활<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="food" name="brand">상품권<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="all" name="brand">전체상품<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="food" name="brand">배달음식<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="drink" name="brand">음료<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="convenience" name="brand">편의점<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="item" name="brand">소품<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="daily" name="brand">생활<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="voucher" name="brand">상품권<span> (3600)</span></li>
                   </ul>
                 </form>
               </li>
@@ -103,43 +105,21 @@
               </select>
             </div>
             <div>
+            <form action="category.jsp" method="post">
               <div class="input-group filter-bar-search">
                 <input type="text" placeholder="Search" name="searchName" id="searchName">
                 <div class="input-group-append">
-                  <button type="button" onclick="location.href='category.jsp?searchName=<%=SearchName%>'"><i class="ti-search"></i></button>
+                  <button type="submit"><i class="ti-search"></i></button>
                 </div>
               </div>
+             </form>
             </div>
           </div>
           <!-- End Filter Bar -->
           <!-- Start Best Seller -->
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
-              
-              
-              <%if(SearchName != null && !SearchName.isEmpty()){ %>
-              	<%for (int i=0; i<list2.size(); i++){
-              		GiftconVO vo2 = list2.get(i);
-              		%>
-              <div class="col-md-6 col-lg-4">
-                <div class="card text-center card-product">
-                  <div class="card-product__img">
-                    <img class="card-img" src="../images/product/<%=vo2.getImage() %>.png">
-                    <ul class="card-product__imgOverlay">
-                      <li><button onclick ="location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
-                    </ul>
-                  </div>
-                  <div class="card-body">
-                    <p><%=vo2.getSeller() %></p>
-                    <h4 class="card-product__title"><a href="#"><%=vo2.getName() %></a></h4>
-                    <p class="card-product__price"><%=vo2.getPrice() %> Point</p>
-                  </div>
-                </div>
-              </div>	
-              	<%}//for %>
-              	
-              	
-             <%}else{ %>
+
              <%for (int i=0; i<9; i++ ){
             	 GiftconVO vo = list.get(i);
             	 %>
@@ -159,7 +139,7 @@
                 </div>
               </div>
              <%}//for %>
-           <%} //else %>
+
 
             </div>
           </section>
