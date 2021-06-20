@@ -34,4 +34,12 @@ private MemberDAO memberDao;
 	public int loginProc(String userid, String pwd) throws SQLException {
 		return memberDao.loginProc(userid, pwd);
 	}
+	
+	public int updateMember(MemberVO vo) throws SQLException {
+		return memberDao.updateMember(vo);
+	}
+	
+	public int withdrawMember(String userid) throws SQLException {
+		return memberDao.withdrawMember(userid);
+	}
 }

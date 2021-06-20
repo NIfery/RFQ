@@ -1,14 +1,17 @@
+<%@page import="com.quiz.model.GetPointDAO"%>
 <%@page import="com.quiz.model.QuizListVO"%>
 <%@page import="com.quiz.model.QuizListDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+String userid = (String)session.getAttribute("userid");
 String corCount = request.getParameter("corCount");
 	String listNum=request.getParameter("listNum");
 	String point = request.getParameter("level");
 	
 	QuizListDAO dao = new QuizListDAO();
 	QuizListVO vo = new QuizListVO();
+	GetPointDAO gpDao = new GetPointDAO();
 	
 	int count = dao.insertCount(listNum, corCount);
 	vo=dao.countCor(listNum);
@@ -17,10 +20,14 @@ String corCount = request.getParameter("corCount");
 	
 	if(point.equals("0")){
 		points=10*result;
+		int cnt=gpDao.updatePoint(userid, points);
+		System.out.println(cnt);
 	}else if(point.equals("1")){
 		points=15*result;
+		int cnt=gpDao.updatePoint(userid, points);
 	}else if(point.equals("2")){
 		points=20*result;
+		int cnt=gpDao.updatePoint(userid, points);
 	}
 %>
 <!DOCTYPE html>

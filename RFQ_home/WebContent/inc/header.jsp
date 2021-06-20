@@ -28,15 +28,15 @@
 									<li>
 										<a href="<%=request.getContextPath()%>/quiz/quizMain.jsp" class="icon fa-chart-bar"><span>퀴즈</span></a>
 										<ul>
-											<li><a href="<%=request.getContextPath()%>/quiz/quizMain.jsp">전체보기</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;영화</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;역사</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;스포츠</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;게임</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;상식</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;학습</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;연예인</a></li>
-											<li><a href="#">&nbsp;&nbsp;&nbsp;신조어</a>
+											<li><a href="<%=request.getContextPath() %>/quiz/quizMain.jsp">전체보기</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=1">&nbsp;&nbsp;&nbsp;영화</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=2">&nbsp;&nbsp;&nbsp;역사</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=3">&nbsp;&nbsp;&nbsp;스포츠</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=4">&nbsp;&nbsp;&nbsp;게임</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=5">&nbsp;&nbsp;&nbsp;상식</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=6">&nbsp;&nbsp;&nbsp;학습</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=7">&nbsp;&nbsp;&nbsp;연예인</a></li>
+											<li><a href="<%=request.getContextPath() %>/quiz/confirmQuiz.jsp?category=8">&nbsp;&nbsp;&nbsp;신조어</a>
 												<!-- <a href="#">Phasellus consequat</a>
 												<ul>
 													<li><a href="#">Magna phasellus</a></li>
@@ -65,7 +65,7 @@
 											<li><a href="<%=request.getContextPath() %>/member/agreement.jsp"><span>JOIN</span></a></li>           
 										<%}else{ %>
 											<li><a href="<%=request.getContextPath() %>/member/logout.jsp"><span>LOGOUT</span></a></li>
-											<li><a href="#"><span>MYPAGE</span></a></li>	            
+											<li><a href="<%=request.getContextPath() %>/myPage/myPageMain.jsp?userid=<%=t_userid%>"><span>MYPAGE</span></a></li>	            
 										<%} %>
 									</ul>
 								</nav>							

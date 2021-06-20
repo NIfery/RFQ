@@ -1,3 +1,4 @@
+<%@page import="com.quiz.model.GetPointDAO"%>
 <%@page import="com.quiz.model.QuizService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -9,6 +10,9 @@ if(c_userid!=null && !c_userid.isEmpty()){ //세션에 값이 있으면
 }
 
 QuizService qs = new QuizService();
+GetPointDAO dao = new GetPointDAO();
+int cnt = dao.insertUser(c_userid);
+System.out.println("유저 넣기 완료="+cnt);
 
 String category = request.getParameter("category");
 String r_category="";
