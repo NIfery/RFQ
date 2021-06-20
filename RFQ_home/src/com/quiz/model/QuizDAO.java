@@ -46,43 +46,4 @@ public class QuizDAO {
 		 }
 	}
 	
-	public int insertCount(String num) throws SQLException {
-		Connection conn=null;
-		PreparedStatement ps=null;
-		
-		try {
-			conn=pool.getConnection();
-			
-			String sql="insert into quizList(listNo, corCount)"
-					+ " values(?, 1)";
-			ps=conn.prepareStatement(sql);
-			ps.setString(1, num);
-			
-			int cnt = ps.executeUpdate();
-			System.out.println("result="+cnt+"매개변수="+num);
-			return cnt;
-		}finally {
-			pool.dbClose(ps, conn);
-		}
-	}
-	
-	public int countCor(int num) throws SQLException {
-		Connection conn=null;
-		PreparedStatement ps=null;
-		
-		try {
-			conn=pool.getConnection();
-			
-			String sql="select count(*) form quizList";
-			ps=conn.prepareStatement(sql);
-			
-			int cnt=ps.executeUpdate();
-			System.out.println("정답개수 결과"+cnt);
-			return cnt;
-		}finally {
-			pool.dbClose(ps, conn);
-		}
-	}
-	
-	
 }

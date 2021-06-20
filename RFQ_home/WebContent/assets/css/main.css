@@ -3085,11 +3085,14 @@ input::-moz-focus-inner {
 
 		}
 		
-		#quizList{
-			width:800px;
-			height:300px;
-		}
 		
+		
+		#form-box{
+    padding:1%;
+    top:50%;
+    position: absolute;
+    left:40%;
+}
 		#wrapper{
     /* background-image:url('../../images/logo.jpg'); */
     background-position: center;

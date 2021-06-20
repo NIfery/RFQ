@@ -47,6 +47,7 @@
    	  	
 %>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -54,12 +55,10 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="../assets/css/main.css" />
 
+
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
-/* function btnClick(){
-	var getval = $('#quizList').contennts().find('#btn').value();
-	alert(getval);
-} */
+
 			$(function() {
 				var count=0;
 				
@@ -69,12 +68,13 @@
 						var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
 						count++;
 						var num=<%=listNum%>;
+						var point=<%=level%>;
 						
 						 $('#quizList').attr('src', 'test.jsp?r_num1='+rnd+'&listNum1='+num);
 						
 					}
 						if(count==3){
-							location.href="resultQuiz.jsp";
+							location.href="resultQuiz.jsp?corCount="+$('#check').val()+'&listNum='+num+'&level='+point;
 						}
 						<%}else if(level.equals("1")){%>
 						if(count<15){
@@ -107,12 +107,18 @@
 		
 <title>퀴즈 풀이 창</title>
 <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+#category, #level, .startQuiz, #next{
+font-family: 'Nanum Gothic', sans-serif;
+}
 #category {
 	border: 1px solid lightgray;
 	background: lightgray;
 	border-radius: 5px;
 	padding: 5px;
 	margin: 5px;
+	font-size: 1.6em;
 }
 
 #level {
@@ -121,25 +127,43 @@
 	border-radius: 5px;
 	padding: 5px;
 	margin: 5px;
+	font-size: 1.6em;
+}
+#quizList{
+			width:800px;
+			height:500px;
+}
+#empty{
+	background: white;
+}
+
+#next{
+	width : 200px;
+	height: 50px;
 }
 </style>
 </head>
 <body>
+<input type="hidden" id="check" value="0">
 	<div id="page-wrapper">
 		<%@ include file="../inc/header.jsp"%>
 		<div id="wrapper">
 			<div id="form-box">
 				<form>
+				<br>
 				<span id="category"><%=r_category%></span> <span id="level"><%=r_level %></span>
-					<br><br><Br>
-					<a href="#quiz" class="startQuiz">퀴즈시작</a>
+					<br><br><br>
+					<a href="#empty" class="startQuiz" style="font-size: 1.8em">퀴즈시작</a>
 				</form>
+					<br>
 			</div>
 		</div>
-		<div id="quiz">
-			<iframe src="test.jsp?r_num1=<%=r_num %>&listNum1=<%=listNum %>" id="quizList"></iframe>
+		<div id="empty">
+			<br><br><br><br>
 		</div>
-		<div>
+		
+		<div class="quiz">
+			<iframe src="test.jsp?r_num1=<%=r_num %>&listNum1=<%=listNum %>" id="quizList"></iframe>
 		<button id="next">다음문제</button>
 		</div>
 	</div>
