@@ -6,7 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-
+	String listNum=request.getParameter("listNum");
    	String category=request.getParameter("category");
    	String level=request.getParameter("level");
    	QuizService qs = new QuizService();
@@ -44,6 +44,7 @@
    		int r_num=Integer.parseInt(category+level+((int)(Math.random()*5)+1));
    		vo=dao.showQuiz(r_num);
    	
+   	  	
 %>
 <!DOCTYPE html>
 <html>
@@ -55,25 +56,31 @@
 
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
+/* function btnClick(){
+	var getval = $('#quizList').contennts().find('#btn').value();
+	alert(getval);
+} */
 			$(function() {
 				var count=0;
+				
 				$('#next').click(function(){
 					<%if(level.equals("0")){%>
 						if(count<3){
 						var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
 						count++;
+						var num=<%=listNum%>;
 						
-						$('#quizList').attr('src', 'test.jsp?r_num1='+rnd);
+						 $('#quizList').attr('src', 'test.jsp?r_num1='+rnd+'&listNum1='+num);
+						
 					}
 						if(count==3){
 							location.href="resultQuiz.jsp";
 						}
-					<%}else if(level.equals("1")){%>
+						<%}else if(level.equals("1")){%>
 						if(count<15){
 							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
 							count++;
-							
-							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd);
+							$('#quizList').attr('src','test.jsp?r_num1='+rnd+'&listNum1='+num);
 						}
 						if(count==15){
 							location.href="resultQuiz.jsp";
@@ -83,7 +90,7 @@
 							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
 							count++;
 							
-							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd);
+							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd+'&listNum1='+num);
 						}
 						if(count==20){
 							location.href="resultQuiz.jsp";
@@ -125,13 +132,15 @@
 				<form>
 				<span id="category"><%=r_category%></span> <span id="level"><%=r_level %></span>
 					<br><br><Br>
-					<a href="#quizList" class="startQuiz">퀴즈시작</a>
+					<a href="#quiz" class="startQuiz">퀴즈시작</a>
 				</form>
 			</div>
 		</div>
-		<div class="quiz">
-			<iframe src="test.jsp?r_num1=<%=r_num %>" id="quizList"></iframe>
-			<button id="next">다음문제</button>
+		<div id="quiz">
+			<iframe src="test.jsp?r_num1=<%=r_num %>&listNum1=<%=listNum %>" id="quizList"></iframe>
+		</div>
+		<div>
+		<button id="next">다음문제</button>
 		</div>
 	</div>
 	<%@ include file="../inc/footer.jsp"%>

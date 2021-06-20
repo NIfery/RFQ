@@ -5,6 +5,9 @@
 //quizMain페이지에서 각 버튼 클릭하면 get방식으로 이동
 String category = request.getParameter("category");
 QuizService qs = new QuizService();
+
+int listNum = (int)((Math.random()*200)+1);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -50,7 +53,7 @@ QuizService qs = new QuizService();
 						<article class="style2">
 							<span class="image">
 							<img src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" /> 
-							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.HARD%>">
+							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.HARD%>&listNum=<%=listNum%>">
 								<h2>상</h2>
 								<h2>(20문제, 50p)</h2>
 								<div class="content">
@@ -61,7 +64,7 @@ QuizService qs = new QuizService();
 						<article class="style2">
 							<span class="image"> <img
 								src="<%=request.getContextPath()%>/images/pic02.jpg" alt="" />
-							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.NOMAL%>">
+							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.NOMAL%>&listNum=<%=listNum%>">
 								<h2>중</h2>
 								<h2>(20문제, 30p)</h2>
 								<div class="content">
@@ -72,7 +75,8 @@ QuizService qs = new QuizService();
 						<article class="style2">
 							<span class="image"> <img
 								src="<%=request.getContextPath()%>/images/pic03.jpg" alt="" />
-							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.EASY%>">
+							</span> 
+							<a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.EASY%>&listNum=<%=listNum%>">
 								<h2>하</h2>
 								<h2>(10문제, 10p)</h2>
 								<div class="content">

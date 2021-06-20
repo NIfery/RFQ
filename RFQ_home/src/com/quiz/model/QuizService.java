@@ -16,4 +16,5 @@ public class QuizService {
 	public static int NOMAL=1;
 	public static int HARD=2;
 	
+	
 }
