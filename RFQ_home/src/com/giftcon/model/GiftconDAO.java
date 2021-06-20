@@ -160,4 +160,91 @@ public class GiftconDAO {
 		}
 	}
 	
+	
+	public List<GiftconVO> selectName(String name) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		List<GiftconVO> list = new ArrayList<GiftconVO>();
+		
+		try {
+			conn = pool.getConnection();
+			
+			String sql ="select * from giftcon "
+					+ " where category like '%'|| ? ||'%'"
+					+ " order by no";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				int no = rs.getInt("no");
+				String seller = rs.getString("seller");
+				String category = rs.getString("category");
+				String name2 = rs.getString("name");
+				int price = rs.getInt("price");
+				String detail = rs.getString("detail");
+				String image = rs.getString("image");
+				Timestamp exdate = rs.getTimestamp("exdate");
+				
+				GiftconVO vo = new GiftconVO(no, category, name2, price, detail, exdate, image, seller);
+				list.add(vo);
+			}
+			System.out.println("list = "+list);
+			return list;
+			
+		}finally {
+			pool.dbClose(rs, ps, conn);
+		}
+	}
+	
+	public List<GiftconVO> selectSearch( String category, String keyword) throws SQLException {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		List<GiftconVO> list = new ArrayList<GiftconVO>();
+		try {
+			conn = pool.getConnection();
+			
+			String sql = "select * from giftcon";
+			if(category !=null && !category.isEmpty()) {
+				sql +=  " where category = ?";
+					if(keyword !=null && !keyword.isEmpty()) {
+						sql += " and name like '%'|| ? ||'%'";
+					}
+			}
+					sql+= " order by no desc";
+					
+			ps = conn.prepareStatement(sql);
+			
+			if(category !=null && !category.isEmpty()) {
+				ps.setString(1, category);
+					if(keyword != null && !keyword.isEmpty()) {
+						ps.setString(2, keyword);
+					}
+			}
+			
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				int no = rs.getInt("no");
+				String seller = rs.getString("seller");
+				String category2 = rs.getString("category");
+				String name2 = rs.getString("name");
+				int price = rs.getInt("price");
+				String detail = rs.getString("detail");
+				String image = rs.getString("image");
+				Timestamp exdate = rs.getTimestamp("exdate");
+				
+				GiftconVO vo = new GiftconVO(no, category2, name2, price, detail, exdate, image, seller);
+				
+				list.add(vo);
+			}
+			System.out.println("list =" +list);
+			return list;
+		}finally {
+			pool.dbClose(rs, ps, conn);
+		}
+	}
 }

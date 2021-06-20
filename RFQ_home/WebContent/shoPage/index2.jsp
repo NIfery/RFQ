@@ -59,7 +59,7 @@
         </div>
        
         <div class="row">
-        <%for (int i=0; i<list.size(); i++){
+        <%for (int i=0; i<9; i++){
         	GiftconVO vo = list.get(i);
         	%>
         
@@ -113,23 +113,7 @@
           <h2>추천 <span class="section-intro__style">상품</span></h2>
         </div>
         <div class="owl-carousel owl-theme" id="bestSellerCarousel">    
-          <div class="card text-center card-product">
-            <div class="card-product__img">
-              <img class="img-fluid" src="img/product/product1.png">
-              <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
-                <li><button><i class="ti-shopping-cart"></i></button></li>
-                <li><button><i class="ti-heart"></i></button></li>
-              </ul>
-            </div>
           
-
-            <div class="card-body">
-              <p></p>
-              <h4 class="card-product__title"><a href="single-product.jsp?no=1"></a></h4>
-              <p class="card-product__price"></p>
-            </div>
-          </div>
 		
           	<%for (int i=0; i<list2.size(); i++){
 					GiftconVO vo2 = list2.get(i);

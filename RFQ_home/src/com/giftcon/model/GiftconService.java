@@ -25,4 +25,12 @@ public class GiftconService {
 	public List<GiftconVO> selectRecommend(String recommend) throws SQLException {
 		return giftconDao.selectRecommend(recommend);
 	}
+	
+	public List<GiftconVO> selectName(String name) throws SQLException {
+		return giftconDao.selectName(name);
+	}
+	
+	public List<GiftconVO> selectSearch( String category, String keyword) throws SQLException {
+		return giftconDao.selectSearch(category, keyword);
+	}
 }

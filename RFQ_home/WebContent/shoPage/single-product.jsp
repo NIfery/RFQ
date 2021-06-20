@@ -144,112 +144,36 @@
 	<!--================End Product Description Area =================-->
 
 	<!--================ Start related Product area =================-->  
-	<section class="related-product-area section-margin--small mt-0">
-		<div class="container">
-			<div class="section-intro pb-60px">
-        <p>related product in the RFQ SHOP </p>
-        <h2>관련 <span class="section-intro__style">상품</span></h2>
-      </div>
-			
-	 <div class="row mt-30">
-        <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-          <div class="single-search-product-wrapper">
-                     <!-- 관련상품 반복처리 --> 
-            <%for(int i=0; i<3; i++) {
-            	GiftconVO vo2 = list.get(i);
-            	%>   
-            
-            <div class="single-search-product d-flex">
-              <a href="'single-product.jsp?no=<%=vo2.getNo()%>'"><img src="../images/product/<%=vo2.getImage() %>.png"></a>
-              <div class="desc">
-                  <a href="#" class="title"><%=vo2.getName() %></a>
-                  <div class="price"><%=vo2.getPrice() %></div>
-              </div>
-            </div>
-	<%} //for1%>
-        
-        <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-          <div class="single-search-product-wrapper">
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-4.png" alt=""></a>
-              <div class="desc">
-                  <a href="#" class="title">Gray Coffee Cup</a>
-                  <div class="price">$170.00</div>
-              </div>
-            </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-5.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-6.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-          </div>
+     <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Relation Item in the RFQ POINT SHOP</p>
+          <h2>관련 <span class="section-intro__style">상품</span></h2>
         </div>
+        <div class="owl-carousel owl-theme" id="bestSellerCarousel">    
+          
+		
+          	<%for (int i=0; i<list.size(); i++){
+					GiftconVO vo2 = list.get(i);
+				%>
 
-        <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-          <div class="single-search-product-wrapper">
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-7.png" alt=""></a>
-              <div class="desc">
-                  <a href="#" class="title">Gray Coffee Cup</a>
-                  <div class="price">$170.00</div>
-              </div>
+          <div class="card text-center card-product">
+            <div class="card-product__img">
+              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
+              <ul class="card-product__imgOverlay">
+                <li><button onclick="location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
+              </ul>
             </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-8.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-9.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
+            <div class="card-body">
+              <p><%=vo2.getSeller() %></p>
+              <h4 class="card-product__title"><a href='single-product.jsp?no=<%=vo2.getNo()%>'><%=vo2.getName() %></a></h4>
+              <p class="card-product__price"><%=vo2.getPrice() %> Point</p>
             </div>
           </div>
-        </div>
-
-        <div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-          <div class="single-search-product-wrapper">
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
-              <div class="desc">
-                  <a href="#" class="title">Gray Coffee Cup</a>
-                  <div class="price">$170.00</div>
-              </div>
-            </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-            <div class="single-search-product d-flex">
-              <a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
-              <div class="desc">
-                <a href="#" class="title">Gray Coffee Cup</a>
-                <div class="price">$170.00</div>
-              </div>
-            </div>
-          </div>
+	<%} %>
         </div>
       </div>
-		</div>
-		</div>
-		</div>
-	</section>
+    </section>
 	<!--================ end related Product area =================-->  	
 
   
