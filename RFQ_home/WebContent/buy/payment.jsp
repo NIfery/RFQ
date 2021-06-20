@@ -17,8 +17,13 @@
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$('#agree').change(function({
-			
+		$('#pay').click(function({
+			if('#agree:checked'==true){
+				$('form[name=frmBuy]').submit();				
+			}else{
+				alert('결제 동의를 체크해주세요!!');
+				event.preventDefault();
+			}
 		}));	
 	});
 </script>
