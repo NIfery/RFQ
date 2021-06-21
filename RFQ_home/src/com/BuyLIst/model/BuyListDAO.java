@@ -29,7 +29,7 @@ public class BuyListDAO {
 			ps.setInt(4, vo.getBalance());
 			
 			int cnt=ps.executeUpdate();
-			System.out.println("결제내역 추가 cnt="+cnt+", 매개변수 vo="+vo);
+			System.out.println("결제완료 조회 cnt="+cnt+", 매개변수 vo="+vo);
 			return cnt;
 		}finally {
 			pool.dbClose(ps, conn);

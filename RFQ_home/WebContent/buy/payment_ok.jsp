@@ -30,14 +30,14 @@
 	vo.setOutPoint(OutP);
 	vo.setBalance(Integer.parseInt(balanceP));
 	
-	String msg="결제 실패!", url="/payment.jsp";
+	String qty=request.getParameter("qty");
+	String msg="결제 실패!", url="/buy/buyCon.jsp?no="+giftconNo+"&qty="+qty;
 	try{
 		int cnt=buyListService.RunPayment(vo);
 			if(cnt>0){
 				msg="결제 완료되었습니다";
 				url="/myPage/myPageMain.jsp?userid="+userid
 						+"&outPoint="+OutP+"&balanceP="+balanceP;
-				System.out.println("결제 완료 조회 cnt="+cnt+", 매개변수 vo="+vo);
 			}	
 	}catch(SQLException e){
 		e.printStackTrace();

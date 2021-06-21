@@ -45,7 +45,7 @@
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
-	
+	System.out.println("보유 포인트="+memVo.getPoint());
 	DecimalFormat df=new DecimalFormat();
 %>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
@@ -61,13 +61,12 @@
 			
 			var outPoint=$('#outPoint').val();
 			var getPoint=$('#getPoint').val();
-			if(outPoint > getPoint){
+			if(parseInt(outPoint) > parseInt(getPoint)){
 				alert('보유 포인트가 부족합니다');
 				event.preventDefault();
 				window.open('../myPage/myPageMain.jsp?userid=<%=userid%>','about:top');
 			}	
 		});	
-	
 	});
 </script>
 <form name="frmBuy" method="post" action="payment_ok.jsp?userid=<%=userid%>&no=<%=no%>" target="_top">
