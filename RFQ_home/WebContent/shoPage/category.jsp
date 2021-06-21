@@ -1,3 +1,4 @@
+<%@page import="com.giftcon.model.PagingVO"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="com.giftcon.model.GiftconVO"%>
 <%@page import="java.util.List"%>
@@ -19,6 +20,25 @@
     	}catch(SQLException e){
     		e.printStackTrace();
     	}
+    	
+    	//페이징 처리
+    	
+    	int currentPage=1;
+    	
+    	if(request.getParameter("currentPage") !=null ){
+    		currentPage=Integer.parseInt(request.getParameter("currentPage"));
+    	}
+    	
+    	int totalRecord = 0;
+    	if(list != null && !list.isEmpty()) {
+    		totalRecord = list.size();
+    	}
+    	
+    	int pageSize=9;
+    	int totalPage = (int)Math.ceil((float)totalRecord/pageSize);
+    	int blockSize=10;
+    	
+    	PagingVO pageVo = new PagingVO(currentPage, totalRecord, pageSize, blockSize);
     %>
 <!DOCTYPE html>
 <html>
@@ -106,9 +126,19 @@
           <!-- Start Best Seller -->
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
-
-             <%for (int i=0; i<list.size(); i++ ){
-            	 GiftconVO vo = list.get(i);
+            <%if(list == null || list.isEmpty()) { %>
+				<p>"검색하신 결과가 없습니다.</p>
+				<%}else {%>
+				
+             <%
+             int num = pageVo.getNum();
+             int curPos = pageVo.getCurPos();
+             
+             for (int i=0; i<pageVo.getPageSize(); i++ ){
+ 		  		if(num<1) break;
+ 		  		GiftconVO vo=list.get(curPos++); //0, 5, 10, 15
+ 		  		num--;
+  /*           	 GiftconVO vo = list.get(i); */
             	 %>
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">
@@ -126,7 +156,7 @@
                 </div>
               </div>
              <%}//for %>
-			
+			<%} //else %>
             </div>
           </section>
           <!-- End Best Seller -->
@@ -134,7 +164,33 @@
       </div>
      </form>
     </div>
+      <!-- 이전 페이지 -->
+  	<%if(pageVo.getFirstPage()>1){ %>
+		<a href="category.jsp?currentPage=<%=pageVo.getFirstPage()-1%>&brand=<%=category%>&searchName=<%=keyword%>">
+			<img src="../images/first.JPG" alt="이전 블럭으로">
+		</a>
+	<%}//if %>
+	
+		<%
+		for(int i=pageVo.getFirstPage();i<=pageVo.getLastPage();i++){
+			if(i>totalPage) break;
+			
+			if(i == currentPage){%>
+				<span style="color:red;font-weight: bold"><%=i %></span>
+			<%}else{ %>
+				<a href ="category.jsp?currentPage=<%=i%>&brand=<%=category%>&searchName=<%=keyword%>">[<%=i %>]</a>
+			<%}//if %>	
+	<%}//for %>
+	
+	<!-- 다음페이지 -->
+	<%if(pageVo.getLastPage() < totalPage){ %>
+		<a href="category.jsp?currentPage=<%=pageVo.getLastPage()+1%>&brand=<%=category%>&searchName=<%=keyword%>">
+			<img src="../images/last.JPG" alt="다음 블럭으로">
+		</a>
+	<%}//if %>
   </section>
+  
+
 	<!-- ================ category section end ================= -->		  
 
 	<!-- ================ top product area start ================= -->	
