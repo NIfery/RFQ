@@ -61,66 +61,53 @@
 	<!-- ================ end banner area ================= -->
 
 
-	<!-- ================ category section start ================= -->		  
+	<!-- ================ category section start ================= -->	
+	                
   <section class="section-margin--small mb-5">
     <div class="container">
+    <form name=frmCategory method="post" action="category.jsp">	  
       <div class="row">
         <div class="col-xl-3 col-lg-4 col-md-5">
           <div class="sidebar-categories">
             <div class="head">기프티콘 카테고리</div>
             <ul class="main-categories">
               <li class="common-filter">
-                <form name=frmCategory method="get" action="category.jsp">
                   <ul>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="all" name="brand">전체상품<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="food" name="brand">배달음식<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="drink" name="brand">음료<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="convenience" name="brand">편의점<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="item" name="brand">소품<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="daily" name="brand">생활<span> (3600)</span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="voucher" name="brand">상품권<span> (3600)</span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="all" name="brand" value="">전체상품<span> </span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="food" name="brand" value="배달음식">배달음식<span></span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="drink" name="brand" value="음료">음료<span> </span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="convenience" name="brand" value="편의점">편의점<span> </span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="item" name="brand" value="소품">소품<span> </span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="daily" name="brand" value="생활">생활<span></span></li>
+                    <li class="filter-list"><input class="pixel-radio" type="radio" id="voucher" name="brand" value="상품권">상품권<span></span></li>
                   </ul>
-                </form>
               </li>
             </ul>
-          </div>
+          </div>	
           
         </div>
         <div class="col-xl-9 col-lg-8 col-md-7">
           <!-- Start Filter Bar -->
           <div class="filter-bar d-flex flex-wrap align-items-center">
             
-            <div class="sorting">
-              <select>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-                <option value="1">Default sorting</option>
-              </select>
-            </div>
-            <div class="sorting mr-auto">
-              <select>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-                <option value="1">Show 12</option>
-              </select>
-            </div>
             <div>
-            <form action="category.jsp" method="post">
+          
               <div class="input-group filter-bar-search">
                 <input type="text" placeholder="Search" name="searchName" id="searchName">
                 <div class="input-group-append">
                   <button type="submit"><i class="ti-search"></i></button>
                 </div>
               </div>
-             </form>
             </div>
+
+
           </div>
           <!-- End Filter Bar -->
           <!-- Start Best Seller -->
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
 
-             <%for (int i=0; i<9; i++ ){
+             <%for (int i=0; i<list.size(); i++ ){
             	 GiftconVO vo = list.get(i);
             	 %>
               <div class="col-md-6 col-lg-4">
@@ -139,13 +126,13 @@
                 </div>
               </div>
              <%}//for %>
-
-
+			
             </div>
           </section>
           <!-- End Best Seller -->
         </div>
       </div>
+     </form>
     </div>
   </section>
 	<!-- ================ category section end ================= -->		  

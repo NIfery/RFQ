@@ -212,10 +212,13 @@ public class GiftconDAO {
 			
 			if(category !=null && !category.isEmpty()) {
 				sql +=  " where category = ?";
-			}
-			
-			if(keyword !=null && !keyword.isEmpty()) {
-				sql += " and name like '%'|| ? ||'%'";
+				if(keyword !=null && !keyword.isEmpty()) {
+					sql += " and name like '%'|| ? ||'%'";
+				}
+			}else {
+				if(keyword !=null && !keyword.isEmpty()) {
+					sql += " where name like '%' || ? || '%'";
+				}
 			}
 				sql+= " order by no desc";
 			
@@ -223,14 +226,15 @@ public class GiftconDAO {
 			
 			if(category !=null && !category.isEmpty()) {
 				ps.setString(1, category);
+				if(keyword != null && !keyword.isEmpty()) {
+					ps.setString(2, keyword);
+				}
+			}else {
+				if(keyword !=null && !keyword.isEmpty()) {
+					ps.setString(1, keyword);
+				}
 			}
-			
-			if(keyword != null && !keyword.isEmpty()) {
-				ps.setString(2, keyword);
-			}
-			
 
-			
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				int no = rs.getInt("no");
@@ -252,4 +256,6 @@ public class GiftconDAO {
 			pool.dbClose(rs, ps, conn);
 		}
 	}
+	
+
 }
