@@ -5,8 +5,9 @@
 <%@page import="com.quiz.model.GetPointVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="memberService" class="com.member.model.MemberService" scope="session"></jsp:useBean>    
-<jsp:useBean id="buylistService" class="com.BuyLIst.model.BuyListService" scope="session"></jsp:useBean>    
+<jsp:useBean id="memberService" class="com.member.model.MemberService" scope="session"></jsp:useBean> 
+<jsp:useBean id="buylistService" class="com.BuyLIst.model.BuyListService" scope="session"></jsp:useBean>
+
 <%
 	System.out.println();
 	String userid=request.getParameter("userid");
@@ -18,20 +19,17 @@
 	GetPointDAO dao = new GetPointDAO();
 	vo=dao.selectPoint(userid);
 	
+	//적립, 사용, 잔여 포인트
 	int getP=vo.getGetPoint();		
 	int outP=Integer.parseInt(outPoint);
 	int bal=Integer.parseInt(balance)+getP;
 	
 	MemberVO vo2=new MemberVO();
 	vo2.setPoint(bal);
-
-	BuyListVO vo3=new BuyListVO();
-	vo3.setOutPoint(outP);
-	vo3.setBalance(bal);
 	
+	//to-do : 포인트 사용내역 적립내용 뿌리기
 	try{
-		int cnt2=buylistService.updateOutPoint(vo3);		
-		int cnt3=memberService.updatePoint(vo2);		
+		int cnt3=memberService.updatePoint(vo2);
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
