@@ -16,6 +16,13 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/layout.css"/>
 </head>
+<style type="text/css">
+	.error{
+		color: red;
+		display : none;
+	}
+</style>
+<body>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -24,29 +31,24 @@
 				alert('결제 동의를 체크해주세요!!');
 				event.preventDefault();
 				$("input:checkbox[id='agree']").focus();
+				return false;
+			}
+			
+			var outPoint=$('#outPoint').val();
+			var getPoint=$('#getPoint').val();
+			if(outPoint > getPoint){
+				alert('보유 포인트가 부족합니다');
+				event.preventDefault();
+				window.open('../myPage/myPage.jsp','about:top');
 			}
 		});	
 	});
 </script>
-<style type="text/css">
-	.error{
-		color: red;
-		display : none;
-	}
-</style>
-<body>
 <%
 	String userid=request.getParameter("userid");
 	String qty=request.getParameter("qty");
 	String no=request.getParameter("no");
 	System.out.println("매개변수 no="+no+", userid="+userid+", qty="+qty);
-	
-	if(no==null || no.isEmpty()) {%>
-		<script type="text/javascript">
-			alert("잘못된 접근입니다!");
-			location.href="../giftcon/giftconCon.jsp";
-		</script>
-	<%}
 	
 	GiftconVO vo=new GiftconVO();
 	int totalPrice=0;
