@@ -1,20 +1,47 @@
+<%@page import="com.BuyLIst.model.BuyListVO"%>
+<%@page import="com.member.model.MemberVO"%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="com.quiz.model.GetPointDAO"%>
 <%@page import="com.quiz.model.GetPointVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="memberService" class="com.member.model.MemberService" scope="session"></jsp:useBean>    
+<jsp:useBean id="buylistService" class="com.BuyLIst.model.BuyListService" scope="session"></jsp:useBean>    
 <%
-	String userid = (String)session.getAttribute("userid");
+	System.out.println();
+	String userid=request.getParameter("userid");
+	String outPoint=request.getParameter("outPoint");
+	String balance=request.getParameter("balance");
+	System.out.println("userid="+userid+", outPoint="+outPoint+", balance="+balance);
+	
 	GetPointVO vo = new GetPointVO();
 	GetPointDAO dao = new GetPointDAO();
-	
 	vo=dao.selectPoint(userid);
-	int points=vo.getGetPoint();
+	
+	int getP=vo.getGetPoint();		
+	int outP=Integer.parseInt(outPoint);
+	int bal=Integer.parseInt(balance)+getP;
+	
+	MemberVO vo2=new MemberVO();
+	vo2.setPoint(bal);
+
+	BuyListVO vo3=new BuyListVO();
+	vo3.setOutPoint(outP);
+	vo3.setBalance(bal);
+	
+	try{
+		int cnt2=buylistService.updateOutPoint(vo3);		
+		int cnt3=memberService.updatePoint(vo2);		
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
+
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>RFQ</title>
 </head>
 <body>
 	<div>
@@ -24,7 +51,9 @@
 		<a href="memberOut.jsp?userid">회원탈퇴</a>
 	</div>
 	<div>
-	 획득한 포인트 : <%= points%>
+	 획득한 포인트 : <%= getP%>
+	 차감된 포인트 : <%= outP%>
+	 보유 포인트 : <%= bal%>
 	</div>
 </body>
 </html>

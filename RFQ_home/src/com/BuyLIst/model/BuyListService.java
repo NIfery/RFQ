@@ -13,4 +13,7 @@ public class BuyListService {
 		return dao.RunPayment(vo);
 	}
 	
+	public int updateOutPoint(BuyListVO vo) throws SQLException {
+		return dao.updateOutPoint(vo);
+	}
 }

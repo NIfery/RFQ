@@ -113,7 +113,7 @@
 		<label>구매자 이름</label><span id="name"><%=memVo.getName()%></span><br><br>
 		<label>구매자 연락처</label><span id="hp"><%=memVo.getHp() %></span><br><br>
 		<label for="point">보유 포인트</label>
-		<input type="text" name="getPoint" id="getPoint" value="<%=df.format(memVo.getPoint())%>">Point<br>
+		<input type="text" name="getPoint" id="getPoint" value="<%=df.format(memVo.getPoint())%>" readonly>Point<br>
 	</div><br>
 	<hr>
 	<div class="agree">

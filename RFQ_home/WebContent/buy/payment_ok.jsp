@@ -20,15 +20,15 @@
 	
 	DecimalFormat df = new DecimalFormat();
 	   
-    int OutP = df.parse(outPoint).intValue();
+    int outP = df.parse(outPoint).intValue();
     int getP = df.parse(getPoint).intValue();
-	String balanceP=Integer.toString(getP-OutP);
+	String balance=Integer.toString(getP-outP);
 	
 	BuyListVO vo=new BuyListVO();
 	vo.setUserid(userid);
 	vo.setGiftconNo(Integer.parseInt(giftconNo));
-	vo.setOutPoint(OutP);
-	vo.setBalance(Integer.parseInt(balanceP));
+	vo.setOutPoint(outP);
+	vo.setBalance(Integer.parseInt(balance));
 	
 	String qty=request.getParameter("qty");
 	String msg="결제 실패!", url="/buy/buyCon.jsp?no="+giftconNo+"&qty="+qty;
@@ -37,7 +37,7 @@
 			if(cnt>0){
 				msg="결제 완료되었습니다";
 				url="/myPage/myPageMain.jsp?userid="+userid
-						+"&outPoint="+OutP+"&balanceP="+balanceP;
+						+"&outPoint="+outP+"&balance="+balance;
 			}	
 	}catch(SQLException e){
 		e.printStackTrace();

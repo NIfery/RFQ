@@ -42,4 +42,8 @@ private MemberDAO memberDao;
 	public int withdrawMember(String userid) throws SQLException {
 		return memberDao.withdrawMember(userid);
 	}
+	
+	public int updatePoint(MemberVO vo) throws SQLException {
+		return memberDao.updatePoint(vo);
+	}
 }

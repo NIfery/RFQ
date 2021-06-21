@@ -35,4 +35,26 @@ public class BuyListDAO {
 			pool.dbClose(ps, conn);
 		}
 	}
+	
+	public int updateOutPoint(BuyListVO vo) throws SQLException {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		
+		try {
+			conn=pool.getConnection();
+			
+			String sql="update buylist set outPoint=? where userid=?, giftconNo=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, vo.getOutPoint());
+			ps.setString(2, vo.getUserid());
+			ps.setInt(3, vo.getGiftconNo());
+			
+			int cnt=ps.executeUpdate();
+			System.out.println("포인트 업데이트 결과 cnt="+cnt+", 매개변수 vo="+vo);
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, conn);
+		}
+	}
 }
