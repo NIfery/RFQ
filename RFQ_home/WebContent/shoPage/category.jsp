@@ -127,7 +127,7 @@
           <section class="lattest-product-area pb-40 category-list">
             <div class="row">
             <%if(list == null || list.isEmpty()) { %>
-				<p>"검색하신 결과가 없습니다.</p>
+				<p>검색하신 결과가 없습니다.</p>
 				<%}else {%>
 				
              <%
@@ -157,6 +157,8 @@
               </div>
              <%}//for %>
 			<%} //else %>
+			
+			      <!-- 이전 페이지 -->
             </div>
           </section>
           <!-- End Best Seller -->
@@ -164,8 +166,9 @@
       </div>
      </form>
     </div>
-      <!-- 이전 페이지 -->
-  	<%if(pageVo.getFirstPage()>1){ %>
+  </section>
+  
+  <%if(pageVo.getFirstPage()>1){ %>
 		<a href="category.jsp?currentPage=<%=pageVo.getFirstPage()-1%>&brand=<%=category%>&searchName=<%=keyword%>">
 			<img src="../images/first.JPG" alt="이전 블럭으로">
 		</a>
@@ -176,10 +179,10 @@
 			if(i>totalPage) break;
 			
 			if(i == currentPage){%>
-				<span style="color:red;font-weight: bold"><%=i %></span>
+				<span style="color:red;  padding-left: 57%; font-size: 20px; margin: 3px;" ><%=i %></span>
 			<%}else{ %>
-				<a href ="category.jsp?currentPage=<%=i%>&brand=<%=category%>&searchName=<%=keyword%>">[<%=i %>]</a>
-			<%}//if %>	
+				<a style="font-size: 20px; margin: 3px;" href ="category.jsp?currentPage=<%=i%>&brand=<%=category%>&searchName=<%=keyword%>">[<%=i %>]</a>
+				<%}//if %>	
 	<%}//for %>
 	
 	<!-- 다음페이지 -->
@@ -188,8 +191,6 @@
 			<img src="../images/last.JPG" alt="다음 블럭으로">
 		</a>
 	<%}//if %>
-  </section>
-  
 
 	<!-- ================ category section end ================= -->		  
 
