@@ -7,6 +7,8 @@
 <%@page import="com.giftcon.model.GiftconDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="memService" class="com.member.model.MemberService" scope="session"></jsp:useBean>
+<jsp:useBean id="giftconService" class="com.giftcon.model.GiftconService" scope="session"></jsp:useBean>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,35 +25,24 @@
 </style>
 <body>
 <%
-	String userid=(String)session.getAttribute("userid");
-	boolean login=false;
-	if(userid!=null && !userid.isEmpty()){
-		login=true;
-	}
-	
+	String userid=request.getParameter("userid");
 	String qty=request.getParameter("qty");
 	String no=request.getParameter("no");
 	System.out.println("매개변수 no="+no+", userid="+userid+", qty="+qty);
 		
-	if(no==null || no.isEmpty()){ %>
+	if(no==null || no.isEmpty()) {%>
 		<script type="text/javascript">
 			alert('잘못된 접근입니다!');
-			location.href="single-product.jsp?no=<%=no%>";
+			location.href="../giftcon/giftconCon.jsp";
 		</script>
-	<% }else if(login){ %>
-		<script type="text/javascript">
-			alert('로그인을 하세요!');
-			location.href="../member/login.jsp";
-		</script>
-	<% }else if(qty==null || qty.isEmpty()){ %>
+	<%}else if(qty==null && qty.isEmpty()) {%>
 		<script type="text/javascript">
 			alert('수량을 다시 선택하세요!');
-			location.href="single-product.jsp?no=<%=no%>";
+			location.href="../giftcon/giftconCon.jsp";
 		</script>
-	<% }
+	<%}
 	
 	GiftconVO vo=new GiftconVO();
-	GiftconService giftconService=new GiftconService();
 	int totalPrice=0;
 	try{
 		vo=giftconService.selectByNo(Integer.parseInt(no));
@@ -62,7 +53,6 @@
 	}
 	
 	MemberVO memVo=new MemberVO();
-	MemberService memService=new MemberService();
 	try{
 		memVo=memService.selectByUserid(userid);
 	}catch(SQLException e){
@@ -74,14 +64,14 @@
 <script type="text/javascript">
 	$(function(){
 		$('#pay').click(function(){
-			if($("input:checkbox[id='agree']").is('checked')==false){
+			if($("input:checkbox[id='agree']").is('checked')){
 				alert('결제 동의를 체크해주세요!!');
-				event.preventDefault();,
+				event.preventDefault();
 			}
 		});	
 	});
 </script>
-<form name="frmBuy" method="post" action="payment_ok.jsp?userid=<%=userid%>&no=?<%=no%>">
+<form name="frmBuy" method="post" action="payment_ok.jsp?userid=<%=userid%>&no=?<%=no%>" target="_top">
 	<h3>주문 / 결제</h3>
 	<div class="status">
 		<span>상품 상세정보&nbsp > &nbsp</span>
