@@ -10,7 +10,12 @@
     
  <%
  	String no = request.getParameter("no");
- 	String userid=request.getParameter("userid");	
+ 	String userid=request.getParameter("userid");
+ 	
+ 	boolean login=false;
+ 	if(userid!=null && !userid.isEmpty()){
+ 		login=true;
+ 	}
  
  	GiftconService gs = new GiftconService();
  	GiftconVO vo = new GiftconVO();
@@ -21,7 +26,7 @@
  	}catch(SQLException e){
  		e.printStackTrace();
  	}
- 	
+
  	DecimalFormat df=new DecimalFormat();
  %>
  
@@ -45,13 +50,15 @@
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">	
-	function submit(){
-		var gsWin=window.open("about:blank","winName");
-		var frm=document.form;
-		frm.action="../buy/buyCon.jsp?no=<%=no%>";
-		frm.target="winName";
-		frm.submit();
-	}	
+	$(function(){
+		$('#buyBtn').click(function(){
+			if(<%=login%>){
+				alert('로그인을 먼저 하세요!');
+				event.preventDefault();
+				var gsWind=window.open("../member/login.jsp","about:top");
+			}
+		});
+	});
 </script>
 <style type="text/css">
 	#arrow {
@@ -117,7 +124,7 @@
 							<li><a href="#"><span>판매처</span> : <%=vo.getSeller() %></a></li>
 						</ul>
 						<p><%= vo.getDetail() %></p>
-					<form action="" method=post>
+					<form action="../buy/buyCon.jsp?no=<%=no%>" method="post" target="_top">
 						<div class="product_count">
               			<label for="qty">수량:</label>
               			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst>1) result.value--;return false;"
@@ -127,8 +134,7 @@
                			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button" id="arrow">
                			<i class="ti-angle-right"></i></button>
-							<input type="button" class="button primary-btn" id="buyBtn"
-								onclick="submit();" value="구매하기">               
+							<input type="submit" class="button primary-btn" id="buyBtn" value="구매하기">                
 						</div>
 					</form>
 						<div class="card_area d-flex align-items-center">
