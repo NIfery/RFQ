@@ -5,17 +5,21 @@ public class BuyListVO {
 	private String userid;
 	private int outPoint;
 	private int giftconNo;
+	private int balance;
 	
+
 	public BuyListVO() {
 		super();
+
 	}
 
-	public BuyListVO(int no, String userid, int outPoint, int giftconNo) {
+	public BuyListVO(int no, String userid, int outPoint, int giftconNo, int balance) {
 		super();
 		this.no = no;
 		this.userid = userid;
 		this.outPoint = outPoint;
 		this.giftconNo = giftconNo;
+		this.balance = balance;
 	}
 
 	public int getNo() {
@@ -50,13 +54,18 @@ public class BuyListVO {
 		this.giftconNo = giftconNo;
 	}
 
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
 	@Override
 	public String toString() {
 		return "BuyListVO [no=" + no + ", userid=" + userid + ", outPoint=" + outPoint 
-				+ ", giftconNo=" + giftconNo + "]";
+				+ ", giftconNo=" + giftconNo + ", balance=" + balance + "]";
 	}
-	
-	
-
-	
+		
 }

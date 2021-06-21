@@ -20,12 +20,13 @@ public class BuyListDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="insert into buylist(no, userid, giftconNo, outPoint)"
-					+ " values(buylist_seq.nextval,?,?,?)";
+			String sql="insert into buylist(no, userid, giftconNo, outPoint, balance)"
+					+ " values(buylist_seq.nextval,?,?,?,?)";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, vo.getUserid());
 			ps.setInt(2, vo.getGiftconNo());
 			ps.setInt(3, vo.getOutPoint());
+			ps.setInt(4, vo.getBalance());
 			
 			int cnt=ps.executeUpdate();
 			System.out.println("결제내역 추가 cnt="+cnt+", 매개변수 vo="+vo);

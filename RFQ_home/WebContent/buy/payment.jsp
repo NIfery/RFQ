@@ -23,27 +23,6 @@
 	}
 </style>
 <body>
-<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('#pay').click(function(){
-			if(!$("input:checkbox[id='agree']").is(':checked')){
-				alert('결제 동의를 체크해주세요!!');
-				event.preventDefault();
-				$("input:checkbox[id='agree']").focus();
-				return false;
-			}
-			
-			var outPoint=$('#outPoint').val();
-			var getPoint=$('#getPoint').val();
-			if(outPoint > getPoint){
-				alert('보유 포인트가 부족합니다');
-				event.preventDefault();
-				window.open('../myPage/myPage.jsp','about:top');
-			}
-		});	
-	});
-</script>
 <%
 	String userid=request.getParameter("userid");
 	String qty=request.getParameter("qty");
@@ -69,7 +48,29 @@
 	
 	DecimalFormat df=new DecimalFormat();
 %>
-<form name="frmBuy" method="post" action="payment_ok.jsp?userid=<%=userid%>&no=?<%=no%>" target="_top">
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#pay').click(function(){
+			if(!$("input:checkbox[id='agree']").is(':checked')){
+				alert('결제 동의를 체크해주세요!!');
+				event.preventDefault();
+				$("input:checkbox[id='agree']").focus();
+				return false;
+			}
+			
+			var outPoint=$('#outPoint').val();
+			var getPoint=$('#getPoint').val();
+			if(outPoint > getPoint){
+				alert('보유 포인트가 부족합니다');
+				event.preventDefault();
+				window.open('../myPage/myPageMain.jsp?userid=<%=userid%>','about:top');
+			}	
+		});	
+	
+	});
+</script>
+<form name="frmBuy" method="post" action="payment_ok.jsp?userid=<%=userid%>&no=<%=no%>" target="_top">
 	<h3>주문 / 결제</h3>
 	<div class="status">
 		<span>상품 상세정보&nbsp > &nbsp</span>
@@ -97,10 +98,11 @@
 				</td>
 				<td id="seller"><%=vo.getSeller() %></td>
 				<td>
-					<input type="text" name="qty" id="qty" value="<%=qty%>" style="border:1px solid gray">개
+					<input type="text" name="qty" id="qty" value="<%=qty%>" readonly>개
 				</td>
 				<td>
-					<input type="text" name="outPoint" id="outPoint" value="<%=df.format(totalPrice)%>">Point
+					<input type="text" name="outPoint" id="outPoint" 
+							value="<%=df.format(totalPrice)%>" readonly>Point
 				</td>
 			</tr>
 		</tbody>

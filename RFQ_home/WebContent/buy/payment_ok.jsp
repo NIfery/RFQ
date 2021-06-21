@@ -1,8 +1,9 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.BuyLIst.model.BuyListVO"%>
 <%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="buyListService" class="com.BuyLIst.model.BuyListService" scope="session"></jsp:useBean> %>
+<jsp:useBean id="buyListService" class="com.BuyLIst.model.BuyListService" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +12,32 @@
 </head>
 <body>
 <%
+	request.setCharacterEncoding("utf-8");
 	String userid=request.getParameter("userid");
 	String outPoint=request.getParameter("outPoint");
 	String getPoint=request.getParameter("getPoint");
 	String giftconNo=request.getParameter("no");
 	
-	int OutP=Integer.parseInt(outPoint);
-	int getP=Integer.parseInt(getPoint);
+	DecimalFormat df = new DecimalFormat();
+	   
+    int OutP = df.parse(outPoint).intValue();
+    int getP = df.parse(getPoint).intValue();
 	String balanceP=Integer.toString(getP-OutP);
 	
 	BuyListVO vo=new BuyListVO();
-	String msg="결제 실패!", url="payment.jsp";
+	vo.setUserid(userid);
+	vo.setGiftconNo(Integer.parseInt(giftconNo));
+	vo.setOutPoint(OutP);
+	vo.setBalance(Integer.parseInt(balanceP));
+	
+	String msg="결제 실패!", url="/payment.jsp";
 	try{
 		int cnt=buyListService.RunPayment(vo);
 			if(cnt>0){
 				msg="결제 완료되었습니다";
-				url="/myPage/myPageMain.jsp?outPoint="+outPoint+"&balanceP="+balanceP;
+				url="/myPage/myPageMain.jsp?userid="+userid
+						+"&outPoint="+OutP+"&balanceP="+balanceP;
+				System.out.println("결제 완료 조회 cnt="+cnt+", 매개변수 vo="+vo);
 			}	
 	}catch(SQLException e){
 		e.printStackTrace();
