@@ -44,8 +44,14 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-<script type="text/javascript">
-
+<script type="text/javascript">	
+	function submit(){
+		var gsWin=window.open("about:blank","winName");
+		var frm=document.form;
+		frm.action="../buy/buyCon.jsp?no=<%=no%>";
+		frm.target="winName";
+		frm.submit();
+	}	
 </script>
 <style type="text/css">
 	#arrow {
@@ -111,7 +117,7 @@
 							<li><a href="#"><span>판매처</span> : <%=vo.getSeller() %></a></li>
 						</ul>
 						<p><%= vo.getDetail() %></p>
-						<form action="../buy/buyCon.jsp?no=<%=no%>" method="post">
+					<form action="" method=post>
 						<div class="product_count">
               			<label for="qty">수량:</label>
               			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) && sst>1) result.value--;return false;"
@@ -121,9 +127,10 @@
                			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button" id="arrow">
                			<i class="ti-angle-right"></i></button>
-							<input type="submit" class="button primary-btn" id="buyBtn" value="구매하기">               
+							<input type="button" class="button primary-btn" id="buyBtn"
+								onclick="submit();" value="구매하기">               
 						</div>
-						</form>
+					</form>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
