@@ -17,6 +17,17 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/layout.css"/>
 </head>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#pay').click(function(){
+			if(!$("input:checkbox[id='agree']").is(':checked')){
+				alert('결제 동의를 체크해주세요!!');
+				event.preventDefault();
+				$("input:checkbox[id='agree']").focus();
+			}
+		});	
+	});
+</script>
 <style type="text/css">
 	.error{
 		color: red;
@@ -29,15 +40,10 @@
 	String qty=request.getParameter("qty");
 	String no=request.getParameter("no");
 	System.out.println("매개변수 no="+no+", userid="+userid+", qty="+qty);
-		
+	
 	if(no==null || no.isEmpty()) {%>
 		<script type="text/javascript">
-			alert('잘못된 접근입니다!');
-			location.href="../giftcon/giftconCon.jsp";
-		</script>
-	<%}else if(qty==null && qty.isEmpty()) {%>
-		<script type="text/javascript">
-			alert('수량을 다시 선택하세요!');
+			alert("잘못된 접근입니다!");
 			location.href="../giftcon/giftconCon.jsp";
 		</script>
 	<%}
@@ -61,16 +67,6 @@
 	
 	DecimalFormat df=new DecimalFormat();
 %>
-<script type="text/javascript">
-	$(function(){
-		$('#pay').click(function(){
-			if($("input:checkbox[id='agree']").is('checked')){
-				alert('결제 동의를 체크해주세요!!');
-				event.preventDefault();
-			}
-		});	
-	});
-</script>
 <form name="frmBuy" method="post" action="payment_ok.jsp?userid=<%=userid%>&no=?<%=no%>" target="_top">
 	<h3>주문 / 결제</h3>
 	<div class="status">

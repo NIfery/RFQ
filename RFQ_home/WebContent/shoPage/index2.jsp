@@ -8,6 +8,7 @@
     pageEncoding="UTF-8"%>
     
  <%
+ 	String c_userid = (String)session.getAttribute("userid");
 	GiftconService gs = new GiftconService();
  	List<GiftconVO> list = null;
  	List<GiftconVO> list2 = null;
@@ -69,7 +70,11 @@
               <div class="card-product__img">
                 <img class="card-img" src="../images/product/<%=vo.getImage() %>.png">
                 <ul class="card-product__imgOverlay">
+                  <%if(c_userid==null || c_userid.isEmpty()){ %>
                   <li><button onclick="location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
+                 <%}else{ %>
+                  <li><button onclick="location.href='single-product.jsp?no=<%=vo.getNo()%>&userid=<%=c_userid%>'"><i class="ti-search"></i></button></li>
+           		 <%} %>
 
                 </ul>
               </div>

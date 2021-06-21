@@ -52,10 +52,15 @@
 <script type="text/javascript">	
 	$(function(){
 		$('#buyBtn').click(function(){
-			if(<%=login%>){
+			if(!<%=login%>){
 				alert('로그인을 먼저 하세요!');
 				event.preventDefault();
 				var gsWind=window.open("../member/login.jsp","about:top");
+			}
+			
+			if($('#sst').val().length < 1){
+				alert('수량을 다시 선택하세요!');
+				event.preventDefault();
 			}
 		});
 	});
