@@ -24,6 +24,7 @@
 </style>
 <body>
 <%
+	System.out.println();
 	String userid=request.getParameter("userid");
 	String qty=request.getParameter("qty");
 	String no=request.getParameter("no");

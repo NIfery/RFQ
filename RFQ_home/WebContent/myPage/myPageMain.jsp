@@ -29,7 +29,7 @@
 	
 	//to-do : 포인트 사용내역 적립내용 뿌리기
 	try{
-		int cnt3=memberService.updatePoint(vo2);
+		int cnt3=memberService.updatePoint(userid, bal);
 	}catch(SQLException e){
 		e.printStackTrace();
 	}

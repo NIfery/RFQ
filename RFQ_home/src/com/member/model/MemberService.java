@@ -43,7 +43,7 @@ private MemberDAO memberDao;
 		return memberDao.withdrawMember(userid);
 	}
 	
-	public int updatePoint(MemberVO vo) throws SQLException {
-		return memberDao.updatePoint(vo);
+	public int updatePoint(String userid, int balance) throws SQLException {
+		return memberDao.updatePoint(userid, balance);
 	}
 }
