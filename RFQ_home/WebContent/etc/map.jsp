@@ -36,8 +36,31 @@
 						<div id="map_title">
 							<h2><b>오시는길</b></h2>
 						</div>
+						
+						
+						
 						<div id="map" style="width:100%;height:700px;"></div>
-						<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=225f070ac93da60529e74683aea1205f"></script>
+						<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYegbSxyydTev3AXgENVUGVnBzWwHVR-8&callback=initMap&region=kr"></script>
+						<script>
+							function initMap() {
+								var rfq = { lat: 37.49888 ,lng: 127.03180 };
+								var map = new google.maps.Map(
+							    document.getElementById('map'), {
+								zoom: 19,
+								center: rfq
+								});
+								
+								new google.maps.Marker({
+								position: rfq,
+								map: map
+								});
+							}
+						</script>
+						
+						
+						
+						
+						<!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 						<script>
 							var container = document.getElementById('map');
 							var options = {
@@ -57,7 +80,11 @@
 							//확대축소 컨트롤
 							var zoomControl = new kakao.maps.ZoomControl();
 							map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-						</script>
+						</script> -->
+						
+						
+						
+						
 						
 						<!-- way_info -->
 						<div class="container" style="border-bottom:1px dotted #888;padding-bottom:2em;">
