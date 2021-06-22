@@ -3,8 +3,8 @@ package com.BuyLIst.model;
 public class BuyListVO {
 	private int no;
 	private String userid;
-	private int outPoint;
 	private int giftconNo;
+	private int outPoint;
 	private int balance;
 	
 
@@ -13,12 +13,12 @@ public class BuyListVO {
 
 	}
 
-	public BuyListVO(int no, String userid, int outPoint, int giftconNo, int balance) {
+	public BuyListVO(int no, String userid, int giftconNo, int outPoint, int balance) {
 		super();
 		this.no = no;
 		this.userid = userid;
-		this.outPoint = outPoint;
 		this.giftconNo = giftconNo;
+		this.outPoint = outPoint;
 		this.balance = balance;
 	}
 
@@ -42,20 +42,20 @@ public class BuyListVO {
 		return outPoint;
 	}
 
-	public void setOutPoint(int outPoint) {
-		this.outPoint = outPoint;
-	}
-
-	public int getGiftconNo() {
-		return giftconNo;
-	}
-
 	public void setGiftconNo(int giftconNo) {
 		this.giftconNo = giftconNo;
 	}
 
 	public int getBalance() {
 		return balance;
+	}
+
+	public void setOutPoint(int outPoint) {
+		this.outPoint = outPoint;
+	}
+	
+	public int getGiftconNo() {
+		return giftconNo;
 	}
 
 	public void setBalance(int balance) {

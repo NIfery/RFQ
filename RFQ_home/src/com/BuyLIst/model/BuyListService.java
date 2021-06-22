@@ -1,6 +1,7 @@
 package com.BuyLIst.model;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class BuyListService {
 	private BuyListDAO dao;
@@ -12,5 +13,12 @@ public class BuyListService {
 	public int RunPayment(BuyListVO vo) throws SQLException {
 		return dao.RunPayment(vo);
 	}
-
+	
+	public List<BuyListVO> selectBuyList(String userid) throws SQLException {
+		return dao.selectBuyList(userid);
+	}
+	
+	public BuyListVO recentBuy(String userid) throws SQLException {
+		return dao.recentBuy(userid);
+	}
 }
