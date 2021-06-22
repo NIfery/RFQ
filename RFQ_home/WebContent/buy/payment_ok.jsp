@@ -21,10 +21,10 @@
    
    DecimalFormat df = new DecimalFormat();
       
-    int outP = df.parse(outPoint).intValue();
-    int getP = df.parse(getPoint).intValue();
+   int outP = df.parse(outPoint).intValue();
+   int getP = df.parse(getPoint).intValue();
    String balance=Integer.toString(getP-outP);
-    int bal=Integer.parseInt(balance);
+   int bal=Integer.parseInt(balance);
    
    BuyListVO vo=new BuyListVO();
    vo.setUserid(userid);
@@ -37,6 +37,8 @@
    try{
       int cnt=buyListService.RunPayment(vo);
       int cnt3=memberService.updatePoint(userid, bal);
+      System.out.println("결제 성공 내역 cnt="+cnt+", 매개변수 vo="+vo);
+      System.out.println("포인트 업데이트 내역 cnt3="+cnt3+", 매개변수 balance="+bal+", outPoint="+outP);
          if(cnt>0){
             msg="결제 완료되었습니다";
             url="/myPage/myPageMain.jsp?userid="+userid
