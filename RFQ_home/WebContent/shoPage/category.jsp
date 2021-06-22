@@ -149,7 +149,7 @@
               <div class="col-md-6 col-lg-4">
                 <div class="card text-center card-product">
                   <div class="card-product__img">
-                    <img class="card-img" src="../images/product/<%=vo.getImage() %>.png">
+                    <img class="card-img" src="../images/product/<%=vo.getImage() %>.PNG">
                     <ul class="card-product__imgOverlay">
                       <li><button type="button" onclick ="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
                     </ul>

@@ -60,7 +60,7 @@
         </div>
        
         <div class="row">
-        <%for (int i=0; i<list.size(); i++){
+        <%for (int i=0; i<9; i++){
         	GiftconVO vo = list.get(i);
         	%>
         
@@ -68,7 +68,7 @@
           <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card text-center card-product">
               <div class="card-product__img">
-                <img class="card-img" src="../images/product/<%=vo.getImage() %>.png">
+                <img class="card-img" src="../images/product/<%=vo.getImage() %>.PNG">
                 <ul class="card-product__imgOverlay">
                   <%if(c_userid==null || c_userid.isEmpty()){ %>
                   <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
@@ -102,7 +102,6 @@
               <h3>Open Event</h3>
               <h4>지금 가입시 500P 지급!</h4>
               <p>Ready for the quiz ?</p>
-              <a class="button button--active mt-3 mt-xl-4" href="../member/agreement.jsp">회원가입</a>
             </div>
           </div>
         </div>
@@ -126,7 +125,7 @@
 
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
+              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.PNG">
               <ul class="card-product__imgOverlay">
                 <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
               </ul>

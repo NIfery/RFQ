@@ -124,7 +124,7 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="../images/product/<%=vo.getImage()%>.png">
+							<img class="img-fluid" src="../images/product/<%=vo.getImage()%>.PNG">
 						</div>
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="img/category/s-p1.jpg" alt="">
@@ -183,12 +183,12 @@
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Popular Item in the RFQ point shop</p>
-          <h2>인기 <span class="section-intro__style">상품</span></h2>
+          <h2>관련 <span class="section-intro__style">상품</span></h2>
         </div>
        
         <div class="row">
        
-          <!-- 인기상품 품목 처리 예정 -->
+          <!-- 관련상품 품목 처리-->
            <div class="owl-carousel owl-theme" id="bestSellerCarousel">    
           
 		<%for (int i=0; i<list.size(); i++){
@@ -197,7 +197,7 @@
 
           <div class="card text-center card-product">
             <div class="card-product__img">
-              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
+              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.PNG">
               <ul class="card-product__imgOverlay">
                 <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
               </ul>
