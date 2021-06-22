@@ -16,13 +16,11 @@
 			
 			});
 			
-			function calcHeight() {
+			function autoResize(i) {
 
-				var the_height = document.getElementById('the_iframe').contentWindow.document.body.scrollHeight;
-
-				document.getElementById('the_iframe').height = the_height;
-
-				document.getElementById('the_iframe').style.overflow = "hidden";
+				   var iframeHeight=
+					    (i).contentWindow.document.body.scrollHeight;
+					    (i).height=iframeHeight;
 			}
 		</script>
 		
@@ -47,7 +45,7 @@
 						<%}else{ %>
 							src="<%=request.getContextPath() %>/shoPage/index2.jsp"
 						<%} %>
-						id="the_iframe" onload="calcHeight();" scrolling="no"
+						id="the_iframe" onload="autoResize(this)" scrolling="no"
 						style="overflow-x:hidden; overflow:auto; width:100%; min-height:10px;"></iframe>
 					</div>
 				</section>

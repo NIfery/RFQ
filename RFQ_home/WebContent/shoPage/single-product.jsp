@@ -179,7 +179,7 @@
             <div class="card-product__img">
               <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
               <ul class="card-product__imgOverlay">
-                <li><button onclick="location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
+                <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
               </ul>
             </div>
             <div class="card-body">

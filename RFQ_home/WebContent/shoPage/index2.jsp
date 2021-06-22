@@ -71,9 +71,9 @@
                 <img class="card-img" src="../images/product/<%=vo.getImage() %>.png">
                 <ul class="card-product__imgOverlay">
                   <%if(c_userid==null || c_userid.isEmpty()){ %>
-                  <li><button onclick="location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
                  <%}else{ %>
-                  <li><button onclick="location.href='single-product.jsp?no=<%=vo.getNo()%>&userid=<%=c_userid%>'"><i class="ti-search"></i></button></li>
+                  <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>&userid=<%=c_userid%>'"><i class="ti-search"></i></button></li>
            		 <%} %>
 
                 </ul>
@@ -128,12 +128,12 @@
             <div class="card-product__img">
               <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
               <ul class="card-product__imgOverlay">
-                <li><button onclick="location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
+                <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
               </ul>
             </div>
             <div class="card-body">
               <p><%=vo2.getSeller() %></p>
-              <h4 class="card-product__title"><a href="single-product.html"><%=vo2.getName() %></a></h4>
+              <h4 class="card-product__title"><a href="$('html, body', window.parent.document).scrollTop(800);single-product.jsp?no<%=vo2.getNo()%>"><%=vo2.getName() %></a></h4>
               <p class="card-product__price"><%=vo2.getPrice() %> Point</p>
             </div>
           </div>
