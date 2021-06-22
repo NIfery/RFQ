@@ -48,6 +48,11 @@
 				width: 80%;
 				height: 500px;
 			}
+			
+			#quizImg{
+				width : 420px;
+				height: 250px;
+			}
 		</style>
 	</head>
 	<body class="homepage is-preload">
@@ -85,48 +90,44 @@
 								<!-- Feature -->
 									<section>
 										<a href="quiz/confirmQuiz.jsp?category=<%=qs.MOVIE%>" 
-										class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/movie_quiz.jpg" alt="" /></a>
+										class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/movie_quiz.jpg" alt="" id="quizImg"/></a>
 										<header>
 											<h3>영화</h3>
 										</header>
-										<p>===영화 퀴즈 설명===</p>
 									</section>
 
 							</div>
 							<div class="col-4 col-6-medium col-12-small">
 								<!-- Feature -->
 									<section>
-										<a href="quiz/confirmQuiz.jsp?category=<%=qs.SPORT%>" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/sports_quiz.jpg" alt="" /></a>
+										<a href="quiz/confirmQuiz.jsp?category=<%=qs.SPORT%>" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/sports_quiz.jpg" id="quizImg" alt="" /></a>
 										<header>
 											<h3>스포츠</h3>
 										</header>
-										<p>===스포츠 퀴즈 설명===</p>
 									</section>
 							</div>
 							<div class="col-4 col-6-medium col-12-small">
 								<!-- Feature -->
 									<section>
-										<a href="quiz/confirmQuiz.jsp?category=<%=qs.STUDY%>" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/study_quiz.jpg" alt="" /></a>
+										<a href="quiz/confirmQuiz.jsp?category=<%=qs.STUDY%>" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/study_quiz.jpg" alt="" id="quizImg"/></a>
 										<header>
 											<h3>학습</h3>
 										</header>
-										<p>===학습 퀴즈 설명===</p>
 									</section>
 							</div>
 							<div class="col-4 col-6-medium col-12-small">
 								<!-- Feature -->
 									<section>
-										<a href="quiz/confirmQuiz.jsp?category=<%=qs.COMMON%>" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/common_quiz.jpg" alt="" /></a>
+										<a href="quiz/confirmQuiz.jsp?category=<%=qs.COMMON%>" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/common_quiz.jpg" alt="" id="quizImg"/></a>
 										<header>
 											<h3>상식</h3>
 										</header>
-										<p>===상식 퀴즈 설명===</p>
 									</section>
 							</div>
 							<div class="col-4 col-6-medium col-12-small">
 								<!-- Feature -->
 									<section>
-										<a href="quiz/quizMain.jsp" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/more_quiz.jpg" alt="" /></a>
+										<a href="quiz/quizMain.jsp" class="image featured"><img src="<%=request.getContextPath()%>/images/quiz/more_quiz.jpg" alt="" id="quizImg"/></a>
 										<header>
 											<h3>더보기</h3>
 										</header>

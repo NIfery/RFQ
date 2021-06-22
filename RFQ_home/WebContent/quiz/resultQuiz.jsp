@@ -1,3 +1,4 @@
+<%@page import="com.member.model.MemberService"%>
 <%@page import="com.quiz.model.GetPointDAO"%>
 <%@page import="com.quiz.model.QuizListVO"%>
 <%@page import="com.quiz.model.QuizListDAO"%>
@@ -12,22 +13,27 @@ String corCount = request.getParameter("corCount");
 	QuizListDAO dao = new QuizListDAO();
 	QuizListVO vo = new QuizListVO();
 	GetPointDAO gpDao = new GetPointDAO();
+	MemberService memberSerivce=new MemberService();
 	
 	int count = dao.insertCount(listNum, corCount);
 	vo=dao.countCor(listNum);
 	int result=vo.getCorCount();
 	int points=0;
+	int balance=0;
 	
 	if(point.equals("0")){
 		points=10*result;
 		int cnt=gpDao.updatePoint(userid, points);
+		int cnt2=memberSerivce.updatePoint(userid, balance);
 		System.out.println(cnt);
 	}else if(point.equals("1")){
 		points=15*result;
 		int cnt=gpDao.updatePoint(userid, points);
+		int cnt2=memberSerivce.updatePoint(userid, balance);
 	}else if(point.equals("2")){
 		points=20*result;
 		int cnt=gpDao.updatePoint(userid, points);
+		int cnt2=memberSerivce.updatePoint(userid, balance);
 	}
 %>
 <!DOCTYPE html>

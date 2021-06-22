@@ -43,7 +43,7 @@ public class GetPointDAO {
 			conn=pool.getConnection();
 			
 			String sql="update getPoint"
-					+ " set getPoint=getPoint+?"
+					+ " set getPoint=getPoint+?, addList=addList+1"
 					+ " where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, point);
@@ -67,7 +67,7 @@ public class GetPointDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="select getPoint from getPoint"
+			String sql="select getPoint, addList from getPoint"
 					+ " where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
@@ -75,6 +75,7 @@ public class GetPointDAO {
 			rs=ps.executeQuery();
 			if(rs.next()) {
 				vo.setGetPoint(rs.getInt("getPoint"));
+				vo.setAddList(rs.getInt("addList"));
 			}
 			return vo;
 		}finally {

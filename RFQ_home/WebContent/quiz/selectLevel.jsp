@@ -16,7 +16,13 @@ int listNum = (int)((Math.random()*200)+1);
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="../assets/css/main.css" />
-
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+		h1, h2{
+		    	font-size: 2em;
+		    	font-family: 'Nanum Gothic', sans-serif;
+			}
+</style>
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">
 			$(function() {
@@ -55,7 +61,7 @@ int listNum = (int)((Math.random()*200)+1);
 							<img src="<%=request.getContextPath()%>/images/pic01.jpg" alt="" /> 
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.HARD%>&listNum=<%=listNum%>">
 								<h2>상</h2>
-								<h2>(20문제, 50p)</h2>
+								<h2>(15문제, 20p)</h2>
 								<div class="content">
 									<p></p>
 								</div>
@@ -66,7 +72,7 @@ int listNum = (int)((Math.random()*200)+1);
 								src="<%=request.getContextPath()%>/images/pic02.jpg" alt="" />
 							</span> <a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.NOMAL%>&listNum=<%=listNum%>">
 								<h2>중</h2>
-								<h2>(20문제, 30p)</h2>
+								<h2>(10문제, 15p)</h2>
 								<div class="content">
 									<p></p>
 								</div>
@@ -78,7 +84,7 @@ int listNum = (int)((Math.random()*200)+1);
 							</span> 
 							<a href="listQuiz.jsp?category=<%=category%>&level=<%=qs.EASY%>&listNum=<%=listNum%>">
 								<h2>하</h2>
-								<h2>(10문제, 10p)</h2>
+								<h2>(5문제, 10p)</h2>
 								<div class="content">
 									<p></p>
 								</div>

@@ -1,3 +1,4 @@
+<%@page import="com.quiz.model.GetPointDAO"%>
 <%@page import="com.quiz.model.QuizDAO"%>
 <%@page import="com.quiz.model.QuizVO"%>
 <%@page import="com.quiz.model.QuizService"%>
@@ -6,10 +7,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+String c_userid = (String)session.getAttribute("userid");
+boolean c_login = false;
+if(c_userid!=null && !c_userid.isEmpty()){ //세션에 값이 있으면
+	c_login = true; //로그인이 된 경우
+}
+
+QuizService qs = new QuizService();
+GetPointDAO gpdao = new GetPointDAO();
+int cnt = gpdao.insertUser(c_userid);
+System.out.println("유저 넣기 완료="+cnt);
+
 	String listNum=request.getParameter("listNum");
    	String category=request.getParameter("category");
    	String level=request.getParameter("level");
-   	QuizService qs = new QuizService();
    	QuizVO vo = new QuizVO();
    	QuizDAO dao = new QuizDAO();
    	
@@ -41,7 +52,7 @@
    		r_level="어려움";
    	}
    	
-   		int r_num=Integer.parseInt(category+level+((int)(Math.random()*5)+1));
+   		int r_num=Integer.parseInt(category+level+((int)(Math.random()*20)+1));
    		vo=dao.showQuiz(r_num);
    	
    	  	
@@ -64,8 +75,8 @@
 				
 				$('#next').click(function(){
 					<%if(level.equals("0")){%>
-						if(count<3){
-						var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
+						if(count<5){
+						var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*20)+1).toString();
 						count++;
 						var num=<%=listNum%>;
 						var point=<%=level%>;
@@ -73,26 +84,26 @@
 						 $('#quizList').attr('src', 'test.jsp?r_num1='+rnd+'&listNum1='+num);
 						
 					}
-						if(count==3){
+						if(count==5){
 							location.href="resultQuiz.jsp?corCount="+$('#check').val()+'&listNum='+num+'&level='+point;
 						}
 						<%}else if(level.equals("1")){%>
-						if(count<15){
-							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
+						if(count<10){
+							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*20)+1).toString();
 							count++;
 							$('#quizList').attr('src','test.jsp?r_num1='+rnd+'&listNum1='+num);
 						}
-						if(count==15){
+						if(count==10){
 							location.href="resultQuiz.jsp";
 						}
 					<%}else if(level.equals("2")){%>
-						if(count<20){
-							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*10)+1).toString();
+						if(count<15){
+							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*20)+1).toString();
 							count++;
 							
 							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd+'&listNum1='+num);
 						}
-						if(count==20){
+						if(count==15){
 							location.href="resultQuiz.jsp";
 						}
 					<%}%>

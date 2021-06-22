@@ -9,10 +9,7 @@ if(c_userid!=null && !c_userid.isEmpty()){ //세션에 값이 있으면
 	c_login = true; //로그인이 된 경우
 }
 
-QuizService qs = new QuizService();
-GetPointDAO dao = new GetPointDAO();
-int cnt = dao.insertUser(c_userid);
-System.out.println("유저 넣기 완료="+cnt);
+
 
 String category = request.getParameter("category");
 String r_category="";
@@ -42,9 +39,8 @@ if(category.equals("1")){
     <link rel="stylesheet" href="../assets/css/main.css" />
     <title>Home</title>
     
-    <style>
-    
-    
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
     #popupDiv {  /* 팝업창 css */
     top : 0px;
     position: absolute;
@@ -73,6 +69,14 @@ if(category.equals("1")){
     
     .con{
     	margin: 20px 0px;
+    }
+    
+    h1, h2, .con{
+    font-family: 'Nanum Gothic', sans-serif;
+    }
+    
+    h2{
+    	font-weight: bold;
     }
     </style>
 </head>

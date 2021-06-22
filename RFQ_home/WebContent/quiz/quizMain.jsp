@@ -35,11 +35,25 @@
 		
 		<!-- 사용자 정의 css -->
 		<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+		
 			.swiper-container {
 				border: 1px solid black;
 				width: 80%;
 				height: 500px;
 			}
+			
+			#quizImg{
+				width : 420px;
+				height: 250px;
+			}
+			
+			h1{
+		    	font-size: 2em;
+		    	font-family: 'Nanum Gothic', sans-serif;
+			}
+			
+			
 		</style>
 	</head>
 	<body class="homepage is-preload">
@@ -57,7 +71,7 @@
 							<section class="tiles">
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/movie_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/movie_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.MOVIE%>">
 										<h2 class="quizTitle">영화</h2>
@@ -68,7 +82,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/history_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/history_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.HISTORY%>">
 										<h2 class="quizTitle">역사</h2>
@@ -79,7 +93,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/sports_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/sports_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.SPORT%>">
 										<h2 class="quizTitle">스포츠</h2>
@@ -90,7 +104,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/game_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/game_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.GAME%>">
 										<h2 class="quizTitle">게임</h2>
@@ -101,7 +115,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/common_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/common_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.COMMON%>">
 										<h2 class="quizTitle">상식</h2>
@@ -112,7 +126,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/study_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/study_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.STUDY%>">
 										<h2 class="quizTitle">학습</h2>
@@ -123,7 +137,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/enter_quiz.jpg" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/enter_quiz.jpg" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.ENTER%>">
 										<h2 class="quizTitle">연예인</h2>
@@ -134,7 +148,7 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src="<%=request.getContextPath() %>/images/quiz/nword_quiz.png" alt="" />
+										<img src="<%=request.getContextPath() %>/images/quiz/nword_quiz.png" alt="" id="quizImg"/>
 									</span>
 									<a href="confirmQuiz.jsp?category=<%=qs.NWORD%>">
 										<h2 class="quizTitle">신조어</h2>
