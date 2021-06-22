@@ -92,7 +92,7 @@ public class BuyListDAO {
 				vo.setUserid(userid);
 				vo.setNo(rs.getInt("no"));
 				vo.setGiftconNo(rs.getInt("giftconNo"));
-				vo.setOutPoint(rs.getInt("balance"));
+				vo.setOutPoint(rs.getInt("outPoint"));
 				vo.setBalance(rs.getInt("balance"));
 			}
 			System.out.println("최근 내역 조회 vo="+vo+", 매개변수 userid="+userid);
