@@ -220,7 +220,7 @@
 
 
     <!-- ================ offer section start ================= --> 
-    <section class="offer">
+    <section>
       <div class="container">
         <div class="row">
           <div class="col-xl-5">
@@ -245,7 +245,7 @@
     <!-- ================ Best Selling item  carousel end ================= --> 
 
    
-
+	<br>
    
 
   </main>
