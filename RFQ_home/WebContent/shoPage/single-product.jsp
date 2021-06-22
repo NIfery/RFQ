@@ -157,7 +157,7 @@
 	<section class="product_description_area">
 		<div class="container">
 			
-		
+		</div>
 	</section>
 	<!--================End Product Description Area =================-->
 

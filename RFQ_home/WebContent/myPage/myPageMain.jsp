@@ -22,7 +22,7 @@
 	//적립, 사용, 잔여 포인트
 	int getP=vo.getGetPoint();		
 	int outP=Integer.parseInt(outPoint);
-	int bal=Integer.parseInt(balance)+getP;
+	int bal=Integer.parseInt(balance);
 	
 	MemberVO vo2=new MemberVO();
 	vo2.setPoint(bal);
