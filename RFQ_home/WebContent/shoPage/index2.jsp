@@ -60,7 +60,7 @@
         </div>
        
         <div class="row">
-        <%for (int i=0; i<9; i++){
+        <%for (int i=0; i<list.size(); i++){
         	GiftconVO vo = list.get(i);
         	%>
         
@@ -211,11 +211,7 @@
     <section class="subscribe-position">
 
 
-            </form>
-          </div>
-          
-        </div>
-      </div>
+         
     </section>
     <!-- ================ Subscribe section end ================= --> 
 

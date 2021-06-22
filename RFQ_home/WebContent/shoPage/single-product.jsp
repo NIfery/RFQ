@@ -80,10 +80,23 @@
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    }
 </style>
+
+
+
+
 <body>
-	
-	
+  
+                <!-- <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="category.html">전체상품</a></li>
+                  <li class="nav-item"><a class="nav-link" href="single-product.html">상품상세</a></li>
+                  <li class="nav-item"><a class="nav-link" href="cart.html">장바구니</a></li>
+                </ul> -->
+				
+
+  <main class="site-main">
+    
 	<!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="blog">
 		<div class="container h-100">
@@ -103,7 +116,8 @@
 	<!-- ================ end banner area ================= -->
 
 
-  <!--================Single Product Area =================-->
+
+<!--================Single Product Area =================-->
 	<div class="product_image_area">
 		<div class="container">
 			<div class="row s_product_inner">
@@ -153,7 +167,9 @@
 	</div>
 	<!--================End Single Product Area =================-->
 
-	<!--================Product Description Area =================-->
+
+
+<!--================Product Description Area =================-->
 	<section class="product_description_area">
 		<div class="container">
 			
@@ -161,8 +177,105 @@
 	</section>
 	<!--================End Product Description Area =================-->
 
-	<!--================ Start related Product area =================-->  
+
+    <!-- ================ trending product section start ================= -->  
+    <section class="section-margin calc-60px" style="margin: 0 70px 0;">
+      <div class="container">
+        <div class="section-intro pb-60px">
+          <p>Popular Item in the RFQ point shop</p>
+          <h2>인기 <span class="section-intro__style">상품</span></h2>
+        </div>
+       
+        <div class="row">
+       
+          <!-- 인기상품 품목 처리 예정 -->
+           <div class="owl-carousel owl-theme" id="bestSellerCarousel">    
+          
+		<%for (int i=0; i<list.size(); i++){
+					GiftconVO vo2 = list.get(i);
+				%>
+
+          <div class="card text-center card-product">
+            <div class="card-product__img">
+              <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.png">
+              <ul class="card-product__imgOverlay">
+                <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <p><%=vo2.getSeller() %></p>
+              <h4 class="card-product__title"><a href='single-product.jsp?no=<%=vo2.getNo()%>'><%=vo2.getName() %></a></h4>
+              <p class="card-product__price"><%=vo2.getPrice() %> Point</p>
+            </div>
+          </div>
+		<%} %>
+
+         
+        </div>
+          <!-- 인기상품 품목 처리 끝 -->
+        </div>
+      </div>
+    </section>
+    <!-- ================ trending product section end ================= -->  
+
+
+    <!-- ================ offer section start ================= --> 
+    <section class="offer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5">
+            <div class="offer__content text-center">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================ offer section end ================= --> 
+
+    <!-- ================ Best Selling item  carousel ================= --> 
      <section class="section-margin calc-60px">
+      <div class="container">
+        <div class="section-intro pb-60px">
+         
+         
+        </div>
+      </div>
+    </section>
+    <!-- ================ Best Selling item  carousel end ================= --> 
+
+   
+
+   
+
+  </main>
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<%-- 
+	
+	
+	
+<!--================ Start related Product area =================-->  
       <div class="container">
         <div class="section-intro pb-60px">
           <p>Relation Item in the RFQ POINT SHOP</p>
@@ -191,9 +304,15 @@
 	<%} %>
         </div>
       </div>
-    </section>
 	<!--================ end related Product area =================-->  	
 
+
+  
+	<!--================Product Description Area =================-->
+	
+	<!--================End Product Description Area =================-->
+
+	
   
 
 
@@ -208,3 +327,5 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+ --%>
+
