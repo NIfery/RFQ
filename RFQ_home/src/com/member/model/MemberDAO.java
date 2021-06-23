@@ -189,7 +189,7 @@ public class MemberDAO {
 		try {
 			conn=pool.getConnection();
 			
-			String sql="update member2 set point=? where userid=?";
+			String sql="update member2 set point=point+? where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, balance);
 			ps.setString(2, userid);
