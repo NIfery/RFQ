@@ -90,7 +90,7 @@
 		<tbody>
 			<tr>
 				<td id="giftImg">
-					<img src="../images/product/<%=vo.getImage() %>.png">
+					<img src="../images/product/<%=vo.getImage() %>.PNG">
 				</td>
 				<td id="detail">
 					<p id="tag">[RFQ-GiftCon]</p>
