@@ -228,7 +228,7 @@
 												</div>
 												<div class="col-md-8">
 													<h6 class="text-muted font-semibold">주문 상품</h6>
-													<a href="#"><h6 class="font-extrabold mb-0"><%=list.size() %> 개</h6></a>
+													<h6 class="font-extrabold mb-0"><%=list.size() %> 개</h6>
 												</div>
 											</div>
 										</div>
@@ -297,7 +297,9 @@
 												   			num--;
 												   		%>
 													<tr>
-														<td class="text-bold-500"><%=vo3.getNo() %></td>
+														<td class="text-bold-500">
+														<a href="orderDetail.jsp?userid=<%=userid%>&orderNo=<%=vo3.getNo()%>">
+															<%=vo3.getNo() %></a></td>
 														<td class="text-bold-500"><%=vo3.getUserid() %></td>
 														<td class="text-bold-500"><%=vo3.getGiftconNo() %></td>
 														<td class="text-bold-500"><%=df.format(vo3.getOutPoint()) %> Point</td>

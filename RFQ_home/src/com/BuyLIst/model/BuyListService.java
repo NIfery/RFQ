@@ -21,4 +21,8 @@ public class BuyListService {
 	public BuyListVO recentBuy(String userid) throws SQLException {
 		return dao.recentBuy(userid);
 	}
+	
+	public int selectByUserid(String userid, int no) throws SQLException {
+		return dao.selectByUserid(userid, no);
+	}
 }

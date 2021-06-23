@@ -71,6 +71,31 @@ public class BuyListDAO {
 			pool.dbClose(rs, ps, conn);
 		}
 	}
+	
+	public int selectByUserid(String userid, int no) throws SQLException {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		BuyListVO vo=new BuyListVO();
+		try {
+			conn=pool.getConnection();
+
+			String sql="select giftconNo from buylist where userid=? and no=? order by no desc";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			ps.setInt(2, no);
+			
+			int result=0;
+			if(rs.next()) {
+				result=rs.getInt("giftconNo");
+			}
+			System.out.println("아이디로 기프티콘 번호 조회, result="+result+", 매개변수 userid="+userid);
+			return result;
+		}finally {
+			pool.dbClose(rs, ps, conn);
+		}
+	}
 
 	public BuyListVO recentBuy(String userid) throws SQLException {
 		Connection conn=null;
