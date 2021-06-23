@@ -259,7 +259,7 @@
                         <div class="col-12 col-xs-1">
                             <div class="card">
                                 <div class="card-header">
-											<h4 class="card-title">포인트 사용 내역</h4>
+											<h4 class="card-title">주문 목록</h4>
 								</div>
 								<div class="card-content">
                                     <div class="card-body">

@@ -215,9 +215,8 @@ public class MemberDAO {
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
 			
+			int point=0;
 			rs=ps.executeQuery();
-			
-			int point= 0;
 			if(rs.next()) {
 				point=rs.getInt("point");
 			}

@@ -26,6 +26,11 @@ public class MemberVO {
 		this.email = email;
 		this.point = point;
 	}
+	
+	public MemberVO(int point) {
+		super();
+		this.point=point;
+	}
 
 	public String getUserid() {
 		return userid;
