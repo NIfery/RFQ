@@ -1,3 +1,4 @@
+<%@page import="com.giftcon.model.PagingVO"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="com.member.model.MemberVO"%>
 <%@page import="java.sql.SQLException"%>
@@ -37,6 +38,22 @@
 	   int outP=vo2.getOutPoint();
 	   
 	   DecimalFormat df=new DecimalFormat();
+	   
+	   //페이징 처리
+		int currentPage=1; 
+		
+		if(request.getParameter("currentPage") !=null ){
+			currentPage=Integer.parseInt(request.getParameter("currentPage"));
+		}
+		
+		int totalRecord = 0; 
+		if(list !=null && !list.isEmpty()){
+			totalRecord=list.size();
+		}
+		int pageSize=5;  
+		int blockSize=10; 
+		
+		PagingVO pageVo=new PagingVO(currentPage, totalRecord, pageSize, blockSize);
 %>
 <!DOCTYPE html>
 <head>
@@ -211,7 +228,7 @@
 												</div>
 												<div class="col-md-8">
 													<h6 class="text-muted font-semibold">주문 상품</h6>
-													<h6 class="font-extrabold mb-0"><%=list.size() %> 개</h6>
+													<a href="#"><h6 class="font-extrabold mb-0"><%=list.size() %> 개</h6></a>
 												</div>
 											</div>
 										</div>
@@ -270,28 +287,60 @@
 															내역이 없습니다.</td>
 													</tr>
 													<%}else{ %>
-													<%for(int i=0; i<list.size(); i++){ 
-											   			BuyListVO vo3=list.get(i);
-											   		%>
+														<%
+														int num=pageVo.getNum();
+														int curPos=pageVo.getCurPos();
+														
+														for(int i=0; i<pageVo.getPageSize(); i++){ 
+															if(num<1) break;
+												   			BuyListVO vo3=list.get(curPos++);
+												   			num--;
+												   		%>
 													<tr>
 														<td class="text-bold-500"><%=vo3.getNo() %></td>
 														<td class="text-bold-500"><%=vo3.getUserid() %></td>
 														<td class="text-bold-500"><%=vo3.getGiftconNo() %></td>
-														<td class="text-bold-500"><%=vo3.getOutPoint() %></td>
-														<td class="text-bold-500"><%=vo3.getBalance()%></td>
+														<td class="text-bold-500"><%=df.format(vo3.getOutPoint()) %> Point</td>
+														<td class="text-bold-500"><%=df.format(vo3.getBalance()) %> Point</td>
 													</tr>
 													<%} //for %>
-													<%} //if %>
+												<%} //if %>
 												</tbody>
 											</table>
+											<div class="divPage" style="text-align: center">
+												<!-- 이전 블럭 -->
+												<%if(pageVo.getFirstPage()>1){ %>
+													<a href="myPageMain2.jsp?currentPage=<%=pageVo.getFirstPage()-1%>&userid=<%=userid%>">
+														<img src="../images/first.png" alt="이전 블럭으로">
+													</a>
+												<%}//if %>
+																	
+												<!-- 넘버링 -->
+												<%
+													for(int i=pageVo.getFirstPage();i<=pageVo.getLastPage();i++){
+														if(i>pageVo.getTotalPage()) break;
+														
+														if(i == currentPage){%>
+															<span style="color : blue; font-weight : bold; text-align: center"><%=i %></span>
+														<%}else{ %>
+															<a href	= "myPageMain2.jsp?currentPage=<%=i%>&userid=<%=userid%>">[<%=i %>]</a>
+														<%}//if %>	
+													<%}//for %>
+												<!-- 다음 블럭 -->
+												<%if(pageVo.getLastPage() < pageVo.getTotalPage()){ %>
+													<a href="myPageMain2.jsp?currentPage=<%=pageVo.getLastPage()+1%>&userid=<%=userid%>">
+														<img src="../images/last.png" alt="다음 블럭으로">
+													</a>
+												<%}//if %>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-			</div>
-
+				</div>
+			</section>
 			<footer>
 				<div class="footer clearfix mb-0 text-muted">
 					<div class="float-start">
@@ -309,6 +358,7 @@
 		</div>
 	</div>
 	</div>
+	</div>
 	<script
 		src="../assets/mazer-main/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 	<script
@@ -320,5 +370,4 @@
 
 	<script src="../assets/mazer-main/dist/assets/js/main.js"></script>
 </body>
-
 </html>
