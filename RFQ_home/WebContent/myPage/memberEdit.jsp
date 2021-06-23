@@ -72,6 +72,9 @@ $(function(){
 		}
 	}
 	
+	window.chkZipcode = function(){
+		window.open('../zipcode/zipcode.jsp','zipcodeChk','width=500,height=550,left=0,top=0,location=yes,resizable=yes');
+	}
 });	
 </script>
 <head>
@@ -150,7 +153,7 @@ input#addressDetail {
 									name="zipcode" id="zipcode" ReadOnly title="우편번호"
 									class="width_80" value="<%=zipcode %>"> <input
 									type="Button" value="우편번호 찾기" class="question" id="btnZipcode"
-									title="새창열림"><br /> <span class="sp1">&nbsp;</span> <input
+									title="새창열림" onclick="chkZipcode()"><br /> <span class="sp1">&nbsp;</span> <input
 									type="text" name="address" ReadOnly title="주소"
 									class="width_350" value="<%=address %>"><br /> <span
 									class="sp1">&nbsp;</span>
