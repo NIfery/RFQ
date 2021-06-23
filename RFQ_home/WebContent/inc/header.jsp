@@ -64,7 +64,7 @@
 											<li><a href="<%=request.getContextPath() %>/member/agreement.jsp"><span>JOIN</span></a></li>           
 										<%}else{ %>
 											<li><a href="<%=request.getContextPath() %>/member/logout.jsp"><span>LOGOUT</span></a></li>
-											<li><a href="<%=request.getContextPath() %>/myPage/myPageMain.jsp?userid=<%=t_userid%>"><span>MYPAGE</span></a></li>	            
+											<li><a href="<%=request.getContextPath() %>/myPage/myPageMain2.jsp?userid=<%=t_userid%>"><span>MYPAGE</span></a></li>	            
 										<%} %>
 									</ul>
 								</nav>							

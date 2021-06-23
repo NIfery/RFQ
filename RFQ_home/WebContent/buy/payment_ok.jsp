@@ -39,7 +39,7 @@
       int cnt3=memberService.updatePoint(userid, bal);
          if(cnt>0){
             msg="결제 완료되었습니다";
-            url="/myPage/myPageMain.jsp?userid="+userid
+            url="/myPage/myPageMain2.jsp?userid="+userid
                   +"&outPoint="+outP+"&balance="+balance;
          }   
    }catch(SQLException e){

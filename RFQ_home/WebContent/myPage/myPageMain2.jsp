@@ -1,3 +1,5 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="com.member.model.MemberVO"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="com.BuyLIst.model.BuyListService"%>
 <%@page import="java.util.List"%>
@@ -19,12 +21,13 @@
 	GetPointDAO dao = new GetPointDAO();
 	BuyListVO vo2=new BuyListVO();
 	List<BuyListVO> list=null;
-	
+	int bal=0;
 	//to-do : 포인트 사용내역 적립내용 뿌리기
 	   try{
 		   vo=dao.selectPoint(userid);
 		   list=buylistService.selectBuyList(userid);		   
 		   vo2=buylistService.recentBuy(userid);
+		   bal=memberService.selectPoint(userid);
 	   }catch(SQLException e){
 		   e.printStackTrace();
 	   }
@@ -32,7 +35,8 @@
 	   //적립, 사용, 잔여 포인트
 	   int getP=vo.getGetPoint();
 	   int outP=vo2.getOutPoint();
-	   int bal=vo2.getBalance();
+	   
+	   DecimalFormat df=new DecimalFormat();
 %>
 <!DOCTYPE html>
 <head>
@@ -172,8 +176,8 @@
 													</div>
 												</div>
 												<div class="col-md-8">
-													<h6 class="text-muted font-semibold">획득 포인트</h6>
-													<h6 class="font-extrabold mb-0"><%= bal %></h6>
+													<h6 class="text-muted font-semibold">퀴즈 획득 포인트</h6>
+													<h6 class="font-extrabold mb-0"><%= getP %> Point</h6>
 												</div>
 											</div>
 										</div>
@@ -189,8 +193,8 @@
 													</div>
 												</div>
 												<div class="col-md-8">
-													<h6 class="text-muted font-semibold">결제한 상품</h6>
-													<h6 class="font-extrabold mb-0">183.000 개</h6>
+													<h6 class="text-muted font-semibold">퀴즈 성공</h6>
+													<h6 class="font-extrabold mb-0"><%=vo.getAddList() %> 개</h6>
 												</div>
 											</div>
 										</div>
@@ -206,18 +210,33 @@
 													</div>
 												</div>
 												<div class="col-md-8">
-													<h6 class="text-muted font-semibold">푼 퀴즈</h6>
-													<h6 class="font-extrabold mb-0"><%=vo.getAddList() %>
-														개
-													</h6>
+													<h6 class="text-muted font-semibold">주문 상품</h6>
+													<h6 class="font-extrabold mb-0"><%=list.size() %> 개</h6>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
-	<section class="section">
+							<div class="col-4">
+									<div class="card">
+										<div class="card-body px-3 py-4-5">
+											<div class="row">
+												<div class="col-md-4">
+													<div class="stats-icon purple">
+														<i class="iconly-boldAdd-User"></i>
+													</div>
+												</div>
+												<div class="col-md-8">
+													<h6 class="text-muted font-semibold">현재 보유 포인트</h6>
+													<h6 class="font-extrabold mb-0"><%=df.format(bal)%> Point</h6>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+			<section class="section">
                     <div class="row" id="basic-table">
                         <div class="col-12 col-xs-1">
                             <div class="card">
@@ -252,8 +271,8 @@
 													</tr>
 													<%}else{ %>
 													<%for(int i=0; i<list.size(); i++){ 
-	   			BuyListVO vo3=list.get(i);
-	   		%>
+											   			BuyListVO vo3=list.get(i);
+											   		%>
 													<tr>
 														<td class="text-bold-500"><%=vo3.getNo() %></td>
 														<td class="text-bold-500"><%=vo3.getUserid() %></td>
