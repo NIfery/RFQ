@@ -91,7 +91,28 @@
             display: -webkit-inline-box;
          }
          
-         
+         #btnZipcode, #wr_submit{
+         -moz-transition: all 0.25s ease-in-out;
+		-webkit-transition: all 0.25s ease-in-out;
+		-ms-transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
+		/* -webkit-appearance: none; */
+		position: relative;
+		display: inline-block;
+		background: #ed786a;
+		color: #fff;
+		text-transform: uppercase;
+		border-radius: 4px;
+		border: 0;
+		outline: 0;
+		font-size: 1em;
+		box-shadow: 0.125em 0.175em 0 0 rgba(0, 0, 0, 0.125);
+		font-weight: 600;
+		text-align: center;
+		font-size: 0.85em;
+		letter-spacing: 2px;
+		padding: 0.85em 2.75em 0.85em 2.75em;
+         }
          
          input#pwd {
             width: 50%;
@@ -152,13 +173,13 @@
                          <div>
                              <label for="zipcode">주소</label><br>
                              <input type="text" name="zipcode" id="zipcode" ReadOnly  
-                                title="우편번호" value="<%=zipcode %>">&nbsp;
+                                title="우편번호" value="<%=zipcode %>">
                              <Button type="button" class="question" id="btnZipcode" title="새창열림" onclick="chkZipcode()">우편번호 찾기</Button>
                              <input type="text" name="address" id="address" title="주소" value="<%=address %>"><br />
                          </div>
                          <br>
                          <div>
-                         <label for="hp1">핸드폰</label>&nbsp;<select name="hp1" id="hp1"
+                         <label for="hp1">핸드폰</label><br><select name="hp1" id="hp1"
                            title="휴대폰 앞자리">
                            <option value="010" <%if(hp1.equals("010")){ %>
                               selected="selected" <%} %>>010</option>
@@ -194,6 +215,8 @@
                          </div>
                          <br>
                          <div style="text-align: center">
+                         <br>
+                         <Br>
                            <input type="submit" class="question" id="wr_submit" value="수정">
                         </div>
                   </form>

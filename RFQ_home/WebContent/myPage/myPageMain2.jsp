@@ -108,7 +108,7 @@
 					<ul class="menu">
 						<li class="sidebar-title">Menu</li>
 
-						<li class="sidebar-item  "><a href="myPageMain2.jsp"
+						<li class="sidebar-item  "><a href="myPageMain2.jsp?userid=<%=userid %>"
 							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>마이페이지 홈
 									</span>
 						</a></li>
