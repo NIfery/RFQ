@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="com.giftcon.model.PagingVO"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="com.giftcon.model.GiftconVO"%>
@@ -39,6 +40,8 @@
        int blockSize=10;
        
        PagingVO pageVo = new PagingVO(currentPage, totalRecord, pageSize, blockSize);
+       
+       DecimalFormat df = new DecimalFormat();
     %>
 <!DOCTYPE html>
 <html>
@@ -98,7 +101,6 @@
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="drink" name="brand" value="음료">음료<span> </span></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="convenience" name="brand" value="편의점">편의점<span> </span></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="item" name="brand" value="소품">소품<span> </span></li>
-                    <li class="filter-list"><input class="pixel-radio" type="radio" id="daily" name="brand" value="생활">생활<span></span></li>
                     <li class="filter-list"><input class="pixel-radio" type="radio" id="voucher" name="brand" value="상품권">상품권<span></span></li>
                   </ul>
               </li>
@@ -157,7 +159,7 @@
                   <div class="card-body">
                     <p><%=vo.getSeller() %></p>
                     <h4 class="card-product__title"><a href="#"><%=vo.getName() %></a></h4>
-                    <p class="card-product__price"><%=vo.getPrice() %> Point</p>
+                    <p class="card-product__price"><%=df.format(vo.getPrice()) %> Point</p>
                   </div>
                 </div>
               </div>

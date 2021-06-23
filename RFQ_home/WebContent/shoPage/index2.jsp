@@ -133,7 +133,7 @@
             <div class="card-body">
               <p><%=vo2.getSeller() %></p>
               <h4 class="card-product__title"><a href="$('html, body', window.parent.document).scrollTop(800);single-product.jsp?no<%=vo2.getNo()%>"><%=vo2.getName() %></a></h4>
-              <p class="card-product__price"><%=vo2.getPrice() %> Point</p>
+              <p class="card-product__price"><%=df.format(vo2.getPrice()) %> Point</p>
             </div>
           </div>
 	<%} %>

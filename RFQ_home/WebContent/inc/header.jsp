@@ -19,7 +19,7 @@
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="<%=request.getContextPath()%>/index.jsp">Ready For the Quiz?</a></h1>
-							<p>A responsive HTML5 site template. Manufactured by HTML5 UP.</p>
+							<p>매일 새롭게 출제되는 퀴즈에 도전하고 포인트를 모으세요 !!</p>
 
 						<!-- Nav -->
 							<nav id="nav">
@@ -54,7 +54,6 @@
 											<%-- <li><a href="<%=request.getContextPath()%>/shoPage/cart.html">장바구니</a></li> --%>
 										</ul>
 									</li>
-									<li><a href="#" class="icon solid fa-retweet"><span>이용안내</span></a></li>
 									<li><a href="<%=request.getContextPath() %>/customer/customer.jsp" class="icon solid fa-sitemap"><span>고객센터</span></a></li>
 								</ul>
 							</nav>
