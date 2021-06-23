@@ -94,7 +94,7 @@
 				<div class="sidebar-header">
 					<div class="d-flex justify-content-between">
 						<div class="logo">
-							<a href="myPageMain.jsp?userid=<%=userid%>"><img
+							<a href="../index.jsp"><img
 								src="../assets/mazer-main/dist/assets/images/logo/logo.png"
 								alt="Logo" srcset=""></a>
 						</div>
@@ -108,7 +108,10 @@
 					<ul class="menu">
 						<li class="sidebar-title">Menu</li>
 
-						
+						<li class="sidebar-item  "><a href="myPageMain2.jsp"
+							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>마이페이지 홈
+									</span>
+						</a></li>
 
 						<li class="sidebar-item  "><a href="memberEdit.jsp"
 							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>회원정보
@@ -121,24 +124,7 @@
 						</a></li>
 
 
-						<li class="sidebar-title">Raise Support</li>
-
-						<li class="sidebar-item  "><a
-							href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
-								<i class="bi bi-life-preserver"></i> <span>Documentation</span>
-						</a></li>
-
-						<li class="sidebar-item  "><a
-							href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md"
-							class='sidebar-link'> <i class="bi bi-puzzle"></i> <span>Contribute</span>
-						</a></li>
-
-						<li class="sidebar-item  "><a
-							href="https://github.com/zuramai/mazer#donate"
-							class='sidebar-link'> <i class="bi bi-cash"></i> <span>Donate</span>
-						</a></li>
-
-					</ul>
+						
 				</div>
 				<button class="sidebar-toggler btn x">
 					<i data-feather="x"></i>
@@ -174,13 +160,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-12 col-xs-4">
+						<div class="col-12 col-xs-3">
 							<div class="row">
 								<div class="col-4">
 									<div class="card">
 										<div class="card-body px-3 py-4-5">
 											<div class="row">
-												<div class="col-md-4">
+												<div class="col-md-3">
 													<div class="stats-icon purple">
 														<i class="iconly-boldShow"></i>
 													</div>
@@ -197,7 +183,7 @@
 									<div class="card">
 										<div class="card-body px-3 py-4-5">
 											<div class="row">
-												<div class="col-md-4">
+												<div class="col-md-3">
 													<div class="stats-icon blue">
 														<i class="iconly-boldProfile"></i>
 													</div>
@@ -214,7 +200,7 @@
 									<div class="card">
 										<div class="card-body px-3 py-4-5">
 											<div class="row">
-												<div class="col-md-4">
+												<div class="col-md-3">
 													<div class="stats-icon green">
 														<i class="iconly-boldAdd-User"></i>
 													</div>
@@ -232,7 +218,7 @@
 									<div class="card">
 										<div class="card-body px-3 py-4-5">
 											<div class="row">
-												<div class="col-md-4">
+												<div class="col-md-3">
 													<div class="stats-icon purple">
 														<i class="iconly-boldAdd-User"></i>
 													</div>

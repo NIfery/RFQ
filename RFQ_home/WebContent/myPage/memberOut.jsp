@@ -27,6 +27,24 @@
 	position: relative;
 	display: -webkit-inline-box;
 }
+
+#pwd{
+display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #607080;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dce7f1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 </style>
 <title>회원탈퇴</title>
 </head>
@@ -48,11 +66,13 @@
 						<form name="frmOut" method="post" action="memberOut_ok.jsp">
 							<p class="p">회원탈퇴하시겠습니까?</p>
 							<div>
-								<label for="pwd" class="p">비밀번호</label> <input type="password"
+								<label for="pwd" class="p" >비밀번호</label> <input type="password"
 									name="pwd" id="pwd">
 							</div>
+							<br>
+							<br>
 							<div class="align_center">
-								<input type="submit" id="submit" value="회원탈퇴"> <input
+								<input type="submit" id="submit" value="회원탈퇴"> &nbsp;&nbsp;&nbsp;&nbsp;<input
 									type="reset" value="취소">
 							</div>
 						</form>
