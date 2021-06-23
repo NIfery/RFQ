@@ -23,6 +23,7 @@
 	BuyListVO vo2=new BuyListVO();
 	List<BuyListVO> list=null;
 	int bal=0;
+	
 	//to-do : 포인트 사용내역 적립내용 뿌리기
 	   try{
 		   vo=dao.selectPoint(userid);

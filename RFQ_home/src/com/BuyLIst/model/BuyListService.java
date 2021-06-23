@@ -22,7 +22,7 @@ public class BuyListService {
 		return dao.recentBuy(userid);
 	}
 	
-	public int selectByUserid(String userid, int no) throws SQLException {
+	public BuyListVO selectByUserid(String userid, int no) throws SQLException {
 		return dao.selectByUserid(userid, no);
 	}
 }

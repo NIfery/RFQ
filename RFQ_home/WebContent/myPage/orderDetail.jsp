@@ -19,11 +19,11 @@
 	String orderNo=request.getParameter("orderNo");
 	
 	GiftconVO vo=new GiftconVO();
-	int giftconNo=0;
+	BuyListVO vo2=null;
 	
 	try{
-		giftconNo=buylistService.selectByUserid(userid, Integer.parseInt(orderNo));
-		vo=giftconService.selectByNo(giftconNo);
+		vo2=buylistService.selectByUserid(userid, Integer.parseInt(orderNo));
+		vo=giftconService.selectByNo(vo2.getGiftconNo());
 	}catch(SQLException e){
 		e.printStackTrace();
 	}
@@ -65,12 +65,11 @@
 				</td>
 				<td>
 					<input type="text" name="exdate" id="exdate" 
-							value="<%=vo.getExdate() %>" readonly>Point
+							value="<%=vo.getExdate() %>" readonly>
 				</td>
 			</tr>
 		</tbody>
 		</table>
 	</div><br>
-	<hr><br>
 </body>
 </html>

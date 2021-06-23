@@ -21,7 +21,12 @@ public class BuyListVO {
 		this.outPoint = outPoint;
 		this.balance = balance;
 	}
-
+	
+	public BuyListVO(int giftconNo) {
+		super();
+		this.giftconNo = giftconNo;
+	}
+	
 	public int getNo() {
 		return no;
 	}
