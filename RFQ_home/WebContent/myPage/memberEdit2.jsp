@@ -74,7 +74,9 @@ $(function(){
 	
 });	
 </script>
+
 <head>
+
 <meta charset="UTF-8">
 <title>회원정보 수정</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -116,7 +118,23 @@ body{
     background-color: #ed786a;
     border-color: #ed786a;
 }
-
+.form-control2{
+    display: block;
+    width: 30%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #607080;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dce7f1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 </style>
 </head>
 
@@ -165,12 +183,11 @@ body{
 											<div class="col-12">
 												<div class="form-group">
 													<label for="email-id-vertical">주소</label> 
-													<input type="text" name="zipcode" id="zipcode" ReadOnly title="우편번호"
-									class="width_80" value="<%=zipcode %>"> <input
-									type="Button" value="우편번호 찾기" class="question" id="btnZipcode"
-									title="새창열림"><br /> <span class="sp1">&nbsp;</span> <input
+													<input type="text" name="zipcode" id="zipcode" ReadOnly title="우편번호" class="form-control2" value="<%=zipcode %>"> 
+									<button class="btn btn-primary me-1 mb-1" id="btnZipcode" title="새창열림">우편번호 찾기</button>
+								<br /> <span class="sp1">&nbsp;</span> <input
 									type="text" name="address" ReadOnly title="주소"
-									class="width_350" value="<%=address %>"><br /> <span
+									class="form-control3" value="<%=address %>"><br /> <span
 									class="sp1">&nbsp;</span>
 												</div>
 											</div>

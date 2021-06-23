@@ -57,6 +57,7 @@
 		PagingVO pageVo=new PagingVO(currentPage, totalRecord, pageSize, blockSize);
 %>
 <!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,22 +109,14 @@
 					<ul class="menu">
 						<li class="sidebar-title">Menu</li>
 
-						<li class="sidebar-item  "><a href="table.html"
-							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>회원정보
-									확인</span>
-						</a></li>
+						
 
 						<li class="sidebar-item  "><a href="memberEdit.jsp"
 							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>회원정보
 									수정</span>
 						</a></li>
 
-						<li class="sidebar-item  "><a href="searchIdPwd.jsp"
-							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>아이디/비밀번호
-									찾기</span>
-						</a></li>
-
-
+						
 						<li class="sidebar-item  "><a href="memberOut.jsp"
 							class='sidebar-link'> <i class="bi bi-grid-1x2-fill"></i> <span>회원탈퇴</span>
 						</a></li>
