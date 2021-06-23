@@ -43,10 +43,6 @@
 				height: 500px;
 			}
 			
-			#quizImg{
-				width : 420px;
-				height: 250px;
-			}
 			
 			h1{
 		    	font-size: 2em;

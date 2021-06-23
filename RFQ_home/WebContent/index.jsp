@@ -49,10 +49,7 @@
 				height: 500px;
 			}
 			
-			#quizImg{
-				width : 420px;
-				height: 250px;
-			}
+			
 		</style>
 	</head>
 	<body class="homepage is-preload">

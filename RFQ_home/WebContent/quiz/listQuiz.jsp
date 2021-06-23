@@ -41,7 +41,7 @@ System.out.println("유저 넣기 완료="+cnt);
    	}else if(category.equals("7")){
    		r_category="연예인";	
    	}else if(category.equals("8")){
-   		r_category="스포츠";	
+   		r_category="신조어";	
    	}
    	
    	if(level.equals("0")){
@@ -91,20 +91,23 @@ System.out.println("유저 넣기 완료="+cnt);
 						if(count<10){
 							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*20)+1).toString();
 							count++;
+							var num=<%=listNum%>;
+							var point=<%=level%>;
 							$('#quizList').attr('src','test.jsp?r_num1='+rnd+'&listNum1='+num);
 						}
 						if(count==10){
-							location.href="resultQuiz.jsp";
+							location.href="resultQuiz.jsp?corCount="+$('#check').val()+'&listNum='+num+'&level='+point;
 						}
 					<%}else if(level.equals("2")){%>
 						if(count<15){
 							var rnd = <%=category.toString()+level.toString()%>+(Math.floor(Math.random()*20)+1).toString();
 							count++;
-							
+							var num=<%=listNum%>;
+							var point=<%=level%>;
 							$('#quizList').attr('src', 'test.jsp?r_num1='+rnd+'&listNum1='+num);
 						}
 						if(count==15){
-							location.href="resultQuiz.jsp";
+							location.href="resultQuiz.jsp?corCount="+$('#check').val()+'&listNum='+num+'&level='+point;
 						}
 					<%}%>
 				});

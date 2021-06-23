@@ -29,7 +29,7 @@ if(category.equals("1")){
 }else if(category.equals("7")){
 	r_category="연예인";	
 }else if(category.equals("8")){
-	r_category="스포츠";	
+	r_category="신조어";	
 }
 %>
 <!DOCTYPE html>
