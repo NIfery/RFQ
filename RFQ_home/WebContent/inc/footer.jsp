@@ -7,7 +7,7 @@
 							<h2>Ready For the Quiz? <strong>RFQ</strong></h2>
 						</header>
 						<p style="border-bottom: 1px dotted #888;padding-bottom:2em;">
-							로고이미지
+							
 						</p>
 						<div class="row">
 							<div>

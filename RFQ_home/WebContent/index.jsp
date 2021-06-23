@@ -65,8 +65,8 @@
 							<!-- Additional required wrapper -->
 							<div class="swiper-wrapper">
 								<!-- Slides -->
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/swipe1.jpg" style="width:100%;height:100%"></div>
 								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/swipe2.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/RFQ1.PNG" style="width:100%;height:100%"></div>
 								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic03.jpg" style="width:100%;height:100%"></div>
 								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic04.jpg" style="width:100%;height:100%"></div>
 							</div>
@@ -80,7 +80,7 @@
 				<section id="features">
 					<div class="container">
 						<header>
-							<h2>여러 주제의 퀴즈를 풀어보실 수 있습니다.</h2>
+							<h2>여러 장르의 퀴즈에 도전하세요!</h2>
 						</header>
 						<div class="row aln-center">
 							<div class="col-4 col-6-medium col-12-small">
@@ -136,80 +136,7 @@
 
 
 			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row">
 
-							<!-- Content -->
-								<div id="content" class="col-8 col-12-medium">
-
-									<!-- Post -->
-										<article class="box post">
-											<header>
-												<h2><b>기프티콘 상점</b></h2>
-											</header>
-											<a href="#" class="image featured"><img src="<%=request.getContextPath() %>/images/main_giftcon.jpg" alt="" /></a>
-										</article>
-								</div>
-
-							<!-- Sidebar -->
-								<div id="sidebar" class="col-4 col-12-medium">
-									<!-- Excerpts -->
-										<section>
-											<ul class="divided">
-												<li>
-
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<a href="#"><span class="date">카테고리1</span></a>
-																<h3>카테고리1 간단 설명</h3>
-															</header>
-														</article>
-												</li>
-												<li>
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<a href="#"><span class="date">카테고리2</span></a>
-																<h3>카테고리2 간단 설명</h3>
-															</header>
-														</article>
-												</li>
-												<li>
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<a href="#"><span class="date">카테고리3</span></a>
-																<h3>카테고리3 간단 설명</h3>
-															</header>
-														</article>
-												</li>
-												<li>
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<a href="#"><span class="date">카테고리4</span></a>
-																<h3>카테고리4 간단 설명</h3>
-															</header>
-														</article>
-												</li>
-												<li>
-													<!-- Excerpt -->
-														<article class="box excerpt">
-															<header>
-																<a href="#"><span class="date">카테고리5</span></a>
-																<h3>카테고리5 간단 설명</h3>
-															</header>
-														</article>
-												</li>
-											</ul>
-										</section>
-								</div>
-
-						</div>
-					</div>
-				</section>
 				
 				
 			<%@ include file="inc/footer.jsp"%>

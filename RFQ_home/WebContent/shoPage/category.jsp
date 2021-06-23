@@ -70,7 +70,7 @@
       <div class="container h-100">
          <div class="blog-banner">
             <div class="text-center">
-               <h1>RFQ POINT Shop</h1>
+               <h1 style="color:orange;">RFQ POINT Shop</h1>
                <nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">퀴즈풀고</a></li>
