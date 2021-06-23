@@ -62,7 +62,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이페이지</title>
-
+<link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
@@ -88,7 +88,6 @@
 </style>
 <body>
 <div id="page-wrapper">
-<%@ include file="../inc/header.jsp"%>
 	<div id="app">
 		<div id="sidebar" class="active">
 			<div class="sidebar-wrapper active">
@@ -340,13 +339,12 @@
 			<footer>
 				<div class="footer clearfix mb-0 text-muted">
 					<div class="float-start">
-						<p>2021 &copy; Mazer</p>
+						<p>2021 &copy; RFQ</p>
 					</div>
 					<div class="float-end">
 						<p>
 							Crafted with <span class="text-danger"><i
-								class="bi bi-heart"></i></span> by <a href="http://ahmadsaugi.com">A.
-								Saugi</a>
+								class="bi bi-heart"></i></span> by <a href="http://ahmadsaugi.com">아이티윌 6조</a>
 						</p>
 					</div>
 				</div>

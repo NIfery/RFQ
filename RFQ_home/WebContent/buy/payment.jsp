@@ -65,7 +65,7 @@
 			if(parseInt(outPoint) > parseInt(getPoint)){
 				alert('보유 포인트가 부족합니다');
 				event.preventDefault();
-				window.open('../myPage/myPageMain.jsp?userid=<%=userid%>','about:top');
+				window.open('../myPage/myPageMain2.jsp?userid=<%=userid%>','about:top');
 			}	
 		});	
 	});
