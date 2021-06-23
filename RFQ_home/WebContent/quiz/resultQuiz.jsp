@@ -25,18 +25,18 @@ String corCount = request.getParameter("corCount");
 	      points=10*result;
 	      balance=points;
 	      int cnt=gpDao.updatePoint(userid, points);
-	      int cnt2=memberSerivce.updatePoint(userid, balance);
+	      int cnt2=memberSerivce.updatePoint2(userid, balance);
 	      System.out.println(cnt);
 	   }else if(point.equals("1")){
 	      points=15*result;
 	      balance=points;
 	      int cnt=gpDao.updatePoint(userid, points);
-	      int cnt2=memberSerivce.updatePoint(userid, balance);
+	      int cnt2=memberSerivce.updatePoint2(userid, balance);
 	   }else if(point.equals("2")){
 	      points=20*result;
 	      balance=points;
 	      int cnt=gpDao.updatePoint(userid, points);
-	      int cnt2=memberSerivce.updatePoint(userid, balance);
+	      int cnt2=memberSerivce.updatePoint2(userid, balance);
 	   }
 %>
 <!DOCTYPE html>

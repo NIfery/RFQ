@@ -47,6 +47,10 @@ private MemberDAO memberDao;
 		return memberDao.updatePoint(userid, balance);
 	}
 	
+	public int updatePoint2(String userid, int balance) throws SQLException {
+		return memberDao.updatePoint(userid, balance);
+	}
+	
 	public int selectPoint (String userid) throws SQLException {
 		return memberDao.selectPoint(userid);
 	}

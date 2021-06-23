@@ -189,6 +189,27 @@ public class MemberDAO {
 		try {
 			conn=pool.getConnection();
 			
+			String sql="update member2 set point=? where userid=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, balance);
+			ps.setString(2, userid);
+			
+			int cnt=ps.executeUpdate();
+			System.out.println("포인트 업데이트 결과 cnt="+cnt+", 매개변수 userid="+userid+", balance="+balance);
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, conn);
+		}
+	}
+	
+	public int updatePoint2(String userid, int balance) throws SQLException {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		
+		try {
+			conn=pool.getConnection();
+			
 			String sql="update member2 set point=point+? where userid=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, balance);
