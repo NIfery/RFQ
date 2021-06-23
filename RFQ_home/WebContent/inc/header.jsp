@@ -18,7 +18,7 @@
 					<div class="container">
 
 						<!-- Logo -->
-							<h1 id="logo"><a href="<%=request.getContextPath()%>/index.jsp">Ready For the Quiz?</a></h1>
+							<h1 id="logo" style="color:#e35858;"><a href="<%=request.getContextPath()%>/index.jsp">Ready For the Quiz?</a></h1>
 							<p>매일 새롭게 출제되는 퀴즈에 도전하고 포인트를 모으세요 !!</p>
 
 						<!-- Nav -->

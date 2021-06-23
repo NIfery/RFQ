@@ -65,10 +65,10 @@
 							<!-- Additional required wrapper -->
 							<div class="swiper-wrapper">
 								<!-- Slides -->
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/swipe2.jpg" style="width:100%;height:100%"></div>
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/RFQ1.PNG" style="width:100%;height:100%"></div>
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic03.jpg" style="width:100%;height:100%"></div>
-								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/pic04.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/quiz1.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/quiz2.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/quiz3.jpg" style="width:100%;height:100%"></div>
+								<div class="swiper-slide"><img src="<%=request.getContextPath()%>/images/quiz4.jpg" style="width:100%;height:100%"></div>
 							</div>
 							<!-- If we need pagination -->
 							<div class="swiper-pagination"></div>

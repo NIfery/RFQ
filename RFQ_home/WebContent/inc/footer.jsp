@@ -4,7 +4,7 @@
 				<section id="footer">
 					<div class="container">
 						<header>
-							<h2>Ready For the Quiz? <strong>RFQ</strong></h2>
+							<h2>Ready For the Quiz? <strong style="color:#e35858;">RFQ</strong></h2>
 						</header>
 						<p style="border-bottom: 1px dotted #888;padding-bottom:2em;">
 							
