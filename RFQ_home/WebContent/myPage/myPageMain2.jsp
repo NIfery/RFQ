@@ -22,14 +22,14 @@
    GetPointDAO dao = new GetPointDAO();
    BuyListVO vo2=new BuyListVO();
    List<BuyListVO> list=null;
-   int bal=0;
+   MemberVO vo4=null;
    
    //to-do : 포인트 사용내역 적립내용 뿌리기
       try{
          vo=dao.selectPoint(userid);
          list=buylistService.selectBuyList(userid);         
          vo2=buylistService.recentBuy(userid);
-         bal=memberService.selectPoint(userid);
+         vo4=memberService.selectPoint(userid);
       }catch(SQLException e){
          e.printStackTrace();
       }
@@ -207,7 +207,7 @@
                                     </div>
                                     <div class="col-md-8">
                                        <h6 class="text-muted font-semibold">현재 보유 포인트</h6>
-                                       <h6 class="font-extrabold mb-0"><%=df.format(bal)%> Point</h6>
+                                       <h6 class="font-extrabold mb-0"><%=df.format(vo4.getPoint())%> Point</h6>
                                     </div>
                                  </div>
                               </div>

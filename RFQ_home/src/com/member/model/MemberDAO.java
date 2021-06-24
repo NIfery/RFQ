@@ -224,7 +224,7 @@ public class MemberDAO {
 		}
 	}
 	
-	public int selectPoint (String userid) throws SQLException {
+	public MemberVO selectPoint (String userid) throws SQLException {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -236,13 +236,13 @@ public class MemberDAO {
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
 			
-			int point=0;
+			MemberVO vo=null;
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				point=rs.getInt("point");
+				vo.setPoint(rs.getInt("point"));
 			}
-			System.out.println("보유 포인트 조회 결과, point="+point+", 매개변수 userid="+userid);
-			return point;
+			System.out.println("보유 포인트 조회 결과, vo="+vo+", 매개변수 userid="+userid);
+			return vo;
 		}finally {
 			pool.dbClose(rs, ps, conn);
 		}
