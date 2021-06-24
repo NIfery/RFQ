@@ -9,6 +9,7 @@
     
     <%   
        request.setCharacterEncoding("utf-8");
+       String c_userid = request.getParameter("c_userid");
        String category = request.getParameter("brand");
        String keyword = request.getParameter("searchName");
        
@@ -153,7 +154,12 @@
                   <div class="card-product__img">
                     <img class="card-img" src="../images/product/<%=vo.getImage() %>.PNG">
                     <ul class="card-product__imgOverlay">
-                      <li><button type="button" onclick ="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
+                    <%if(c_userid==null || c_userid.isEmpty()){ %>
+                  <li><button type="button" onclick ="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>'"><i class="ti-search"></i></button></li>
+                    <%}else{ %>
+                    <li><button type="button" onclick ="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo.getNo()%>&userid=<%=c_userid%>'"><i class="ti-search"></i></button></li>
+                    
+           		 <%} %>
                     </ul>
                   </div>
                   <div class="card-body">

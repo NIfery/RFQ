@@ -51,7 +51,7 @@
       <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
       <script type="text/javascript">
       $(function(){
-         $('#wr_submit').click(function(){
+         $('#submit').click(function(){
             if($('#pwd').val().length<1){
                alert('비밀번호를 입력하세요');
                $('#pwd').focus();
@@ -217,7 +217,7 @@
                          <div style="text-align: center">
                          <br>
                          <Br>
-                           <input type="submit" class="question" id="wr_submit" value="수정">
+                           <input type="submit" class="question" id="submit" value="수정">
                         </div>
                   </form>
                </div>

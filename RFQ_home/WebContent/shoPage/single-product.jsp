@@ -199,7 +199,12 @@
             <div class="card-product__img">
               <img class="img-fluid" src="../images/product/<%=vo2.getImage() %>.PNG">
               <ul class="card-product__imgOverlay">
-                <li><button onclick="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
+              <%if(userid==null || userid.isEmpty()){ %>
+                  <li><button type="button" onclick ="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>'"><i class="ti-search"></i></button></li>
+                    <%}else{ %>
+                    <li><button type="button" onclick ="$('html, body', window.parent.document).scrollTop(800);location.href='single-product.jsp?no=<%=vo2.getNo()%>&userid=<%=userid%>'"><i class="ti-search"></i></button></li>
+                    
+           		 <%} %>
               </ul>
             </div>
             <div class="card-body">

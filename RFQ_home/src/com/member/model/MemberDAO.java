@@ -236,7 +236,7 @@ public class MemberDAO {
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, userid);
 			
-			MemberVO vo=null;
+			MemberVO vo=new MemberVO();
 			rs=ps.executeQuery();
 			if(rs.next()) {
 				vo.setPoint(rs.getInt("point"));
