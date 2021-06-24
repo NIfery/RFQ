@@ -25,6 +25,7 @@
    
    GiftconVO vo=new GiftconVO();
    BuyListVO vo2=null;
+   MemberVO vo3=null;
    
    try{
       vo2=buylistService.selectByUserid(userid, Integer.parseInt(orderNo));
@@ -43,7 +44,7 @@
          gVo=dao.selectPoint(userid);
          vo2=buylistService.recentBuy(userid);
          list=buylistService.selectBuyList(userid);
-         bal=memberService.selectPoint(userid);
+         vo3=memberService.selectPoint(userid);
       }catch(SQLException e){
          e.printStackTrace();
       }

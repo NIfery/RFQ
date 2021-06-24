@@ -49,7 +49,7 @@
 	vo.setUserid(userid);
 	vo.setZipcode(zipcode);
 	
-	String msg="비밀번호 체크 실패", url="/myPage/myPageMain.jsp";
+	String msg="비밀번호 체크 실패", url="/myPage/myPageMain2.jsp?userid="+userid;
 	try{
 		
 		int result=memberService.loginProc(userid, pwd);
