@@ -25,7 +25,7 @@
    
    GiftconVO vo=new GiftconVO();
    BuyListVO vo2=null;
-   MemberVO vo3=null;
+   MemberVO vo3=new MemberVO();
    
    try{
       vo2=buylistService.selectByUserid(userid, Integer.parseInt(orderNo));
@@ -208,7 +208,7 @@
                                     </div>
                                     <div class="col-md-8">
                                        <h6 class="text-muted font-semibold">현재 보유 포인트</h6>
-                                       <h6 class="font-extrabold mb-0"><%=df.format(bal)%> Point</h6>
+                                       <h6 class="font-extrabold mb-0"><%=df.format(vo3.getPoint())%> Point</h6>
                                     </div>
                                  </div>
                               </div>
