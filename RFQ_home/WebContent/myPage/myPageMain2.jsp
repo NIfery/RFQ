@@ -22,7 +22,7 @@
    GetPointDAO dao = new GetPointDAO();
    BuyListVO vo2=new BuyListVO();
    List<BuyListVO> list=null;
-   MemberVO vo4=null;
+   MemberVO vo4=new MemberVO();
    
    //to-do : 포인트 사용내역 적립내용 뿌리기
       try{
